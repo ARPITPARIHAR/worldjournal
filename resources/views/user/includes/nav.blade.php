@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-    <title>NewBiz Bootstrap Template - Index</title>
+    <title>World journals Alert</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
   
@@ -42,7 +42,7 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a href="/journals" class="nav-link scrollto" href="">Home</a></li>
+        <li><a href="/" class="nav-link scrollto" href="">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About</a></li>
         <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
       
@@ -74,7 +74,10 @@
           <li><a class="nav-link scrollto" href="registration">Register</a></li>
           <li><a class="nav-link scrollto" href="logout">LogOut</a></li>
       </li>
-      <i class="bi bi-list mobile-nav-toggle"></i>
+     <div class="mobile-menu-toggle">
+        <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+      </div>
+    </div>
     </nav><!-- .navbar -->
 
     </div>

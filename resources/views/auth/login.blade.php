@@ -11,9 +11,9 @@
 
                 <div class="card-header text-center" style="background-color: #f0f0f0; height:40px">Login</div>
                 <div class="card-body">
-                    @if(session('error'))
+                    @if(session('error') || session('social_error'))
                         <div class="alert alert-danger">
-                            {{ session('error') }}
+                            {{ session('error') ?: session('social_error') }}
                         </div>
                     @endif
 
@@ -23,8 +23,8 @@
                         </div>
                     @endif
                     @auth()
-{{auth()->user()->name}}
-@endauth
+                        {{ auth()->user()->name }}
+                    @endauth
                     <form method="POST" action="{{ route('log.post') }}">
                         @csrf
 
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-<br>
+                        <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -67,6 +67,13 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="text-center mt-4">
+                        <p>Or login with:</p>
+                        <a href="{{ route('login.provider', ['provider' => 'facebook']) }}" class="btn btn-primary">Login with Facebook</a>
+                        <a href="{{ route('send.otp') }}" class="btn btn-success">Login with WhatsApp</a>
+                        
+                    </div>
                 </div>
             </div>
         </div>

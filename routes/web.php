@@ -26,7 +26,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 
 
 
-Route::get('/journals', [UserController::class, 'index']);
+Route::get('/', [UserController::class, 'index']);
 Route::get('user/login', [UserController::class, 'login'])->name('user.login');
 Route::get('user/promote', [UserController::class, 'promote'])->name('user.promote');
 Route::get('user/add', [UserController::class, 'add'])->name('user.add'); 
@@ -92,7 +92,7 @@ Route::middleware('auth')->group(function () {
 // web.php
 
  
-Route::get('logins', [UserLoginController::class, 'showLoginForm'])->name('logins');
+Route::get('logins', [UserLoginController::class, 'LoginForm'])->name('logins');
 Route::post('log-post', [UserLoginController::class, 'login'])->name('log.post');
 Route::get('logout', [UserLoginController::class, 'logout'])->name('logout');
 
@@ -112,7 +112,17 @@ Route::post('registration/store', [RegisterController::class, 'store'])->name('r
 
 
 
+// ...
 
+Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'])->name('login.provider');
+Route::get('login/{provider}/callback', [UserLoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
+Route::post('login/whatsapp', [UserLoginController::class, 'loginWithWhatsApp'])
+    ->name('login.whatsapp');
+   
+    Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
+    Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
+
+// Route for initiating the social login process
 // // Email verification routes
 // Route::get('/email/verify/{id}/{hash}', [RegisterController::class, 'verifyEmail'])->name('verification.verify');
 // Route::get('/email/verify', [RegisterController::class, 'showVerificationNotice'])->name('verification.notice');

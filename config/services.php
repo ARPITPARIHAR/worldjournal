@@ -31,4 +31,24 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'facebook' => [
+        'client_id' => 'your-facebook-app-id',
+        'client_secret' => 'your-facebook-app-secret',
+        'redirect' => 'http://your-callback-url',
+    ],
+    
+    'twitter' => [
+        'client_id' => 'your-twitter-app-id',
+        'client_secret' => 'your-twitter-app-secret',
+        'redirect' => 'http://your-callback-url',
+    ],
+    
+    // Add configuration for other providers as needed
+    
+    'twilio' => [
+        'sid' => env('TWILIO_SID'),
+        'auth_token' => env('TWILIO_AUTH_TOKEN'),
+        'phone_number' => env('TWILIO_PHONE_NUMBER'),
+    ],
+    
 ];

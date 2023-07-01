@@ -16,5 +16,8 @@ class Register extends Model implements Authenticatable
         'name',
         'email',
         'password',
+        'social_id',
+        'provider',
+        'avatar',
     ];
 }
