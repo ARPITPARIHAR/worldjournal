@@ -238,7 +238,7 @@
    border-bottom-left-radius: 15px;
    color: white;
    width: 1000px;
-    margin-left: 200px;
+    margin-left: 250px;
 }
 
 

@@ -1,4 +1,3 @@
-
 @extends('user.layouts.app')
 @section('meta_title', 'login')
 @section('content')
@@ -12,11 +11,14 @@
                 <div class="card mb-4">
                     <div class="card-body" style="background-color: skyblue; color: white; border-radius: 10px;text-align:center;">
                         <h3>Our Address</h3>
-                        <p>A108 Adam Street<br>New York, NY 535022<br>United States</p>
+                        <p>Y-18-A,
+                            Sudarshana Nagar<br>
+                            Bikaner (Rajasthan)
+                            334003<br>INDIA</p>
                         <h3>Email Us</h3>
                         <p>info@example.com</p>
                         <h3>Call Us</h3>
-                        <p>+1 5589 55488 55</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

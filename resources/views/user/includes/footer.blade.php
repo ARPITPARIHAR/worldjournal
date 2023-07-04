@@ -25,10 +25,12 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+              Y-18-A,<br>
+              Sudarshana Nagar<br>
+              Bikaner (Rajasthan)
+              334003 <br>
+         
+              <strong>Phone:</strong> <br>
               <strong>Email:</strong> info@example.com<br>
             </p>
 
@@ -56,7 +58,8 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+       <strong>© Copyright Auricle Technologies Pvt. Ltd.
+        </strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -65,7 +68,7 @@
         Licensing information: https://bootstrapmade.com/license/
         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
       -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
       </div>
     </div>
   </footer><!-- End Footer -->

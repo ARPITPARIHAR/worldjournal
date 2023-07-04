@@ -15,45 +15,94 @@
 <br>
 
 
-<section>
-  <main id="main">
-    <div class="main" role="main">
-      <div id="content" class="content full">
-         
-          
-<div class="conta">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 featured-block">
-        <a href="user/add/create">
-          <img src="add-event-image.jpg" alt="Add event" class="img-fluid">
-        </a>
-        <h3 class="text-primary">Add Journal / Conference</h3>
-        <p class="italic hover:not-italic">Add a Journal/Conference to the World Journals Alert database. It's quick and free!</p>
-      </div>
-      <div class="col-md-4 col-sm-4 featured-block">
-        <a href="user/promote">
-          <img src="promote-event-image.jpg" alt="Promote event" class="img-fluid">
-        </a>
-        <h3 class="text-secondary">Promote Your Journal / Conference</h3>
-        <p>Promote your Journal/Conference via targeted e-mails, WJA Alerts Monthly and on the WJA website.</p>
-      </div>
-      <div class="col-md-4 col-sm-4 featured-block">
-        <a href="#subscribe">
-          <img src="subscribe-image.jpg" alt="Subscribe" class="img-fluid">
-        </a>
-        <h3 class="text-info">Subscribe</h3>
-        <p>Receive free email updates of events matching your interests. Subscribe to stay up to date with what's happening in your field.</p>
-      </div>
+<style>
+  /* Custom styles for the "Add Journal / Conference" section */
+  .featured-block {
+    background-color: #008080;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .featured-block a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: #007bff;
+    transition: color 0.3s ease-in-out;
+    font-family: Arial, sans-serif; /* Add a font-family */
+  }
+
+  .featured-block a:hover {
+    color: #0056b3;
+  }
+
+  .featured-block a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .featured-block a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .featured-block h3 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: white; /* Change the heading color */
+    font-weight: bold; /* Add font weight */
+    font-family: 'Arial Black', sans-serif; /* Add a different font-family */
+  }
+
+  .featured-block p {
+    font-size: 16px;
+    color:WHITE;
+    font-family: Georgia, serif; /* Add a font-family */
+  }
+
+  .featured-block p.italic {
+    font-style: italic;
+  }
+
+  .featured-block:hover {
+    background-color: #eee;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 featured-block">
+      <a href="user/add/create" class="text-primary">
+        <h3>Add Journal / Conference</h3>
+      </a>
+      <p class="italic">Add a Journal/Conference to the World Journals Alert database. It's quick and free!</p>
+    </div>
+    <div class="col-md-4 col-sm-4 featured-block">
+      <a href="user/promote">
+        <h3>Promote Your Journal / Conference</h3>
+      </a>
+      <p>Promote your Journal/Conference via targeted e-mails, WJA Alerts Monthly and on the WJA website.</p>
+    </div>
+    <div class="col-md-4 col-sm-4 featured-block">
+      <a href="#subscribe">
+        <h3>Subscribe</h3>
+      </a>
+      <p>Receive free email updates of events matching your interests. Subscribe to stay up to date with what's happening in your field.</p>
     </div>
   </div>
-  
-  
-		                
-              	 
+</div>
 
-					
- </div>
 
     
  @php
@@ -242,7 +291,7 @@
     <!-- ======= Cta Section ======= -->
     
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
+    {{-- <section id="faq" class="faq">
       <div class="container">
 
         <div class="section-title">
@@ -398,42 +447,51 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End Team Section --> --}}
 
     <!-- ======= Contact Section ======= -->
+
+    
+    
     <section id="contact" class="contact">
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
-          <h3>Contact <span>Us</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-        </div>
+          <div style="text-align: center;">
+            <h3 style="font-size: 24px; color: #007bff; text-transform: uppercase; letter-spacing: 2px;">
+              Contact Us
+            </h3>
+            <hr style="width: 50px; border: 2px solid #007bff; margin: 10px auto;">
+            <p style="font-size: 16px; color: #666;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
+          </div>
+          
 
         <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
         </div>
-
         <div class="row mt-5">
 
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Location:</h3>
+                <p>Y-18-A,
+                  Sudarshana Nagar
+                  Bikaner (Rajasthan)
+                  334003</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
+                <h3>Email:</h3>
                 <p>info@example.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h3>Call:</h3>
+                <p></p>
               </div>
 
             </div>
@@ -470,3 +528,102 @@
         </div>
 
       </div>
+      <style>
+        /* Set the width of the iframe to 100% */
+        iframe {
+          width: 100%;
+        }
+      </style>
+        <style>
+.contact {
+  background-color: #f7f7f7;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-title h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.info {
+  margin-bottom: 30px;
+}
+
+.info i {
+  font-size: 32px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.info h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info p {
+  color: #666;
+}
+
+.php-email-form input,
+.php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.php-email-form input:focus,
+.php-email-form textarea:focus {
+  border-color: #007bff;
+}
+
+.php-email-form button[type="submit"] {
+  background-color: #007bff;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.php-email-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.loading,
+.error-message,
+.sent-message {
+  display: none;
+  text-align: center;
+  padding: 10px 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.google-maps {
+  border: 0;
+  width: 100%;
+  height: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.google-maps iframe {
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+
+</section>
