@@ -18,11 +18,10 @@
 <style>
   /* Custom styles for the "Add Journal / Conference" section */
   .featured-block {
-    background-color: #008080;
+    background-color: #001180;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    margin-bottom: 20px;
   }
 
   .featured-block a {
@@ -31,7 +30,7 @@
     position: relative;
     color: #007bff;
     transition: color 0.3s ease-in-out;
-    font-family: Arial, sans-serif; /* Add a font-family */
+    font-family: Arial, sans-serif;
   }
 
   .featured-block a:hover {
@@ -60,15 +59,15 @@
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 10px;
-    color: white; /* Change the heading color */
-    font-weight: bold; /* Add font weight */
-    font-family: 'Arial Black', sans-serif; /* Add a different font-family */
+    color: white;
+    font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
   }
 
   .featured-block p {
     font-size: 16px;
-    color:WHITE;
-    font-family: Georgia, serif; /* Add a font-family */
+    color: white;
+    font-family: Georgia, serif;
   }
 
   .featured-block p.italic {
@@ -82,18 +81,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-4 featured-block">
+    <div class="col-md-4 col-sm-4 featured-block" >
       <a href="user/add/create" class="text-primary">
         <h3>Add Journal / Conference</h3>
       </a>
       <p class="italic">Add a Journal/Conference to the World Journals Alert database. It's quick and free!</p>
     </div>
-    <div class="col-md-4 col-sm-4 featured-block">
+    
+    <div class="col-md-4 col-sm-4 featured-block" style="margin-left 50px;">
       <a href="user/promote">
         <h3>Promote Your Journal / Conference</h3>
       </a>
       <p>Promote your Journal/Conference via targeted e-mails, WJA Alerts Monthly and on the WJA website.</p>
     </div>
+    
     <div class="col-md-4 col-sm-4 featured-block">
       <a href="#subscribe">
         <h3>Subscribe</h3>
@@ -104,6 +105,7 @@
 </div>
 
 
+<br>
     
  @php
  $country_records = App\Models\AddJournal::select('country', DB::raw('COUNT(*) as count'))
@@ -137,10 +139,10 @@
                     
 
      <br>
-    
+    <br>
      <div class="container">
       <div class="card">
-        <div class="card-header text-center" style="background-color: #f0f0f0;">Country Records</div>
+        <div class="card-header text-center" style="background-color: #f0f0f0;">Category Records</div>
           <div class="card-body">
              <div class="row">
                  @foreach ($category_records as $result)
@@ -536,7 +538,7 @@
       </style>
         <style>
 .contact {
-  background-color: #f7f7f7;
+  background-color: white;
   padding: 50px;
   border-radius: 10px;
 }

@@ -60,6 +60,31 @@
     .btn-primary:hover {
       background-color: #0069d9;
     }
+  
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .fixed {
+        margin: 0 20px;
+        position: static;
+        transform: none;
+        width: auto;
+        text-align: left;
+      }
+  
+      .search-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .resizedTextbox {
+        width: 100%;
+        max-width: none;
+      }
+  
+      .btn-primary {
+        margin-top: 10px;
+      }
+    }
   </style>
   
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

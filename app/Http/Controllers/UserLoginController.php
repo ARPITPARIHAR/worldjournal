@@ -92,14 +92,14 @@ public function LoginForm()
     public function loginWithWhatsApp(Request $request)
     {
         // Validate the form data
-        
         $validatedData = $request->validate([
             'phone_number' => 'required|numeric'
         ]);
     
-        // Your Twilio credentials
-        $accountSid = 'YOUR_TWILIO_ACCOUNT_SID';
-        $authToken = 'YOUR_TWILIO_AUTH_TOKEN';
+        // Your Twilio credentials from environment variables
+        $accountSid = getenv('TWILIO_SID');
+        $authToken = getenv('TWILIO_AUTH_TOKEN');
+        $twilioPhoneNumber = getenv('TWILIO_PHONE_NUMBER');
     
         // Create a new Twilio client
         $client = new Client($accountSid, $authToken);
@@ -115,13 +115,13 @@ public function LoginForm()
             $message = $client->messages->create(
                 "whatsapp:" . $toPhoneNumber,
                 [
-                    "from" => "whatsapp:YOUR_TWILIO_PHONE_NUMBER",
+                    "from" => "whatsapp:" . $twilioPhoneNumber,
                     "body" => "Your OTP: " . $otp
                 ]
             );
     
             // Store the OTP in the session for verification
-            session(['otp' => $otp]);
+            Session::put('otp', $otp);
     
             // Redirect to the enter-otp route
             return redirect()->route('enter-otp')->with('success', 'OTP sent successfully to your WhatsApp number.');
@@ -130,6 +130,6 @@ public function LoginForm()
             return redirect()->back()->with('error', 'Failed to send OTP to your WhatsApp number.');
         }
     }
-    
 }
+
 

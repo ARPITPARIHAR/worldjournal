@@ -4,7 +4,7 @@
 
 @include('user.includes.nav')
 @section('content')
-<section id="contact" class="contact" style="margin-top: 35px; background-color: #f2f2f2;">
+<section id="contact" class="contact" style="margin-top: 35px; background-color: white;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">

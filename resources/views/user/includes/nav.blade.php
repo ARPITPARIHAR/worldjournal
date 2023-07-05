@@ -37,6 +37,15 @@
 
 <body>
   <header id="header" class="fixed-top d-flex align-items-center">
+    <style>
+      #header {
+        height: 80px;
+        z-index: 997;
+        transition: all 0.5s;
+        background: #001180;
+        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+      }
+    </style>
     <div class="container d-flex justify-content-between">
       <div class="logo">
         <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="img-fluid" id="logo">

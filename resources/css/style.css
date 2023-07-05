@@ -89,7 +89,7 @@ h6 {
   height: 80px;
   z-index: 997;
   transition: all 0.5s;
-  background: #e80c0c;
+  background: #001180;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
 }
 
@@ -184,7 +184,7 @@ h6 {
       z-index: 99;
       opacity: 0;
       visibility: hidden;
-      background: #067285fe;
+      background: #191970;
       box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
       transition: 0.3s;
     }
