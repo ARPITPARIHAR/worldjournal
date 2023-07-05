@@ -215,56 +215,70 @@
 @endsection 
 
 <style>
- .success-message {
-    background-color: darkred;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    
-}
-
-.container{
-    margin-top: 20px;
-}
-        
-.basic{
-    margin-top: 400px;
-    background-color:darkslategray;
-    display:block; margin-top:70px;
-    border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-   border-bottom-left-radius: 15px;
-   color: white;
-   width: 1000px;
-    margin-left: 250px;
-}
-
-
-input[type="text"]  {
-  float: left;
-  width: 730px;
-}
-
-input[type="password"]  {
-  float: left;
-  width: 730px;
-}
-input[type="number"]  {
-  float: left;
-  width: 730px;
-}
-label {
+    .success-message {
+      background-color: darkred;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   
- text-align: center;
+    .container {
+      margin-top: 20px;
+    }
+  
+    .basic {
+      margin-top: 400px;
+      background-color: darkslategray;
+      display: block;
+      margin-top: 70px;
+      border-radius: 15px;
+      color: white;
+      width: 100%;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+      float: left;
+      width: 100%;
+      max-width: 730px;
+    }
+  
+    label {
+      text-align: center;
+    }
+  
+    h3 {
+      text-align: center;
+    }
+  
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .basic {
+        margin-top: 200px;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .basic {
+        margin-top: 90px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+  
+      input[type="text"],
+      input[type="password"],
+      input[type="number"] {
+        max-width: 100%;
+      }
+    }
+  </style>
   
 
-}
-h3{
-    text-align: center;
-}
-</style>
 <script>
     function capitalizeInput(input) {
         var words = input.value.split(' ');

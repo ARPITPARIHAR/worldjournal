@@ -22,6 +22,10 @@
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .featured-block a {
@@ -77,25 +81,36 @@
   .featured-block:hover {
     background-color: #eee;
   }
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .featured-block {
+      width: calc(33.33% - 20px);
+      margin-right: 20px;
+    }
+    .featured-block:last-child {
+      margin-right: 0;
+    }
+  }
 </style>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-4 featured-block" >
+    <div class="featured-block">
       <a href="user/add/create" class="text-primary">
         <h3>Add Journal / Conference</h3>
       </a>
       <p class="italic">Add a Journal/Conference to the World Journals Alert database. It's quick and free!</p>
     </div>
     
-    <div class="col-md-4 col-sm-4 featured-block" style="margin-left 50px;">
+    <div class="featured-block">
       <a href="user/promote">
         <h3>Promote Your Journal / Conference</h3>
       </a>
       <p>Promote your Journal/Conference via targeted e-mails, WJA Alerts Monthly and on the WJA website.</p>
     </div>
     
-    <div class="col-md-4 col-sm-4 featured-block">
+    <div class="featured-block">
       <a href="#subscribe">
         <h3>Subscribe</h3>
       </a>
@@ -103,6 +118,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 
 <br>
@@ -453,7 +472,7 @@
 
     <!-- ======= Contact Section ======= -->
 
-    
+    <br>
     
     <section id="contact" class="contact">
       <div class="container">
@@ -464,7 +483,7 @@
               Contact Us
             </h3>
             <hr style="width: 50px; border: 2px solid #007bff; margin: 10px auto;">
-            <p style="font-size: 16px; color: #666;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
+            <p style="font-size: 16px; color:white;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
           </div>
           
 
@@ -478,21 +497,20 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h3>Location:</h3>
-                <p>Y-18-A,
+                <p style="color: white;">Y-18-A,
                   Sudarshana Nagar
                   Bikaner (Rajasthan)
                   334003</p>
-              </div>
-
+                </div>
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h3>Email:</h3>
-                <p>info@example.com</p>
+                <p style="color:white">info@example.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h3>Call:</h3>
+                <h3 style="color:white">Call:</h3>
                 <p></p>
               </div>
 
@@ -534,14 +552,21 @@
         /* Set the width of the iframe to 100% */
         iframe {
           width: 100%;
+          height:240px;
         }
-      </style>
-        <style>
+     
+      
 .contact {
-  background-color: white;
-  padding: 50px;
-  border-radius: 10px;
-}
+  background-image: url('/user/img/back.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .address h3, .email h3, .call h3 {
+    color: white;
+  }
+  .address p, .email p, .call p {
+    color: white;
+  }
 
 .section-title {
   text-align: center;
@@ -561,8 +586,11 @@
 
 .info {
   margin-bottom: 30px;
+  color: white;
 }
-
+.adrress{
+  color: white;
+}
 .info i {
   font-size: 32px;
   color: #007bff;

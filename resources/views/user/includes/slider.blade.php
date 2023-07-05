@@ -4,15 +4,12 @@
     }
   
     .img-post {
-      display: block;
       position: relative;
-      display: inline-block;
       margin-top: -20px;
       margin-bottom: -20px;
     }
   
     .fixed {
-      margin-right: 50px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -64,7 +61,6 @@
     /* Responsive styles */
     @media (max-width: 768px) {
       .fixed {
-        margin: 0 20px;
         position: static;
         transform: none;
         width: auto;
@@ -73,7 +69,8 @@
   
       .search-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        margin-top: 0;
       }
   
       .resizedTextbox {
@@ -94,7 +91,7 @@
   </nav>
   
   <div class="img-post">
-    <img src="{{ asset('user/img/46.png') }}" alt="" width="100%" height="auto">
+    <img src="{{ asset('user/img/hero-bg.png') }}" alt="" width="100%" height="auto">
     <div class="fixed">
       <form action="{{ route('user.search') }}" method="get" class="search-container">
         <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
@@ -102,4 +99,5 @@
       </form>
     </div>
   </div>
+  
   
