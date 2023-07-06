@@ -1,15 +1,15 @@
 @extends('user.layouts.app')
 @section('meta_title', 'login')
-@section('content')
-
 @include('user.includes.nav')
 @section('content')
+
+
 <section id="contact" class="contact" style="margin-top: 35px; background-color: white;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="card mb-4">
-                    <div class="card-body" style="background-color: skyblue; color: white; border-radius: 10px;text-align:center;">
+                    <div class="card-body" style="background-color: #001180; color: white; border-radius: 10px;text-align:center;">
                         <h3>Our Address</h3>
                         <p>Y-18-A,
                             Sudarshana Nagar<br>

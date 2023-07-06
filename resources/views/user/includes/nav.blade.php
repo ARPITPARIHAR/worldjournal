@@ -28,9 +28,7 @@
   <link rel="stylesheet" href="path/to/font-awesome.css">
   <!-- Custom CSS -->
   
-    /* Add your custom styles here */
-
-    /* Logo Styles */
+  
   
 
 </head>
@@ -45,11 +43,15 @@
         background: #001180;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
       }
+      .navbar{
+        background: #001180;
+      }
     </style>
     <div class="container d-flex justify-content-between">
-      <div class="logo">
-        <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="img-fluid" id="logo">
-      </div>
+      <a href="/" class="logo">
+        <img src="{{ asset('user/img/101.jpg') }}" alt="Logo" class="img-fluid" id="logo">
+      </a>
+      
 
       <nav id="navbar" class="navbar">
         <ul>

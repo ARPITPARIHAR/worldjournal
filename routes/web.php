@@ -49,6 +49,7 @@ Route::post('user/add/store', [AddJournalController::class, 'store'])->name('use
 
 Route::get('/search', [SearchController::class, 'search'])->name('user.search');
 
+
 Route::get('/country-list', [AddJournalController::class, 'countryList'])->name('countryList');
 
 // Route::get('user/create', [SignupController::class, 'create'])->name('user.create');

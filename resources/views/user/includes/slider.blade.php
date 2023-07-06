@@ -91,7 +91,7 @@
   </nav>
   
   <div class="img-post">
-    <img src="{{ asset('user/img/hero-bg.png') }}" alt="" width="100%" height="auto">
+    <img src="{{ asset('user/img/114-hd.png') }}" alt="" width="100%" height="auto">
     <div class="fixed">
       <form action="{{ route('user.search') }}" method="get" class="search-container">
         <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
