@@ -11,11 +11,12 @@
   
     .fixed {
       position: absolute;
-      top: 50%;
+      top: 35%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
       text-align: center;
+      z-index: 1;
     }
   
     .search-container {
@@ -24,6 +25,7 @@
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 20px;
+      z-index: 1;
     }
   
     .resizedTextbox {
@@ -61,16 +63,20 @@
     /* Responsive styles */
     @media (max-width: 768px) {
       .fixed {
-        position: static;
-        transform: none;
-        width: auto;
-        text-align: left;
+        position: absolute;
+        top: 45%; /* Adjust the top value to push it above the image */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
       }
   
       .search-container {
         flex-direction: column;
         align-items: center;
         margin-top: 0;
+        position: relative;
+        top: -85px; /* Adjust the top value to push it above the image */
       }
   
       .resizedTextbox {
@@ -91,13 +97,13 @@
   </nav>
   
   <div class="img-post">
-    <img src="{{ asset('user/img/114-hd.png') }}" alt="" width="100%" height="auto">
-    <div class="fixed">
-      <form action="{{ route('user.search') }}" method="get" class="search-container">
-        <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
-    </div>
+    <img src="{{ asset('user/img/114-hd.png') }}" alt="" width="100%" height="540px">
   </div>
   
+  <div class="fixed">
+    <form action="{{ route('user.search') }}" method="get" class="search-container">
+      <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
   

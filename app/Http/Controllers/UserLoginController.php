@@ -51,7 +51,7 @@ public function LoginForm()
     {
         return Socialite::driver($provider)->redirect();
     }
-
+    
     public function handleProviderCallback($provider)
     {
         try {
@@ -59,15 +59,15 @@ public function LoginForm()
         } catch (\Exception $e) {
             return redirect()->route('login')->with('error', 'Failed to authenticate with ' . $provider);
         }
-
+    
         if ($user) {
             $email = $user->getEmail();
             $name = $user->getName();
             $providerId = $user->getId();
-
+    
             if (!empty($email) && !empty($name) && !empty($providerId)) {
                 $existingUser = Register::where('email', $email)->first();
-
+    
                 if ($existingUser) {
                     Auth::login($existingUser);
                 } else {
@@ -77,11 +77,11 @@ public function LoginForm()
                     $newUser->provider = $provider;
                     $newUser->provider_id = $providerId;
                     $newUser->save();
-
+    
                     Auth::login($newUser);
                 }
-
-                return redirect()->route('home');
+    
+                return redirect()->route('home'); // Replace with the appropriate route
             } else {
                 return redirect()->route('login')->with('error', 'User information not available from ' . $provider);
             }

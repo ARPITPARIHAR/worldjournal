@@ -557,7 +557,7 @@
      
       
 .contact {
-  background-image: url('/user/img/bb.jpg');
+  background-image: url('/user/img/bb11.jpg');
       background-size: cover;
       background-position: center;
     }
