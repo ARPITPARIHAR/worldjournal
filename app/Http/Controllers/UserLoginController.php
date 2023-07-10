@@ -60,7 +60,7 @@ public function LoginForm()
         } catch (\Exception $e) {
             return redirect()->route('login')->with('error', 'Failed to authenticate with ' . $provider);
         }
-    
+       dd($user);
         if ($user) {
             $email = $user->getEmail();
             $name = $user->getName();
