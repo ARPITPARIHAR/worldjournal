@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AddJournal;
 use function Ramsey\Uuid\v1;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AddJournalController extends Controller
 {

@@ -113,10 +113,13 @@ Route::post('registration/store', [RegisterController::class, 'store'])->name('r
 
 
 
-// ...
 
 Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'])->name('login.provider');
-Route::get('login/{provider}/callback', [UserLoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
+ Route::get('login/{provider}/callback', [UserLoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
+       
+    
+
+
 Route::post('login/whatsapp', [UserLoginController::class, 'loginWithWhatsApp'])
     ->name('login.whatsapp');
    

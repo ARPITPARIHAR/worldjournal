@@ -1,14 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Register;
 use Illuminate\Support\Facades\Session;
 
 use Laravel\Socialite\Facades\Socialite;
-use Twilio\Rest\Client;
+
 
 class UserLoginController extends Controller
 {
@@ -54,8 +53,10 @@ public function LoginForm()
     
     public function handleProviderCallback($provider)
     {
+       
         try {
             $user = Socialite::driver($provider)->user();
+          
         } catch (\Exception $e) {
             return redirect()->route('login')->with('error', 'Failed to authenticate with ' . $provider);
         }
@@ -81,7 +82,7 @@ public function LoginForm()
                     Auth::login($newUser);
                 }
     
-                return redirect()->route('home'); // Replace with the appropriate route
+                return redirect()->route('home'); 
             } else {
                 return redirect()->route('login')->with('error', 'User information not available from ' . $provider);
             }
@@ -90,6 +91,11 @@ public function LoginForm()
         }
     }
 
+
+   
+
+   
+
     public function loginWithWhatsApp(Request $request)
     {
         // Validate the form data
@@ -97,13 +103,9 @@ public function LoginForm()
             'phone_number' => 'required|numeric'
         ]);
     
-        // Your Twilio credentials from environment variables
-        $accountSid = getenv('TWILIO_SID');
-        $authToken = getenv('TWILIO_AUTH_TOKEN');
-        $twilioPhoneNumber = getenv('TWILIO_PHONE_NUMBER');
-    
-        // Create a new Twilio client
-        $client = new Client($accountSid, $authToken);
+        // Your Meta API credentials or access token
+        $token = getenv('META_API_TOKEN');
+        $metaPhoneNumber = getenv('META_PHONE_NUMBER');
     
         // The phone number to send the WhatsApp message to
         $toPhoneNumber = $validatedData['phone_number'];
@@ -111,26 +113,25 @@ public function LoginForm()
         // Generate OTP (replace this with your OTP generation logic)
         $otp = mt_rand(1000, 9999);
     
-        try {
-            // Send a WhatsApp message with the OTP
-            $message = $client->messages->create(
-                "whatsapp:" . $toPhoneNumber,
-                [
-                    "from" => "whatsapp:" . $twilioPhoneNumber,
-                    "body" => "Your OTP: " . $otp
-                ]
-            );
+        // Make a request to the Meta API to send the WhatsApp message with the OTP
+        $response = Http::post('https://meta-api.com/send-whatsapp', [
+            'token' => $token,
+            'to' => $toPhoneNumber,
+            'from' => $metaPhoneNumber,
+            'body' => 'Your OTP: ' . $otp
+        ]);
     
+        // Check the response from the Meta API and handle success or failure accordingly
+        if ($response->successful()) {
             // Store the OTP in the session for verification
             Session::put('otp', $otp);
     
             // Redirect to the enter-otp route
             return redirect()->route('enter-otp')->with('success', 'OTP sent successfully to your WhatsApp number.');
-        } catch (\Exception $e) {
+        } else {
             // Handle error cases
             return redirect()->back()->with('error', 'Failed to send OTP to your WhatsApp number.');
         }
     }
-}
-
-
+    
+}    
