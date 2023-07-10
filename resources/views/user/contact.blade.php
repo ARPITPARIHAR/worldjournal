@@ -1,5 +1,5 @@
 @extends('user.layouts.app')
-@section('meta_title', 'login')
+@section('meta_title', 'contact')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,11 +43,9 @@
         z-index: 997;
         transition: all 0.5s;
         background: #001180;
-        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+        /* box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3); */
       }
-      #header {
-    background-color: #001180;
-  }
+  
       .logo {
     margin: 0px;
     padding: 0;

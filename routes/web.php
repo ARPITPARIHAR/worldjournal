@@ -132,3 +132,4 @@ Route::post('login/whatsapp', [UserLoginController::class, 'loginWithWhatsApp'])
 // Route::get('/email/verify', [RegisterController::class, 'showVerificationNotice'])->name('verification.notice');
 // Route::get('/email/resend', [RegisterController::class, 'resendVerificationEmail'])->name('verification.resend');
 
+Route::post('feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');

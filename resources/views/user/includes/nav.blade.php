@@ -43,9 +43,7 @@
         background: #001180;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
       }
-      .navbar{
-        background: #001180;
-      }
+      
     </style>
     <div class="container d-flex justify-content-between">
       <a href="/" class="logo">
@@ -60,7 +58,7 @@
           <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
           <li><a class="nav-link scrollto" href="#team">FAQs</a></li>
-          <li class="dropdown">
+          <li class="dropdown" >
             <a href="#"><span>Call for paper</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Journal</a></li>

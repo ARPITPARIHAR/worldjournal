@@ -1,4 +1,12 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+@extends('user.layouts.app')
+@section('meta_title', 'login')
+@section('content')
+
+@include('user.includes.nav')
+
+
+
+{{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
 
 
       
@@ -211,4 +219,6 @@
           });
                     
           </script>
+         @include('user.includes.footer')
+         @endsection
          

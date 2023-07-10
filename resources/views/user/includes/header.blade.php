@@ -16,7 +16,7 @@
 
 
 <style>
-  /* Custom styles for the "Add Journal / Conference" section */
+  
   .featured-block {
     background-color: #001180;
     padding: 20px;
@@ -48,7 +48,7 @@
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #007bff;
+    background-color: black;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out;
@@ -79,7 +79,7 @@
   }
 
   .featured-block:hover {
-    background-color: #eee;
+    background-color: #556B2F;
   }
 
   /* Responsive styles */
@@ -520,7 +520,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="feedback.store" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>

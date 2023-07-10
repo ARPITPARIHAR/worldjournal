@@ -60,7 +60,7 @@ public function LoginForm()
         } catch (\Exception $e) {
             return redirect()->route('login')->with('error', 'Failed to authenticate with ' . $provider);
         }
-       dd($user);
+      
         if ($user) {
             $email = $user->getEmail();
             $name = $user->getName();
@@ -81,8 +81,9 @@ public function LoginForm()
     
                     Auth::login($newUser);
                 }
-    
-                return redirect()->route('home'); 
+                return redirect()->route('user.postcfp');
+
+               
             } else {
                 return redirect()->route('login')->with('error', 'User information not available from ' . $provider);
             }
