@@ -1,14 +1,4 @@
-/**
-* Template Name: NewBiz
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   background: #fff;
   color: #444;
@@ -185,7 +175,7 @@ h6 {
       z-index: 99;
       opacity: 0;
       visibility: hidden;
-      /* background: #191970; */
+      
       box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
       transition: 0.3s;
     }
@@ -244,11 +234,9 @@ h6 {
       }
     }
 
-    /**
-    * Mobile Navigation 
-    */
+   
     .mobile-nav-toggle {
-      color: #283d50;
+      color: #001180;
       font-size: 28px;
       cursor: pointer;
       display: none;

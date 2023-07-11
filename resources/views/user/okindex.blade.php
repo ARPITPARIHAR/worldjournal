@@ -1,33 +1,29 @@
 @extends('user.layouts.app')
 @section('meta_title', 'login')
+@include('user.includes.nav')
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="your-stylesheet.css">
+ </head>
 @section('content')
 
-@include('user.includes.nav')
-
-
-
-{{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> --}}
-
-
-      
-        <head>
-          
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-            <link rel="stylesheet" href="your-stylesheet.css">
-          </head>
-          <div class="tab-container">
+           <div class="tab-container">
             <div class="tab-header">
               <button class="tab-button" data-tab="tab1">Description</button>
               <button class="tab-button" data-tab="tab2">Details</button>
               <button class="tab-button" data-tab="tab3">Scientific profile</button>
               <button class="tab-button" data-tab="tab4">Publisher</button>
             </div>
-            <!-- Add tab content here -->
+          
           </div>
           
             <div class="tab-content">
               <div id="tab1" class="tab-pane ">
-                <!-- Content for Tab 1 -->
+           
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
                  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -36,26 +32,8 @@
                  
                 @endforeach
               </div>
-              <head>
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"></head>
-                <style>
-                  /* Custom styling for the table */
-                  #tableContainer dl {
-                    padding: 20px;
-                    border: 1px solid #ccc;
-                    background-color: #f8f9fa;
-                  }
-              
-                  #tableContainer dt {
-                    font-weight: bold;
-                  }
-              
-                  #tableContainer dd {
-                    margin-bottom: 10px;
-                  }
-                </style>
-              </head>
+             
+                
              
               <table class="table">
                 <thead>
@@ -121,79 +99,11 @@
              
             
           </div>
-          <style>
-      
-.attractive-header {
-  font-family: "Your Desired Font", sans-serif;
-  color: lightblue; /* Replace with your desired color code */
-}
-
-          
-
-          
-          .tab-pane {
-            display: none;
-          }
-          
-          .tab-pane.active {
-            display: block;
-          }
-
-          .attractive-table {
-  border-collapse: collapse;
-  width:900px;
-}
-
-.attractive-table thead th {
-  background-color: lightcoral;
-  padding: 10px;
-  text-align: left;
-  font-weight: bold;
-  color: #333;
-}
-
-.attractive-table tbody td {
-  padding: 10px;
-}
-
-.attractive-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.attractive-table tbody tr:hover {
-  background-color: #e5e5e5;
-}
-/* Custom styling for the tab container */
-.tab-container {
-  border: 1px solid #ddd;
-  background-color: #f5f5f5;
-  padding: 10px;
-}
-
-/* Custom styling for the tab buttons */
-.tab-button {
-  padding: 10px 20px;
-  background-color: #f8f9fa;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.tab-button.active {
-  background-color: #e9ecef;
-}
-
-.tab-button:hover {
-  background-color: #e9ecef;
-  color: #333;
-}
-
-
-
-        </style>
-          <script>
+  
+         
+         @include('user.includes.footer')
+         @endsection
+         <script>
           const tabButtons = document.querySelectorAll('.tab-button');
           
           // Get all tab panes
@@ -219,6 +129,88 @@
           });
                     
           </script>
-         @include('user.includes.footer')
-         @endsection
-         
+                  <style>
+      
+                    .attractive-header {
+                      font-family: "Your Desired Font", sans-serif;
+                      color: lightblue; /* Replace with your desired color code */
+                    }
+                    
+                              
+                    
+                              
+                              .tab-pane {
+                                display: none;
+                              }
+                              
+                              .tab-pane.active {
+                                display: block;
+                              }
+                    
+                              .attractive-table {
+                      border-collapse: collapse;
+                      width:900px;
+                    }
+                    
+                    .attractive-table thead th {
+                      background-color: lightcoral;
+                      padding: 10px;
+                      text-align: left;
+                      font-weight: bold;
+                      color: #333;
+                    }
+                    
+                    .attractive-table tbody td {
+                      padding: 10px;
+                    }
+                    
+                    .attractive-table tbody tr:nth-child(even) {
+                      background-color: #f9f9f9;
+                    }
+                    
+                    .attractive-table tbody tr:hover {
+                      background-color: #e5e5e5;
+                    }
+                    /* Custom styling for the tab container */
+                    .tab-container {
+                      border: 1px solid #ddd;
+                      background-color: #f5f5f5;
+                      padding: 10px;
+                    }
+                    
+                    /* Custom styling for the tab buttons */
+                    .tab-button {
+                      padding: 10px 20px;
+                      background-color: #f8f9fa;
+                      border: none;
+                      border-radius: 5px;
+                      margin-right: 10px;
+                      font-weight: bold;
+                      cursor: pointer;
+                    }
+                    
+                    .tab-button.active {
+                      background-color: #e9ecef;
+                    }
+                    
+                    .tab-button:hover {
+                      background-color: #e9ecef;
+                      color: #333;
+                    }
+                    <style>
+                  /* Custom styling for the table */
+                  #tableContainer dl {
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    background-color: #f8f9fa;
+                  }
+              
+                  #tableContainer dt {
+                    font-weight: bold;
+                  }
+              
+                  #tableContainer dd {
+                    margin-bottom: 10px;
+                  }
+                </style>
+                            

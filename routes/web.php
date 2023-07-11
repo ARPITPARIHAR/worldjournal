@@ -124,7 +124,10 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
     Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
     Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
     Route::post('/webhook/verify', [UserLoginController::class, 'verifyWebhook']);
-
+    Route::post('/webhooks', function () {
+        require __DIR__.'/webhooks.php';
+    });
+    
 
 // Route for initiating the social login process
 // // Email verification routes
