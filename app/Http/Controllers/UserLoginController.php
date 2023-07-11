@@ -135,4 +135,19 @@ public function LoginForm()
         }
     }
     
+    public function verifyWebhook(Request $request)
+{
+    $receivedToken = $request->header('X-META-SIGNATURE'); // Assuming webhook token is passed in the X-META-SIGNATURE header
+    
+    $expectedToken = config('app.webhook_verify_token'); // Assuming you have set the webhook verification token in the application configuration
+    
+    if ($receivedToken === $expectedToken) {
+        // Webhook verification successful
+        return response('Webhook verified successfully', 200);
+    } else {
+        // Webhook verification failed
+        return response('Webhook verification failed', 401);
+    }
+}
+
 }    

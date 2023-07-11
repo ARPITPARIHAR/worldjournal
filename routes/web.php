@@ -120,11 +120,13 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
     
 
 
-Route::post('login/whatsapp', [UserLoginController::class, 'loginWithWhatsApp'])
-    ->name('login.whatsapp');
+  Route::post('login/whatsapp/callback', [UserLoginController::class, 'loginWithWhatsAppCallback'])->name('login.whatsapp.callback');
+;
    
     Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
     Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
+    Route::post('/webhook/verify', [UserLoginController::class, 'verifyWebhook']);
+
 
 // Route for initiating the social login process
 // // Email verification routes
@@ -132,4 +134,4 @@ Route::post('login/whatsapp', [UserLoginController::class, 'loginWithWhatsApp'])
 // Route::get('/email/verify', [RegisterController::class, 'showVerificationNotice'])->name('verification.notice');
 // Route::get('/email/resend', [RegisterController::class, 'resendVerificationEmail'])->name('verification.resend');
 
-Route::post('feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::post('feedback.store', [FeedbackController::class, 'store'])->name('feedback.store');
