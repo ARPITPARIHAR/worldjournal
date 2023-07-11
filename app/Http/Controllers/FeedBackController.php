@@ -11,7 +11,7 @@ class FeedBackController extends Controller
 {
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $data=new Feedback;
     $data->name=$request->name;
     $data->email=$request->email;

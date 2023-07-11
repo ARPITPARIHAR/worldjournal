@@ -92,60 +92,43 @@ public function LoginForm()
         }
     }
 
-
-   
-
-   
-
-    public function loginWithWhatsApp(Request $request)
+    public function loginWithWhatsAppCallback(Request $request)
     {
-        // Validate the form data
+       
         $validatedData = $request->validate([
             'phone_number' => 'required|numeric'
         ]);
     
-        // Your Meta API credentials or access token
         $token = getenv('META_API_TOKEN');
         $metaPhoneNumber = getenv('META_PHONE_NUMBER');
-    
-        // The phone number to send the WhatsApp message to
-        $toPhoneNumber = $validatedData['phone_number'];
-    
-        // Generate OTP (replace this with your OTP generation logic)
-        $otp = mt_rand(1000, 9999);
-    
-        // Make a request to the Meta API to send the WhatsApp message with the OTP
+        $toPhoneNumber = $validatedData['phone_number']; 
+        $otp = mt_rand(1000, 9999);  
         $response = Http::post('https://meta-api.com/send-whatsapp', [
             'token' => $token,
             'to' => $toPhoneNumber,
             'from' => $metaPhoneNumber,
             'body' => 'Your OTP: ' . $otp
         ]);
-    
-        // Check the response from the Meta API and handle success or failure accordingly
         if ($response->successful()) {
-            // Store the OTP in the session for verification
+           
             Session::put('otp', $otp);
-    
-            // Redirect to the enter-otp route
             return redirect()->route('enter-otp')->with('success', 'OTP sent successfully to your WhatsApp number.');
         } else {
-            // Handle error cases
             return redirect()->back()->with('error', 'Failed to send OTP to your WhatsApp number.');
         }
     }
     
     public function verifyWebhook(Request $request)
 {
-    $receivedToken = $request->header('X-META-SIGNATURE'); // Assuming webhook token is passed in the X-META-SIGNATURE header
+    $receivedToken = $request->header('X-META-SIGNATURE'); 
     
-    $expectedToken = config('app.webhook_verify_token'); // Assuming you have set the webhook verification token in the application configuration
+    $expectedToken = config('app.webhook_verify_token'); 
     
     if ($receivedToken === $expectedToken) {
-        // Webhook verification successful
+       
         return response('Webhook verified successfully', 200);
     } else {
-        // Webhook verification failed
+       
         return response('Webhook verification failed', 401);
     }
 }

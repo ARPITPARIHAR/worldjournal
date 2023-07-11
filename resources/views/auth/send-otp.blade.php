@@ -28,7 +28,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('login.whatsapp') }}" method="POST">
+                    <form action="{{ route('login.whatsapp.callback') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="phone_number">Enter your phone number:</label><br>

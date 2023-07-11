@@ -20,7 +20,7 @@ use App\Http\Controllers\JournalDataController;
 
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-
+use App\Http\Controllers\FeedbackController;
 // ...
 
 
