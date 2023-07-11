@@ -16,8 +16,6 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\RestrictedController;
 use App\Http\Controllers\JournalDataController;
-
-
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\FeedbackController;
