@@ -18,7 +18,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="card mb-4">
-                    <div class="card-body" style="background-color: #001180; color: white; border-radius: 10px;text-align:center;">
+                    <div class="card-body" style="background-color:#708090; color: white; border-radius: 10px;text-align:center;">
                         <h3>Our Address</h3>
                         <p>Y-18-A,
                             Sudarshana Nagar<br>

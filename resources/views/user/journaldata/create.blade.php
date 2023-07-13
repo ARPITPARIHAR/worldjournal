@@ -255,8 +255,8 @@ input[type="radio"],
             <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo"width="150px">
         </div>
         <div class="links-home">
-            <a href="/journals" class="home">Home</a>
-            <a href="/api/logout" class="logout-link">Logout</a>
+            <a href="/" class="home">Home</a>
+            <a href="/logout" class="logout-link">Logout</a>
         </div>
     </div>
     

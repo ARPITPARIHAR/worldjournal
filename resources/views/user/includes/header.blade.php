@@ -139,7 +139,7 @@
 
                       <div class="container">
                           <div class="card">
-                            <div class="card-header text-center" style="background-color: #f0f0f0;">Country Records</div>
+                            <div class="card-header text-center" style="background-color:#8FBC8F;">Country Records</div>
                               <div class="card-body">
                                   <div class="row">
                                       @foreach ($country_records as $result)
@@ -161,7 +161,7 @@
     <br>
      <div class="container">
       <div class="card">
-        <div class="card-header text-center" style="background-color: #f0f0f0;">Category Records</div>
+        <div class="card-header text-center" style="background-color:#8FBC8F;">Category Records</div>
           <div class="card-body">
              <div class="row">
                  @foreach ($category_records as $result)
@@ -179,7 +179,7 @@
  
  
  <style>
- .count-box {
+ /* .count-box {
      border: 1px solid #000;
      margin-left: 20px;
      width: 900px;
@@ -190,7 +190,7 @@
      flex-wrap: wrap;
      padding: 20px;
  }
- 
+  */
   .featured-block h3 {
     font-family: "Arial", sans-serif;
     font-size: 24px;
@@ -200,22 +200,47 @@
 
 
  
- .result {
-     width:140px;
-     height: 60px;
-     padding: 10px;
-     box-sizing: border-box;
-     background-color: lightseagreen;
-     border-radius: 5px;
-     margin-bottom: 10px;
-     text-align: center;
- }
- 
- .result h5 {
-     margin-top: 0;
-     margin-bottom: 5px;
-    
- }
+  .count-box {
+  border: 1px solid #000;
+  margin: 20px;
+  width: 900px;
+  margin-bottom: 5px;
+  position: relative;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.result {
+  width: 140px;
+  height: 60px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #4285f4;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.result:hover {
+  background-color: #1c5c9d;
+}
+
+.result h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
  
  @media (max-width: 768px) {
      .count-box {

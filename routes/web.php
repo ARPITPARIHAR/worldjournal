@@ -118,15 +118,13 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
     
 
 
-  Route::post('login/whatsapp/callback', [UserLoginController::class, 'loginWithWhatsAppCallback'])->name('login.whatsapp.callback');
-;
-   
-    Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
-    Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
-    Route::post('/webhook/verify', [UserLoginController::class, 'verifyWebhook']);
-    Route::post('/webhooks', function () {
-        require __DIR__.'/webhooks.php';
-    });
+ Route::post('/webhooks', [UserLoginController::class, 'handleWebhook']);
+
+ Route::post('login/whatsapp/callback', [UserLoginController::class, 'loginWithWhatsAppCallback'])->name('login.whatsapp.callback');
+ Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
+ Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
+ Route::post('/webhook/verify', [UserLoginController::class, 'verifyWebhook']);
+ 
     
 
 // Route for initiating the social login process
