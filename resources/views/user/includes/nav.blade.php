@@ -41,8 +41,13 @@
         z-index: 997;
         transition: all 0.5s;
         background: #001180;
-        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
-      }
+        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);}
+
+
+
+        li.dropdown ul {
+  background-color: #001180;
+}
       
     </style>
     <div class="container d-flex justify-content-between">
@@ -65,7 +70,7 @@
               <li><a href="#">Conference</a></li>
             </ul>
           </li>
-          <li class="dropdown">
+          <li class="dropdown" >
             <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/postcfp">Post a CFP</a></li>

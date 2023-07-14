@@ -85,20 +85,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/restricted-page', [RestrictedController::class, 'index'])->name('restricted.page');
 });
 
-
-
-
-// web.php
-
- 
 Route::get('logins', [UserLoginController::class, 'LoginForm'])->name('logins');
 Route::post('log-post', [UserLoginController::class, 'login'])->name('log.post');
 Route::get('logout', [UserLoginController::class, 'logout'])->name('logout');
 
-
-
-
-// Password reset routes
 Route::get('/re', [ResetPasswordController::class, 'showResetForm'])->name('password.re');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
