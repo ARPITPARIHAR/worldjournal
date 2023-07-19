@@ -97,7 +97,7 @@
 <div class="container">
   <div class="row">
     <div class="featured-block">
-      <a href="user/add/create" class="text-primary">
+      <a href="/addjournal" class="text-primary">
         <h3>Add Journal / Conference</h3>
       </a>
       <p class="italic">Add a Journal/Conference to the World Journals Alert database. It's quick and free!</p>
@@ -583,7 +583,7 @@
      
       
 .contact {
-  background-image: url('/user/img/bb11.jpg');
+  background-image: url('/user/img/dropl.jpg');
       background-size: cover;
       background-position: center;
     }

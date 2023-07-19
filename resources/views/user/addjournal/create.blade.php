@@ -41,7 +41,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
    
     <div class="container d-flex justify-content-between">
-<a href="/" class="logo" style="margin-top: -17px; margin-left: -165px;">>
+<a href="/" class="logo" style="margin-top: 5px; margin-left: -165px;">
   <img src="{{ asset('user/img/101.jpg') }}" alt="Logo" class="img-fluid" id="logo" style="max-width: 100px; max-height: 80px;">
 </a>
 
@@ -235,8 +235,8 @@
                         <div class="col-lg-offset-2 col-lg-10">
                             <div class="checkbox text-justify">
                                 <label>
-                                    <input class="" type="checkbox" required="true" />
-                                    <span style="margin-left: 5px"><span>I agree to the processing of my personal data by Index Copernicus Sp. z o.o. at Kasprzaka Street 31A lok.184, Warsaw, for the purpose of the correct provision of a service by the teleinformatic system and the internet service on the basis of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) as well as, according to Privacy Policy used by Index Copernicus Sp.z o. o. Providing the personal data is voluntary. I am aware of having a possibility to access my personal data, change them and reporting to stop making use of them. </span></span>
+                                    {{-- <input class="" type="checkbox" required="true" />  --}}
+                                    {{-- <span style="margin-left: 5px"><span>I agree to the processing of my personal data by Index Copernicus Sp. z o.o. at Kasprzaka Street 31A lok.184, Warsaw, for the purpose of the correct provision of a service by the teleinformatic system and the internet service on the basis of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) as well as, according to Privacy Policy used by Index Copernicus Sp.z o. o. Providing the personal data is voluntary. I am aware of having a possibility to access my personal data, change them and reporting to stop making use of them. </span></span> --}}
                                 </label>
                             </div>
                         </div>
@@ -246,7 +246,8 @@
                             <div class="checkbox text-justify">
                                 <label>
                                     <input class="" type="checkbox" required="true" />
-                                    <span style="margin-left: 5px"><span>I acknowledge rules and agree to their terms </span> (<a href="/files/Regulations of the ICI World of Journals.pdf" target="_blank"><span>Rules</span></a> i <a href="/files/Privacy policy of the ICI World of Journals.pdf" target="_blank"><span>Privacy policy</span></a>) </span>
+                                    <span style="margin-left: 5px"><span>I acknowledge rules and agree to their terms </span>  
+                                    {{-- <a href="/files/Regulations of the ICI World of Journals.pdf" target="_blank"><span>Rules</span></a> i <a href="/files/Privacy policy of the ICI World of Journals.pdf" target="_blank"><span>Privacy policy</span></a>) </span> --}} 
                                 </label>
                             </div>
                         </div>
@@ -255,8 +256,8 @@
                         <div class="col-lg-offset-2 col-lg-10">
                             <div class="checkbox text-justify">
                                 <label>
-                                    <input class="" type="checkbox" required="false" />
-                                    <span style="margin-left: 5px"><span>I agree to the processing of my personal data by Index Copernicus Sp. z o.o. at Kasprzaka Street 31A lok.184, Warsaw, to receive emails about special offers, new services or other information from Index Copernicus Sp. z o.o. and the collaborating subjects on the basis of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) and according to Privacy Policy used by Index Copernicus Sp.z o. o. Providing the personal data is voluntary. I am aware of having a possibility to access my personal data, change them and report to stop making use of them. I can undo this permission in conformity with the procedure determined in Privacy Policy.</span></span>
+                                    {{-- <input class="" type="checkbox" required="false" /> --}}
+                                    {{-- <span style="margin-left: 5px"><span>I agree to the processing of my personal data by Index Copernicus Sp. z o.o. at Kasprzaka Street 31A lok.184, Warsaw, to receive emails about special offers, new services or other information from Index Copernicus Sp. z o.o. and the collaborating subjects on the basis of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) and according to Privacy Policy used by Index Copernicus Sp.z o. o. Providing the personal data is voluntary. I am aware of having a possibility to access my personal data, change them and report to stop making use of them. I can undo this permission in conformity with the procedure determined in Privacy Policy.</span></span> --}}
                                 </label>
                             </div>
                         </div>
@@ -303,7 +304,10 @@
       margin-bottom: 20px;
       text-align: center;
     }
-  
+    #header {
+  background-color: #001180!important;
+}
+
     .container {
       margin-top: 20px;
     }

@@ -1,8 +1,9 @@
 @extends('user.layouts.app')
 @section('meta_title','Student Registeration')
-@section('content')
+
 
 @include('user.includes.nav')
+@section('content')
  <div class="search">
   <h3 class="widgettitle">Search CFP</h3>
 
@@ -66,8 +67,8 @@
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/mu.jpg');
-margin-bottom: 100px; border: 1px solid #ccc;
+background-image: url('/user/img/water22.jpg');
+margin-bottom: 10px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
@@ -176,7 +177,7 @@ border-spacing: 5px;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/mu.jpg');
+background-image: url('/user/img/water22.jpg');
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -212,7 +213,7 @@ display: block;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/mu.jpg');
+background-image: url('/user/img/water22.jpg');
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -248,7 +249,7 @@ display: block;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/mu.jpg');
+background-image: url('/user/img/water22.jpg');
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -279,18 +280,6 @@ display: block;
 }
   
 </style>
-
-
- 
- 
-
-
-  
-  
-
-
-
-
                                               
 @include('user.includes.footer')
 @endsection

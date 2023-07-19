@@ -42,7 +42,7 @@ Route::get('dashboard/addjournal/index', [AddJournalController::class, 'index'])
 Route::get('admin/edit', [BusinessSettingController::class, 'edit'])->name('admin.edit');
 Route::post('admin/edit', [BusinessSettingController::class, 'update'])->name('admin.update');
 
-Route::get('user/add/create', [AddJournalController::class, 'create'])->name('user.add.create');
+Route::get('/addjournal', [AddJournalController::class, 'create'])->name('user.add.create');
 Route::post('user/add/store', [AddJournalController::class, 'store'])->name('user.add.store');
 
 Route::get('/search', [SearchController::class, 'search'])->name('user.search');

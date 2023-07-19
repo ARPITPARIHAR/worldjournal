@@ -82,3 +82,8 @@
 
 @include('user.includes.footer')
 @endsection
+<style>
+    .user-name {
+        text-align: center;
+    }
+</style>

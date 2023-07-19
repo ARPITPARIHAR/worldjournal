@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title page-title-new>Publishers Panel Basic</title>
+    {{-- <title page-title-new>Publishers Panel Basic</title> --}}
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
@@ -24,9 +24,14 @@
     <![endif]-->
 
 <style>
+    
+
+
+
+
 .form-container {
     max-width: 900px;
-  margin-left: 30px;
+  margin-left:95px;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
@@ -37,6 +42,7 @@
    border-bottom-left-radius: 15px;
   
             }
+           
             .form-label {
   display: block;
   font-weight: bold;
@@ -70,10 +76,28 @@
   border-radius: 4px;
   margin-bottom: 10px;
   }
- 
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.my-form {
+    position: relative;
+    z-index: 1;
+    /* Additional styling for the form */
+}
  
             body {
-              
+                margin: 0;
+    padding: 0;
+    background-image: url('/user/img/cfp.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
                 background-color:lightgray;
                 margin-left: 200px;
             }
@@ -198,7 +222,7 @@ input[type="radio"],
     padding: 10px;
     border-radius: 5px;
     width:900px;
-    margin-left: 30px;
+    margin-left: 95px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -230,11 +254,28 @@ input[type="radio"],
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("path_to_zigzag_background_image");
+        /* background-image: url("path_to_zigzag_background_image"); */
         background-size: cover;
         width: 100px;
         height: 100px;
     }
+    .home-button,
+.logout-button {
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: hsla(307, 39%, 49%, 0.548);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.home-button:hover,
+.logout-button:hover {
+    background-color:;
+}
 
   
 
@@ -255,16 +296,19 @@ input[type="radio"],
             <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo"width="150px">
         </div>
         <div class="links-home">
-            <a href="/" class="home">Home</a>
-            <a href="/logout" class="logout-link">Logout</a>
+            <a href="/" class="home-button" id="home-link">Go to Home</a>
+            <a href="/logout" class="logout-button">Logout</a>
         </div>
+        
+       
+        
     </div>
     
     
 
 
 
-
+    <div class="background-image"></div>
 <div class="form-container">
     <div class="container">
         <div class="row justify-content-center">
@@ -287,7 +331,7 @@ input[type="radio"],
         </div>
     </div>
     
-    <!-- Include Bootstrap JS at the end of your HTML body -->
+   
     
     
     
@@ -1110,7 +1154,7 @@ input[type="radio"],
 
         
 
-
+                </div>
     <div ui-view></div>
 
 </body>

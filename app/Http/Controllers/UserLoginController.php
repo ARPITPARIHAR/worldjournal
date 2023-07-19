@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Register;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\DB;
-
 
 class UserLoginController extends Controller
 {
@@ -140,7 +138,7 @@ class UserLoginController extends Controller
 
         return response('Webhook processed successfully', 200);
     }
-
+}
 
 
     public function showUserDetails()

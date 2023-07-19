@@ -43,8 +43,6 @@
         background: #001180;
         box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);}
 
-
-
         li.dropdown ul {
   background-color: #001180;
 }
@@ -76,7 +74,7 @@
               <li><a href="/postcfp">Post a CFP</a></li>
               <li><a href="#">My CFP List</a></li>
               <li><a href="#">My Favourite List</a></li>
-              <li><a href="#">News Alert List</a></li>
+              {{-- <li><a href="#">News Alert List</a></li> --}}
               <li><a href="#">CFPs Alert List</a></li>
               <li><a href="#">Promote Event</a></li>
             </ul>
