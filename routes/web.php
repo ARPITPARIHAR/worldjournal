@@ -19,7 +19,7 @@ use App\Http\Controllers\JournalDataController;
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\FeedbackController;
-// ...
+use App\Http\Controllers\SearchcfpController;
 
 
 
@@ -65,11 +65,11 @@ Route::get('/country-list', [AddJournalController::class, 'countryList'])->name(
 
 
 
-Route::middleware(['login'])->group(function () {
+// Route::middleware(['login'])->group(function () {
     Route::get('/postcfp', [PostCfpController::class, 'create'])->name('user.postcfp');
     Route::post('/indexpostcfp', [PostCfpController::class, 'index'])->name('user.index');
-});
-
+// });
+Route::get('/mycfp', [PostCfpController::class, 'mycfp'])->name('user.mycfp');
 
 Route::get('/data', [JournalDataController::class, 'create'])->name('user.create');
 Route::post('user/data/store', [JournalDataController::class, 'store'])->name('user.data.store');
@@ -124,3 +124,5 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
 // Route::get('/email/resend', [RegisterController::class, 'resendVerificationEmail'])->name('verification.resend');
 
 Route::post('feedback.store', [FeedbackController::class, 'store'])->name('feedback.store');
+
+Route::get('/searchcfp', [SearchCfpController::class, 'index'])->name('user.searchcfp');

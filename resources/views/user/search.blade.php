@@ -59,16 +59,22 @@
       </div>
   </div>
 </div>
+
+                                              
+@include('user.includes.footer')
+@endsection
+@section('style')
 <style>
           
   .table-responsive{
     width: 1100px;
     margin-left: 360px;
     position: absolute;
-border-collapse: collapse; /* This will remove the spacing between cells */
-border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/water22.jpg');
+border-collapse: collapse; 
+border-spacing: 0; 
+/* background-image: url('/user/img/water22.jpg'); */
 margin-bottom: 10px; border: 1px solid #ccc;
+background-color:rgb(233, 239, 242);
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
@@ -77,21 +83,22 @@ padding: 20px;
 float: right;
 display: block;
 
-/* This will remove the padding around the table */
+
 }
 
 td, th {
-padding: 5px; /* This will add padding to each cell */
+padding: 5px; 
 }
 
 .push-up {
 position: absolute;
-top: 90px; /* push the div 50px up relative to the parent */
+top: 90px; 
 }
 th ,td{
 /* background-color:darkblue; */
 font-weight: bold;
-color:white;
+color:black;
+
 /* color:lightslategray; */
 }
 /* 
@@ -116,7 +123,7 @@ font-weight: bold;
 <style>
 .search {
   text-align: left;
-  background-color: black;
+  background-color:rgb(233, 239, 242);
   margin-left: 30px;
   width: 280px;
   border: 2px solid #062cb6;
@@ -128,7 +135,7 @@ font-weight: bold;
 }
 
 .search .widgettitle {
-  color: white;
+  color:black;
   font-size: 18px;
   margin: 0;
   padding: 10px 0;
@@ -146,7 +153,10 @@ font-weight: bold;
   font-size: 14px;
   margin-bottom: 10px;
 }
-
+.h3
+{
+  color:black;
+}
 .search select option {
   font-size: 14px;
 }
@@ -175,9 +185,9 @@ border-spacing: 5px;
     width: 1100px;
     margin-left: 360px;
     position: absolute;
-border-collapse: collapse; /* This will remove the spacing between cells */
-border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/water22.jpg');
+border-collapse: collapse; 
+border-spacing: 0; 
+/* background-image: url('/user/img/water22.jpg'); */
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -186,15 +196,15 @@ border-bottom-left-radius: 15px;
 padding: 20px;
 float: right;
 display: block;
+background-color:rgb(233, 239, 242);
 
-/* This will remove the padding around the table */
 }
 
 
 
 .search {
   text-align: left;
-  background-color: black;
+  background-color:rgb(233, 239, 242);
   margin-left: 30px;
   width: 280px;
   border: 2px solid #062cb6;
@@ -202,7 +212,7 @@ display: block;
   margin-top: 90px;
   margin-bottom: 450px;
   border-radius: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); */
 }
 
 }
@@ -213,7 +223,7 @@ display: block;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/water22.jpg');
+/* background-image: url('/user/img/water22.jpg'); */
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -222,7 +232,7 @@ border-bottom-left-radius: 15px;
 padding: 20px;
 float: right;
 display: block;
-
+background-color:rgb(233, 239, 242);
 /* This will remove the padding around the table */
 }
 
@@ -230,7 +240,7 @@ display: block;
 
 .search {
   text-align: left;
-  background-color: black;
+  background-color:rgb(233, 239, 242);
   margin-left: 30px;
   width: 280px;
   border: 2px solid #062cb6;
@@ -249,7 +259,7 @@ display: block;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
-background-image: url('/user/img/water22.jpg');
+/* background-image: url('/user/img/water22.jpg'); */
 margin-bottom: 100px; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
@@ -258,7 +268,7 @@ border-bottom-left-radius: 15px;
 padding: 20px;
 float: right;
 display: block;
-
+background-color:rgb(233, 239, 242);
 /* This will remove the padding around the table */
 }
 
@@ -266,7 +276,7 @@ display: block;
 
 .search {
   text-align: left;
-  background-color: black;
+  background-color:rgb(233, 239, 242);
   margin-left: 30px;
   width: 280px;
   border: 2px solid #062cb6;
@@ -280,11 +290,6 @@ display: block;
 }
   
 </style>
-                                              
-@include('user.includes.footer')
-@endsection
-@section('style')
-
 
  
 @endsection

@@ -40,8 +40,7 @@ public function search(Request $request)
         });
     }
 
-    // Debugging statement
-    // dd($data->toSql(), $data->getBindings());
+  
 
     $data = $data->paginate(5);
 

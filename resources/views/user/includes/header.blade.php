@@ -124,8 +124,162 @@
 
 
 
-<br>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Call for Papers</title>
+    <style>
+      
+      <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
     
+            .search-container {
+                text-align: center;
+                margin: 0 10px; /* Add some spacing between containers */
+                flex: 1; /* Distribute available space equally among the containers */
+            }
+    
+            .search-container h6 {
+                margin-top: 0;
+            }
+    
+            .search-input {
+                width: 200px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+    
+            #search-button {
+                padding: 10px 20px;
+                background-color: #007BFF;
+                color: #ffffff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                margin-left: 700px;
+            }
+    
+            #search-button:hover {
+                background-color: #0056b3;
+            }
+    
+            /* Flexbox styles for horizontal alignment */
+            #search-container-wrapper {
+                display: flex;
+            }
+        
+        #cfp-container {
+            position: relative;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #background-curve {
+            position: absolute;
+            top: 30px; 
+            left: 50%;
+            transform: translateX(-50%);
+            height: 70px;
+            width: 400px;
+            background:#556B2F; 
+            border-radius: 0 0 50% 50%;
+            z-index: -1; 
+        }
+        
+        h4 {color: white;
+            font-family: Georgia, serif;;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        #search-bar {
+          margin-left: 600px;
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cfp-container">
+        <div id="background-curve"></div>
+        <h4>CALL  FOR  PAPERS</h4>
+    </div>
+  
+    <body>
+      <form action="/searchcfp" method="get">
+         @csrf 
+         <div id="search-container-wrapper">
+          <div class="search-container">
+              <h6>Search by category</h6>
+              <select class="search-input" name="category" onchange="checkCustomCategory(this)">
+                  <option value="Engineering">Engineering & Technology</option>
+                  <option value="Humanities">Humanities</option>
+                  <option value="physical science">Physical Science</option>
+                  <option value="custom">Other </option>
+              </select>
+              <input type="text" class="search-input" name="custom-category" id="custom-category-input" style="display: none;">
+          </div>
+          <div class="search-container">
+              <h6>Search by journal</h6>
+              <select class="search-input" name="journal" onchange="checkCustomJournal(this)">
+                  <option value="category1">isjrc</option>
+                  <option value="category2">Category 2</option>
+                  <option value="category3">Category 3</option>
+                  <option value="custom">Other </option>
+              </select>
+              <input type="text" class="search-input" name="custom-journal" id="custom-journal-input" style="display: none;">
+          </div>
+          <div class="search-container">
+              <h6>Search by ISSN</h6>
+              <input type="text" class="search-input" name="issn" placeholder="Enter ISSN">
+          </div>
+      </div>
+      <button id="search-button" type="submit">Search</button>
+    </form>
+      <script>
+          function checkCustomCategory(selectElement) {
+              var customCategoryInput = document.getElementById('custom-category-input');
+              if (selectElement.value === 'custom') {
+                  customCategoryInput.style.display = 'block';
+                  customCategoryInput.setAttribute('placeholder', 'Type your category');
+              } else {
+                  customCategoryInput.style.display = 'none';
+              }
+          }
+  
+          function checkCustomJournal(selectElement) {
+              var customJournalInput = document.getElementById('custom-journal-input');
+              if (selectElement.value === 'custom') {
+                  customJournalInput.style.display = 'block';
+                  customJournalInput.setAttribute('placeholder', 'Type your journal');
+              } else {
+                  customJournalInput.style.display = 'none';
+              }
+          }
+      </script>
+  </body>
+  </html>
+
+
+<br>
+<br>
  @php
  $country_records = App\Models\AddJournal::select('country', DB::raw('COUNT(*) as count'))
      ->groupBy('country')
@@ -583,7 +737,7 @@
      
       
 .contact {
-  background-image: url('/user/img/dropl.jpg');
+  background-image: url('/user/img/xyz.jpg');
       background-size: cover;
       background-position: center;
     }

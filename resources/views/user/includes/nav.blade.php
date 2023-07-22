@@ -72,11 +72,11 @@
             <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/postcfp">Post a CFP</a></li>
-              <li><a href="#">My CFP List</a></li>
+              <li><a href="/mycfp">My CFP List</a></li>
               <li><a href="#">My Favourite List</a></li>
               {{-- <li><a href="#">News Alert List</a></li> --}}
               <li><a href="#">CFPs Alert List</a></li>
-              <li><a href="#">Promote Event</a></li>
+              {{-- <li><a href="#">Promote Event</a></li> --}}
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="logins">Login</a></li>

@@ -13,19 +13,148 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {{-- <title page-title-new>Publishers Panel Basic</title> --}}
+   
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Add the Bootstrap CSS file -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- Add the Bootstrap JavaScript file (including the required dependencies) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<!-- Add the Bootstrap Datepicker CSS and JavaScript files -->
+<link href="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.js"></script>
+
+
+   
+    <div class="wrapper d-flex">
+		<div class="sidebar">
+			
+			<ul>
+				<li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+				<li><a href="#"><i class="fas fa-users"></i>Team</a></li>
+				<li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calender</a><span class="number1">4</span></li>
+				<li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li></li>
+				<li><a href="#"><i class="fas fa-signal"></i>Reports</a></li>
+			</ul>
+		{{-- <p class="myproject px-3">PROJECTS</p>
+		<ul>
+			<li><a href="#">Website redesign</a></li>
+			<li><a href="#">GraphQL API</a></li>
+			<li><a href="#">Customer migration guides</a></li>
+			<li><a href="#">Profit sharing program</a></li> --}}
+		</ul>
+		{{-- <div class="userProfile">
+			<a href="#"><i class="far fa-user-circle  xyz"></i></a>
+			<p class="username">Dianne Robertson<br><a href="#">View Profile</a></p>
+			<a href="#"><i class="fas fa-cog mnp"></i></a>
+		</div> --}}
+
+	</div>
+</div>
 
 <style>
     
+    *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: arial;
+}
+body{
+	background: #eee;
+}
+.wrapper{
+	position: relative;
+}
+.sidebar{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	background: #27a07a;
+	/* padding: 10px 0; */
+    margin-left: 10px;
+	    
+}
+.wrapper .sidebar ul li{
+	padding: 15px;	
+}
+.wrapper .sidebar ul li a{
+	color: #bdb8d7;
+	display: block;
+}
+.wrapper .sidebar ul li a .fas{
+	width: 25px!important;
+}
+.wrapper .sidebar ul li a .far{
+	width: 25px!important;
+}
+.wrapper .sidebar ul li:hover{
+	background: #311B92;
+}
+.wrapper .sidebar ul li a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.myproject{
+	margin-top: 25px;
+	color: #ffffffa8;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+.userProfile{
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	display: flex;
 
+}
+.userProfile a{
+	width: 20px;
+	background: #4527A0;
+	color: #bdb8d7;
+	text-decoration: none;
+	font-size: 15px;
+}
+.userProfile a:hover{
+	color: #fff;
+	background: #4527A0;
+}
+.userProfile p{
+	color: #fff;
+	padding: 0 15px 0 15px;
+}
+.userProfile 
+.xyz,
+.mnp{
+	padding-top: 60%;
+	line-height: 30px;
+	font-size: 25px!important;
+}
+.notification1{
+	display: flex;
+}
+.notification1 .number1{
+	font-size: 15px;
+	display: block;
+    padding-left: 100px;
+    color: #fff;
+} 
+ 
+.notification2{
+	display: flex;
+}
+.notification2 .number2{
+	font-size: 15px;
+	display: block;
+    padding-left: 85px;
+    color: #fff;
+   }
 
 
 
@@ -35,7 +164,7 @@
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  height: 2800px;
+  height: 3200px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -110,7 +239,7 @@
   }
   
   .radio-group-label {
-    margin-right: 10px; /* Adjust the spacing between radio buttons */
+    margin-right: 10px; 
   }
   .text-input{
     height: 200px;
@@ -929,8 +1058,51 @@ input[type="radio"],
                 <input type="text" name="issn" class="custom-input" maxlength="9" oninput="formatISSN(this)">
             </div>
         </div>
-      
-      
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Submission deadline</label>
+            <div class="col-sm-10">
+                <input type="date" name="Submission deadline" class="custom-input" id="submission-deadline-input">
+                <span id="submission-deadline-display"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Notification due</label>
+            <div class="col-sm-10">
+                <input type="date" name="Notification due" class="custom-input" id="notification-due-input">
+                <span id="notification-due-display"></span>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Final Version due</label>
+            <div class="col-sm-10">
+                <input type="date" name="Final Version due" class="custom-input" id="final-version-due-input">
+                <span id="final-version-due-display"></span>
+            </div>
+        </div>
+    
+        <script>
+            // Function to update the display element when a date is selected
+            function updateDisplay(inputElement, displayElementId) {
+                const displayElement = document.getElementById(displayElementId);
+                displayElement.textContent = inputElement.value;
+            }
+    
+            // Attach event listeners to update the display elements when a date is selected
+            const submissionDeadlineInput = document.getElementById('submission-deadline-input');
+            submissionDeadlineInput.addEventListener('input', function() {
+                updateDisplay(submissionDeadlineInput, 'submission-deadline-display');
+            });
+    
+            const notificationDueInput = document.getElementById('notification-due-input');
+            notificationDueInput.addEventListener('input', function() {
+                updateDisplay(notificationDueInput, 'notification-due-display');
+            });
+    
+            const finalVersionDueInput = document.getElementById('final-version-due-input');
+            finalVersionDueInput.addEventListener('input', function() {
+                updateDisplay(finalVersionDueInput, 'final-version-due-display');
+            });
+        </script>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">DOI</label>
         <div class="col-sm-10">

@@ -26,4 +26,9 @@ class PostCfpController extends Controller
     {
         return view('user.postcfp');
     }
+
+    public function mycfp()
+    {
+        return view('user.mycfp');
+    }
 }

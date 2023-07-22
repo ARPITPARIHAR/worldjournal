@@ -125,22 +125,9 @@ class UserLoginController extends Controller
         }
     }
 
-    public function handleWebhook(Request $request)
-    {
-        $payload = $request->all();
-
-        // Process the webhook payload and store it in the database
-        DB::table('webhook_logs')->insert([
-            'payload' => json_encode($payload),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        return response('Webhook processed successfully', 200);
-    }
-}
 
 
+    
     public function showUserDetails()
     {
         $jsonData = '{ "entry": [ { "time": 1520383571, "changes": [ { "field": "photos", "value": { "verb": "update", "object_id": "10211885744794461" } } ], "id": "10210299214172187", "uid": "10210299214172187" } ], "object": "user" }';
