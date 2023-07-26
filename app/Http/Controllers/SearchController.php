@@ -40,7 +40,7 @@ public function search(Request $request)
         });
     }
 
-  
+   
 
     $data = $data->paginate(5);
 

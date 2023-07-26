@@ -14,7 +14,7 @@ class PostCfpController extends Controller
     {
         $query = $request->input('fullname', 'shortname');
 
-        // Perform the search query on your model
+      
         $data = JournalData::where('full_title', 'like', '%' . $query . '%')
                            ->orWhere('short_title', 'like', '%' . $query . '%')
                            ->get();

@@ -57,7 +57,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="nav-link scrollto">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="about">About</a></li>
           <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
           <li><a class="nav-link scrollto" href="#team">FAQs</a></li>

@@ -30,6 +30,7 @@ Route::get('user/promote', [UserController::class, 'promote'])->name('user.promo
 Route::get('user/add', [UserController::class, 'add'])->name('user.add'); 
 Route::get('user/search', [UserController::class, 'search'])->name('user.search'); 
 Route::get('contact', [UserController::class, 'contact'])->name('user.contact'); 
+Route::get('about', [UserController::class, 'about'])->name('user.about');
 
 // Route::post('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');

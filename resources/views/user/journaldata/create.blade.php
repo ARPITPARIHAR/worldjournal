@@ -30,42 +30,28 @@
 
 
    
-    <div class="wrapper d-flex">
-		<div class="sidebar">
-			
-			<ul>
-				<li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
-				<li><a href="#"><i class="fas fa-users"></i>Team</a></li>
-				<li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calender</a><span class="number1">4</span></li>
-				<li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li></li>
-				<li><a href="#"><i class="fas fa-signal"></i>Reports</a></li>
-			</ul>
-		{{-- <p class="myproject px-3">PROJECTS</p>
-		<ul>
-			<li><a href="#">Website redesign</a></li>
-			<li><a href="#">GraphQL API</a></li>
-			<li><a href="#">Customer migration guides</a></li>
-			<li><a href="#">Profit sharing program</a></li> --}}
-		</ul>
-		{{-- <div class="userProfile">
-			<a href="#"><i class="far fa-user-circle  xyz"></i></a>
-			<p class="username">Dianne Robertson<br><a href="#">View Profile</a></p>
-			<a href="#"><i class="fas fa-cog mnp"></i></a>
-		</div> --}}
-
-	</div>
-</div>
+<div class="wrapper d-flex">
+    <div class="sidebar">
+      <div class="user-info">
+        @if(Auth::check())
+          <span>Welcome, {{ $user->name }}</span>
+        @endif
+      </div>
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
+        {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
+        {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
+        {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
+      </ul>
+    </div>
+    <!-- Rest of your content here -->
+  </div>
+  
 
 <style>
     
-    *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
-	text-decoration: none;
-	font-family: arial;
-}
+    
 body{
 	background: #eee;
 }
@@ -74,93 +60,18 @@ body{
 }
 .sidebar{
 	position: fixed;
-	width: 250px;
+	width: 200px;
 	height: 100%;
-	background: #27a07a;
+	background: #676a6c;
+	left: 0; /* Set the sidebar to start from the left edge */
 	/* padding: 10px 0; */
-    margin-left: 10px;
-	    
 }
-.wrapper .sidebar ul li{
-	padding: 15px;	
-}
-.wrapper .sidebar ul li a{
-	color: #bdb8d7;
-	display: block;
-}
-.wrapper .sidebar ul li a .fas{
-	width: 25px!important;
-}
-.wrapper .sidebar ul li a .far{
-	width: 25px!important;
-}
-.wrapper .sidebar ul li:hover{
-	background: #311B92;
-}
-.wrapper .sidebar ul li a:hover{
-	color: #fff;
-	text-decoration: none;
-}
-.myproject{
-	margin-top: 25px;
-	color: #ffffffa8;
-	font-size: 14px;
-	margin-bottom: 0;
-}
-.userProfile{
-	position: absolute;
-	bottom: 0;
-	left: 5%;
-	display: flex;
-
-}
-.userProfile a{
-	width: 20px;
-	background: #4527A0;
-	color: #bdb8d7;
-	text-decoration: none;
-	font-size: 15px;
-}
-.userProfile a:hover{
-	color: #fff;
-	background: #4527A0;
-}
-.userProfile p{
-	color: #fff;
-	padding: 0 15px 0 15px;
-}
-.userProfile 
-.xyz,
-.mnp{
-	padding-top: 60%;
-	line-height: 30px;
-	font-size: 25px!important;
-}
-.notification1{
-	display: flex;
-}
-.notification1 .number1{
-	font-size: 15px;
-	display: block;
-    padding-left: 100px;
-    color: #fff;
-} 
- 
-.notification2{
-	display: flex;
-}
-.notification2 .number2{
-	font-size: 15px;
-	display: block;
-    padding-left: 85px;
-    color: #fff;
-   }
 
 
 
 .form-container {
     max-width: 900px;
-  margin-left:95px;
+  margin-left:px;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
@@ -351,7 +262,7 @@ input[type="radio"],
     padding: 10px;
     border-radius: 5px;
     width:900px;
-    margin-left: 95px;
+    margin-left: px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -445,7 +356,7 @@ input[type="radio"],
                 <form action="{{ route('user.data.store') }}" method="post" id="registrationForms" enctype="multipart/form-data">
                     @csrf
     
-                    <!-- Form fields go here -->
+                 
     
                     @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show custom-alert text-center" role="alert">
@@ -1061,21 +972,21 @@ input[type="radio"],
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Submission deadline</label>
             <div class="col-sm-10">
-                <input type="date" name="Submission deadline" class="custom-input" id="submission-deadline-input">
+                <input type="date" name="Submissiondeadline" class="custom-input" id="submission-deadline-input">
                 <span id="submission-deadline-display"></span>
             </div>
         </div>
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Notification due</label>
             <div class="col-sm-10">
-                <input type="date" name="Notification due" class="custom-input" id="notification-due-input">
+                <input type="date" name="Notificationdue" class="custom-input" id="notification-due-input">
                 <span id="notification-due-display"></span>
             </div>
         </div>
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Final Version due</label>
             <div class="col-sm-10">
-                <input type="date" name="Final Version due" class="custom-input" id="final-version-due-input">
+                <input type="date" name="FinalVersiondue" class="custom-input" id="final-version-due-input">
                 <span id="final-version-due-display"></span>
             </div>
         </div>

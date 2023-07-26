@@ -28,7 +28,11 @@
             justify-content: center;
             border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
         }
+.td{
+    width: 125px;
+}
 
         .horizontal-table th, .horizontal-table td {
             padding: 8px;
@@ -52,6 +56,21 @@
         .horizontal-table tr:hover {
             background-color: #e6e6e6;
         }
+
+        .horizontal-table td {
+       padding:-20px;
+        margin: 0;
+    }
+
+        .journal-title-container {
+        font-size: 40px;
+        font-weight: bold;
+        color: #007BFF;
+         padding: 10px; 
+         outline: none;  
+        position: relative; 
+        top: -80px; 
+    }
     </style>
 </head>
 <body>
@@ -62,20 +81,28 @@
            
         </thead>
         <tbody>
-            
-            <tr>
-                <th>Submission Deadline</th>
-                <td> </td>
-            </tr>
-            <tr>
-                <th>Notification Due</th>
-                <td></td>
-            </tr>
-            <tr>
-                <th>Final Version Due</th>
-                <td></td>
-            </tr>
+            @foreach ($data as $key => $cfpdata)
+        
            
+            <td>
+                <div class="journal-title-container">
+                    {{ $cfpdata->journal_title }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>Submission Deadline</th>
+            <td>{{ $cfpdata->submission_deadline }}</td>
+        </tr>
+        <tr>
+            <th>Notification Due</th>
+            <td>{{ $cfpdata->Notification_due }}</td>
+        </tr>
+        <tr>
+            <th>Final Version Due</th>
+            <td>{{ $cfpdata->Final_Version_due }}</td>
+        </tr>
+        @endforeach
         </tbody>
     </table>
 </body>
