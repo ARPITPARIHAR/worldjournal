@@ -131,7 +131,7 @@
     <title>Call for Papers</title>
     <style>
         /* Common styles for all screen sizes */
-        body {
+        .body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             margin: 0;
@@ -144,8 +144,7 @@
 
         .search-container {
             text-align: center;
-            margin: 0 10px; /* Add some spacing between containers */
-            flex: 1; /* Distribute available space equally among the containers */
+            margin: 0 90px;
         }
 
         .search-container h6 {
@@ -169,14 +168,14 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            margin-left: 700px;
+            margin-left: 700px; 
         }
 
         #search-button:hover {
             background-color: #0056b3;
         }
 
-        /* Flexbox styles for horizontal alignment */
+       
         #search-container-wrapper {
             display: flex;
         }
@@ -194,7 +193,7 @@
             transform: translateX(-50%);
             height: 70px;
             width: 400px;
-            background: cornflowerblue;
+            background: lightseagreen;
             border-radius: 0 0 50% 50%;
             z-index: -1;
         }
@@ -207,7 +206,7 @@
         }
 
         #search-bar {
-            margin-left: 600px;
+            margin-left: 600px; 
             width: 300px;
             padding: 10px;
             border: 2px solid #ccc;
@@ -216,37 +215,42 @@
             margin-top: 10px;
         }
 
-        /* Media Queries for different screen sizes */
-
-        /* Mobile screens (up to 767px) */
-        @media (max-width: 767px) {
+        @media (max-width: 1199px) {
+           
             #search-button {
-                margin-left: 0;
-                margin-right: 0;
+                margin-left: 500px; 
+            }
+            #search-bar {
+                margin-left: 400px; 
+            }
+        }
+
+        @media (max-width: 767px) {
+            .search-container {
+                margin-top: 20px;  
+            }
+            
+            .search-container h6 {
+                margin-top: 20px; 
             }
 
             #search-container-wrapper {
-                flex-direction: column;
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .search-container:not(:last-child) {
+                margin-bottom: 20px; 
             }
 
             #search-bar {
-                margin-left: 0;
+                margin-left: 0; 
             }
+    #search-button {
+             margin-left: 130px;
+        margin-top: -60px;
         }
-
-        /* Tablet screens (768px to 1023px) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-            #search-container-wrapper {
-                flex-direction: column;
-            }
-        }
-
-        /* Desktop screens (1024px and above) */
-        @media (min-width: 1024px) {
-            #cfp-container {
-                padding: 50px 0;
-            }
-        }
+      }
     </style>
 </head>
 <body>
@@ -266,7 +270,7 @@
                     <option value="physical science">Physical Science</option>
                     <option value="custom">Other</option>
                 </select>
-                <input type="text" class="search-input" name="custom-category" id="custom-category-input" style="display: none;">
+                <input type="text" class="search-input" name="custom-category" id="custom-category-input" style="display: none;" placeholder="Type your custom category...">
             </div>
             <div class="search-container">
                 <h6>Search by journal</h6>
@@ -276,16 +280,15 @@
                     <option value="category3">Category 3</option>
                     <option value="custom">Other</option>
                 </select>
-                <input type="text" class="search-input" name="custom-journal" id="custom-journal-input" style="display: none;">
+                <input type="text" class="search-input" name="custom-journal" id="custom-journal-input" style="display: none;" placeholder="Type your custom journal...">
             </div>
             <div class="search-container">
                 <h6>Search by ISSN</h6>
-                <input type="text" class="search-input" name="issn" placeholder="Enter ISSN">
+                <input type="text" class="search-input" name="issn" placeholder="Enter ISSN ">
             </div>
         </div>
-        <button id="search-button" type="submit">Search</button>
-    </form>
-    <script>
+      <button id="search-button" type="submit">Search</button>
+      <script>
         function checkCustomCategory(selectElement) {
             var customCategoryInput = document.getElementById('custom-category-input');
             if (selectElement.value === 'custom') {
@@ -306,8 +309,8 @@
             }
         }
     </script>
-</body>
-</html>
+  </body>
+  </html>
 
 
 <br>
@@ -325,7 +328,8 @@
 
                       <div class="container">
                           <div class="card">
-                            <div class="card-header text-center" style="background-color:#8FBC8F;">Country Records</div>
+                            <div class="card-header text-center" style="background-color: #479778; color: white;">Country Records</div>
+
                               <div class="card-body">
                                   <div class="row">
                                       @foreach ($country_records as $result)
@@ -347,7 +351,8 @@
     <br>
      <div class="container">
       <div class="card">
-        <div class="card-header text-center" style="background-color:#8FBC8F;">Category Records</div>
+        <div class="card-header text-center" style="background-color: #479778; color: white;">Category Records</div>
+
           <div class="card-body">
              <div class="row">
                  @foreach ($category_records as $result)
@@ -752,16 +757,21 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
 
           </div>
 
         </div>
+        </section>
+      
 
-      </div>
+
+
+
+
       <style>
-        /* Set the width of the iframe to 100% */
+       
         iframe {
           width: 100%;
           height:240px;
@@ -769,7 +779,7 @@
      
       
 .contact {
-  background-image: url('/user/img/xyz.jpg');
+  background-image: url('/user/img/bb11.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -868,4 +878,4 @@
 </style>
 
 
-</section>
+
