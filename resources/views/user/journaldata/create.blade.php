@@ -28,18 +28,19 @@
 <link href="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.js"></script>
 
-
+<link rel="stylesheet" href="/path/to/styles.css">
    
-<div class="wrapper d-flex">
-    <div class="sidebar">
-      <div class="user-info">
-        @if(Auth::check())
-          <span>Welcome, {{ $user->name }}</span>
-        @endif
-      </div>
+ <div class="wrapper d-flex">
+        <div class="sidebar">
+            <div class="user-info">
+                @if(Auth::check())
+                    <span>Welcome, {{ Auth::user()->name }}</span>
+                @endif
+            </div>
       <ul>
         <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
         <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
+        <li><a href="contact"><i class="fas fa-users"></i>Contact</a></li>
         {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
         {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
@@ -52,12 +53,42 @@
 <style>
     
     
-body{
+.body{
 	background: #eee;
 }
 .wrapper{
 	position: relative;
-}
+} 
+ .user-info {
+            padding: 20px;
+            /*background-color: #336699;*/
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+             font-family: 'Poppins', sans-serif;
+            
+        }
+
+        /* Styling for the Welcome message */
+        .user-info span {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for the user name */
+        .user-info span.name {
+            font-size: 24px;
+        }
+
+        /* Styling for the welcome icon */
+        .user-info .welcome-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
 .sidebar{
 	position: fixed;
 	width: 200px;
@@ -66,7 +97,30 @@ body{
 	left: 0; /* Set the sidebar to start from the left edge */
 	/* padding: 10px 0; */
 }
+.sidebar li {
+        list-style: none;
+    }
 
+    .sidebar a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .sidebar a i {
+        margin-right: 10px;
+    }
+
+    .sidebar a:hover {
+        background-color: #336699;
+        color: white;
+    }
+
+    .sidebar a:hover i {
+        color: white;
+    }
 
 
 .form-container {
@@ -75,7 +129,7 @@ body{
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  height: 3200px;
+  height: 3250px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -336,7 +390,7 @@ input[type="radio"],
             <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo"width="150px">
         </div>
         <div class="links-home">
-            <a href="/" class="home-button" id="home-link">Go to Home</a>
+            <!--<a href="/" class="home-button" id="home-link">Go to Home</a>-->
             <a href="/logout" class="logout-button">Logout</a>
         </div>
         
@@ -358,12 +412,12 @@ input[type="radio"],
     
                  
     
-                    @if(session('success'))
+                    {{-- @if(session('success'))
                         <div class="alert alert-success alert-dismissible fade show custom-alert text-center" role="alert">
                             {{ session('success') }}
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
-                    @endif
+                    @endif --}}
     
                     <!-- Submit button and other form elements -->
                 
@@ -1272,6 +1326,10 @@ function formatISSN(input) {
 
         </script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -1289,7 +1347,7 @@ function formatISSN(input) {
                     <p>{{ session('success') }}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearSessionAndCloseModal()">Close</button>
                 </div>
             </div>
         </div>
@@ -1299,8 +1357,28 @@ function formatISSN(input) {
         $(document).ready(function() {
             $('#successModal').modal('show');
         });
+
+        function clearSessionAndCloseModal() {
+         
+            @php session()->forget('success') @endphp;
+            
+            $('#successModal').modal('hide');
+        }
     </script>
 @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

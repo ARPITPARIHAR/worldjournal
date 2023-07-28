@@ -181,12 +181,19 @@
             #search-container-wrapper {
                 display: flex;
             }
-        
-        #cfp-container {
-            position: relative;
-            text-align: center;
-            padding: 50px 0;
-        }
+            #cfp-container {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+}
+
+
+@media (max-width: 767px) {
+    #cfp-container {
+        padding: 30px 0; 
+    }
+}
+
 
         #background-curve {
             position: absolute;
@@ -195,7 +202,7 @@
             transform: translateX(-50%);
             height: 70px;
             width: 400px;
-            background:#556B2F; 
+            background:cornflowerblue; 
             border-radius: 0 0 50% 50%;
             z-index: -1; 
         }

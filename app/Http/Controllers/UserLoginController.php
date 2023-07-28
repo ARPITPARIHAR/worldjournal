@@ -32,7 +32,7 @@ class UserLoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             Session::flash('success', 'You have successfully logged in.');
-            $intendedUrl = Session::pull('url.intended', '/postcfp');
+            $intendedUrl = Session::pull('url.intended', '/data');
 
             return redirect()->to($intendedUrl);
         } else {

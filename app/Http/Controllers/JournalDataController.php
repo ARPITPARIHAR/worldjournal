@@ -58,10 +58,10 @@ class JournalDataController extends Controller
       } 
         $data->save();
     
-        $request->session()->flash('success', 'Journal data has been submitted successfully!');
+        $request->session()->flash('centerSuccess', 'Journal data has been submitted successfully!');
 
-    return redirect()->back()->with('showSuccessModal', true);
-}
+        return redirect()->back()->with('showSuccessModal', true);
     }
     
 
+}

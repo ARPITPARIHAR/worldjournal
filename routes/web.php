@@ -31,6 +31,7 @@ Route::get('user/add', [UserController::class, 'add'])->name('user.add');
 Route::get('user/search', [UserController::class, 'search'])->name('user.search'); 
 Route::get('contact', [UserController::class, 'contact'])->name('user.contact'); 
 Route::get('about', [UserController::class, 'about'])->name('user.about');
+Route::get('dash', [UserController::class, 'dash'])->name('user.journaldashboard');
 
 // Route::post('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // Route::get('admin/login', [AdminController::class, 'adminLogin'])->name('admin.login');
@@ -72,9 +73,10 @@ Route::get('/country-list', [AddJournalController::class, 'countryList'])->name(
 // });
 Route::get('/mycfp', [PostCfpController::class, 'mycfp'])->name('user.mycfp');
 
+ Route::middleware(['login'])->group(function () {
 Route::get('/data', [JournalDataController::class, 'create'])->name('user.create');
 Route::post('user/data/store', [JournalDataController::class, 'store'])->name('user.data.store');
-
+});
 //  Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 // Route::get('registration', [AuthController::class, 'registration'])->name('register');
 

@@ -40,4 +40,8 @@ public function about()
 {
     return view('user.about'); 
 }
+public function dash()
+{
+    return view('user.journaldashboard'); 
+}
 }

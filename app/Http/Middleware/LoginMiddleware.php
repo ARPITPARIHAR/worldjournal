@@ -10,9 +10,9 @@ class LoginMiddleware
     public function handle($request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect('/login'); // Redirect to login page if not logged in
+            return redirect('/login'); 
         }
 
-        return $next($request); // Allow access to postcfp page if logged in
+        return $next($request); 
     }
 }

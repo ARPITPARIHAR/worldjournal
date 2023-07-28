@@ -62,15 +62,16 @@
         margin: 0;
     }
 
-        .journal-title-container {
-        font-size: 40px;
-        font-weight: bold;
-        color: #007BFF;
-         padding: 10px; 
-         outline: none;  
-        position: relative; 
-        top: -80px; 
-    }
+    .journal-title-container {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #007BFF;
+            padding: 10px;
+            outline: none;
+            position: relative;
+            top: -80px;
+        }
     </style>
 </head>
 <body>
@@ -84,11 +85,11 @@
             @foreach ($data as $key => $cfpdata)
         
            
-            <td>
+            
                 <div class="journal-title-container">
                     {{ $cfpdata->journal_title }}
                 </div>
-            </td>
+            
         </tr>
         <tr>
             <th>Submission Deadline</th>
