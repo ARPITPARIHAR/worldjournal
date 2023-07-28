@@ -38,9 +38,10 @@
                 @endif
             </div>
       <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Dashboard</a></li>
+        <li><a href="/dash"><i class="fas fa-home"></i>Journal pannel</a></li>
         <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
-        <li><a href="contact"><i class="fas fa-users"></i>Contact</a></li>
+        <li><a href="/contact"><i class="fas fa-users"></i>Contact</a></li>
+        <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
         {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
         {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
@@ -71,57 +72,52 @@
             
         }
 
-        /* Styling for the Welcome message */
+      
         .user-info span {
             font-weight: bold;
             display: block;
             margin-bottom: 10px;
         }
 
-        /* Styling for the user name */
+       
         .user-info span.name {
             font-size: 24px;
         }
 
-        /* Styling for the welcome icon */
+
         .user-info .welcome-icon {
             font-size: 32px;
             margin-bottom: 10px;
         }
 
-.sidebar{
+        .sidebar{
 	position: fixed;
 	width: 200px;
 	height: 100%;
 	background: #676a6c;
-	left: 0; /* Set the sidebar to start from the left edge */
-	/* padding: 10px 0; */
+	left: 0; 
+
 }
 .sidebar li {
         list-style: none;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        background-color: #f9f9f9;
     }
-
-    .sidebar a {
-        display: block;
-        padding: 10px;
-        font-size: 16px;
-        color: #333;
+    .btn.btn-info {
+        color: black;
+    }
+    .sidebar li a {
         text-decoration: none;
+        color: #333;
     }
 
-    .sidebar a i {
-        margin-right: 10px;
-    }
-
-    .sidebar a:hover {
+    .sidebar li a:hover {
         background-color: #336699;
         color: white;
     }
-
-    .sidebar a:hover i {
-        color: white;
-    }
-
 
 .form-container {
     max-width: 900px;
@@ -182,7 +178,7 @@
 .my-form {
     position: relative;
     z-index: 1;
-    /* Additional styling for the form */
+    
 }
  
             body {
@@ -262,7 +258,7 @@ input[type="radio"],
   margin-left: 80px;
 }
 
-/* Styling for the upload sign SVG */
+
 .upload-sign svg {
   width: 350px;
   height: 48px;
@@ -270,13 +266,12 @@ input[type="radio"],
   margin-right: 10px;
 }
 
-/* Styling for the upload sign text */
+
 .upload-sign span {
   font-size: 16px;
   color:red;
 }
 
-/* Styling for the upload sign when hovering */
 .upload-sign:hover {
   border-color: #999;
 }
@@ -334,7 +329,7 @@ input[type="radio"],
     gap: 400px;
     align-items: center;
     color: #999;
-    margin-left: 200px;
+    margin-left: 600px;
 }
 .links-home a {
     color: white;
@@ -353,7 +348,7 @@ input[type="radio"],
         width: 100px;
         height: 100px;
     }
-    .home-button,
+    /* .home-button,
 .logout-button {
     display: inline-block;
     padding: 5px 5px;
@@ -364,7 +359,7 @@ input[type="radio"],
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-}
+} */
 
 .home-button:hover,
 .logout-button:hover {
@@ -391,7 +386,7 @@ input[type="radio"],
         </div>
         <div class="links-home">
             <!--<a href="/" class="home-button" id="home-link">Go to Home</a>-->
-            <a href="/logout" class="logout-button">Logout</a>
+            <a href="/logout" class="btn btn-info">Logout</a>
         </div>
         
        
@@ -1240,14 +1235,7 @@ input[type="radio"],
                                                 <div class="input-group">
                                                    <input type="file" class="form-control" id="image" name="image" style="display: none;">
                                                 </div>
-                                                <script>
-                                                    const uploadLabel = document.querySelector('a');
-                                                    const fileInput = document.querySelector('#image');
-                                        
-                                                    uploadLabel.addEventListener('click', function() {
-                                                        fileInput.click();
-                                                    });
-                                                </script>
+                                             
                                             </div>
                                         </div>
                                         
@@ -1300,23 +1288,31 @@ input[type="radio"],
   
 
 <script>
+       
+                                                  const uploadLabel = document.querySelector('a');
+                                                    const fileInput = document.querySelector('#image');
+                                        
+                                                 uploadLabel.addEventListener('click', function() {
+                                                         fileInput.click();
+                                                   });
+                                          
     function openFileUploader() {
   var fileInput = document.getElementById('image');
   fileInput.click();
 }
 function formatISSN(input) {
-    // Remove any non-digit characters from the input value
+    
     var digits = input.value.replace(/\D/g, '');
 
-    // Restrict the input to a maximum of 8 digits
+    
     digits = digits.slice(0, 8);
 
-    // Insert hyphen after the 4th digit
+   
     if (digits.length > 4) {
         digits = digits.slice(0, 4) + '-' + digits.slice(4);
     }
 
-    // Update the input value with the formatted ISSN
+    /
     input.value = digits;
 }
 

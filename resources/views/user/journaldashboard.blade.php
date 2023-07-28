@@ -41,7 +41,7 @@
         <li><a href="#"><i class="fas fa-home"></i>Journal pannel</a></li>
         <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
         <li><a href="/contact"><i class="fas fa-users"></i>Contact</a></li>
-        <li><a href="/data"><i class="fas fa-users"></i>Add Journal</a></li>
+        <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
         {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
         {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}

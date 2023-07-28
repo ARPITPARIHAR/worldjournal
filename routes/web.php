@@ -73,10 +73,10 @@ Route::get('/country-list', [AddJournalController::class, 'countryList'])->name(
 // });
 Route::get('/mycfp', [PostCfpController::class, 'mycfp'])->name('user.mycfp');
 
- Route::middleware(['login'])->group(function () {
+//  Route::middleware(['login'])->group(function () {
 Route::get('/data', [JournalDataController::class, 'create'])->name('user.create');
 Route::post('user/data/store', [JournalDataController::class, 'store'])->name('user.data.store');
-});
+// });
 //  Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 // Route::get('registration', [AuthController::class, 'registration'])->name('register');
 
