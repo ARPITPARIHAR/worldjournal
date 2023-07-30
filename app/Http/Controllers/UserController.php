@@ -44,4 +44,8 @@ public function dash()
 {
     return view('user.journaldashboard'); 
 }
+public function contactus()
+{
+    return view('user.contactus'); 
+}
 }

@@ -44,7 +44,9 @@ class AddJournalController extends Controller
     $data->category=$request->category;
     $data->mobilenu=$request->mobilenu;
     $data->save();
-    return back()->with('success',' Form Saved Successfully');
+    $request->session()->flash('centerSuccess', 'User detail has been submitted successfully!');
+
+    return redirect()->back();
      }
      
 

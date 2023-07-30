@@ -1,7 +1,8 @@
 @extends('user.layouts.app')
 @section('meta_title',' Registeration')
+{{-- @include('user.includes.nav') --}}
 @section('content')
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,8 +50,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="nav-link scrollto">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
+          <li><a class="/about" href="about">About</a></li>
+          <li><a class="/contact" href="contact">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
           <li><a class="nav-link scrollto" href="#team">FAQs</a></li>
           <li class="dropdown" >
@@ -66,9 +67,9 @@
               <li><a href="/postcfp">Post a CFP</a></li>
               <li><a href="#">My CFP List</a></li>
               <li><a href="#">My Favourite List</a></li>
-              <li><a href="#">News Alert List</a></li>
+              {{-- <li><a href="#">News Alert List</a></li> --}}
               <li><a href="#">CFPs Alert List</a></li>
-              <li><a href="#">Promote Event</a></li>
+              {{-- <li><a href="#">Promote Event</a></li> --}}
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="logins">Login</a></li>
@@ -83,7 +84,7 @@
   </header>
 </body>
 
-</html>
+</html> 
 
 
 <link rel="shortcut icon" type="image/x-icon" href="http://www.indexcopernicus.com/favicon.ico" />
@@ -92,23 +93,24 @@
     <link rel="stylesheet" href="/css/ppanel/new/bootstrap.css" media="screen" />
 
     <script src="/js/plugins/number/number-polyfill.js"></script>
+<br><br>
 
 <div class="container">
    
             </div> 
         <div class="basic">
-            @if (session('success'))
+            {{-- @if (session('success'))
             <h4 class="success-message"> {{session('success')}}</h4>
         @elseif(session('error'))
             <h3 class="card-title test-info">{{session('error')}}</h3>
        
-        @endif 
+        @endif  --}}
             <form action="{{route('user.add.store')}}"  method="post" id="registrationForms">
                 @csrf
              
             
 
-                <fieldset>
+                {{-- <fieldset>
                     <h3 style="font-weight: 500">BASIC INFORMATION</h3>
                        
            
@@ -145,9 +147,10 @@
                             
                         </div>
                     </div>
-                </fieldset>
-
-                <h3>CONTACT DETAILS</h3>
+                </fieldset> --}}
+                <form action="{{route('user.add.store')}}"  method="post" id="registrationForms">
+                  @csrf
+                <div class="user">USER  DETAILS</div>
                 <hr />
 
                 <fieldset>
@@ -180,7 +183,7 @@
                     <div class="form-group row">
                         <label for="postalCode" class="col-lg-2 control-label">Postal Code</label>
                         <div class="col-lg-10">
-                            <input type="number" name="postalCode" id="postalCode" class="form-control" placeholder="Postal Code" value="" />
+                            <input type="text" name="postalCode" id="postalCode" class="form-control" placeholder="Postal Code" value="" />
                             
                         </div>
                     </div>
@@ -227,20 +230,10 @@
 
                 </fieldset>
 
-                <h3 style="font-weight: 500">Acceptations</h3>
+                {{-- <h3 style="font-weight: 500">Acceptations</h3> --}}
                 <hr />
 
-                <fieldset>
-                    <div class="form-group">
-                        <div class="col-lg-offset-2 col-lg-10">
-                            <div class="checkbox text-justify">
-                                <label>
-                                    {{-- <input class="" type="checkbox" required="true" />  --}}
-                                    {{-- <span style="margin-left: 5px"><span>I agree to the processing of my personal data by Index Copernicus Sp. z o.o. at Kasprzaka Street 31A lok.184, Warsaw, for the purpose of the correct provision of a service by the teleinformatic system and the internet service on the basis of Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation) as well as, according to Privacy Policy used by Index Copernicus Sp.z o. o. Providing the personal data is voluntary. I am aware of having a possibility to access my personal data, change them and reporting to stop making use of them. </span></span> --}}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+               
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
                             <div class="checkbox text-justify">
@@ -281,7 +274,12 @@
 
 
             </form>
-
+            @if(session('centerSuccess'))
+            <div class="success-message">
+                <span class="close-button" onclick="closeSuccessMessage()">&times;</span>
+                <p>{{ session('centerSuccess') }}</p>
+            </div>
+        @endif
 
         </div>
     
@@ -297,16 +295,34 @@
 @endsection 
 
 <style>
-    .success-message {
-      background-color: darkred;
-      color: white;
-      padding: 10px;
-      margin-bottom: 20px;
-      text-align: center;
+  #navbar{
+    margin-bottom:0px;
+  }
+        .success-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #66139a;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        max-width: 300px; /* Add a maximum width to limit the size of the success message */
+    }
+
+    .close-button {
+        position: absolute;
+        top: 5px; /* Adjust the top position to separate the close button from the success message */
+        right: 5px; /* Adjust the right position to separate the close button from the success message */
+        font-size: 20px;
+        cursor: pointer;
     }
     #header {
   background-color: #001180!important;
 }
+.
 
     .container {
       margin-top: 20px;
@@ -314,6 +330,9 @@
   .navbar{
 margin-left: 250px;}
 
+.navbar li{
+  background:pink;
+}
     .basic {
       margin-top: 400px;
       background-color: darkslategray;
@@ -339,10 +358,19 @@ margin-left: 250px;}
       text-align: center;
     }
   
-    h3 {
-      text-align: center;
-    }
-  
+    .user {
+    text-align: center;
+    margin-top: 2px;
+    color: white;
+    font-family: 'Roboto', sans-serif;;
+    font-size: 24px;
+    /* text-transform: uppercase; */
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #007BFF, #66139a); /* Gradient background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    position: relative; /* Required for the ::before pseudo-element */
+  }
     /* Responsive styles */
     @media (max-width: 768px) {
       .basic {
@@ -364,9 +392,14 @@ margin-left: 250px;}
       }
     }
   </style>
+
   
 
 <script>
+  function closeSuccessMessage() {
+        var successMessage = document.querySelector('.success-message');
+        successMessage.style.display = 'none';
+    }
     function capitalizeInput(input) {
         var words = input.value.split(' ');
         for (var i = 0; i < words.length; i++) {

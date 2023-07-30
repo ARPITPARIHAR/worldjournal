@@ -130,7 +130,7 @@
 <head>
     <title>Call for Papers</title>
     <style>
-        /* Common styles for all screen sizes */
+       
         .body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
@@ -198,12 +198,12 @@
             z-index: -1;
         }
 
-        h4 {
+        .call {
             color: white;
             font-family: Georgia, serif;
             font-size: 24px;
             text-transform: uppercase;
-        }
+        } 
 
         #search-bar {
             margin-left: 600px; 
@@ -256,7 +256,7 @@
 <body>
     <div id="cfp-container">
         <div id="background-curve"></div>
-        <h4>CALL  FOR  PAPERS</h4>
+        <div class="call">CALL  FOR  PAPERS</div>
     </div>
 
     <form action="/searchcfp" method="get">
@@ -287,7 +287,9 @@
                 <input type="text" class="search-input" name="issn" placeholder="Enter ISSN ">
             </div>
         </div>
+    
       <button id="search-button" type="submit">Search</button>
+    </form>
       <script>
         function checkCustomCategory(selectElement) {
             var customCategoryInput = document.getElementById('custom-category-input');

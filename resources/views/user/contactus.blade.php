@@ -1,8 +1,3 @@
-{{-- @extends('user.layouts.app')
-@section('meta_title',' Registeration')
-@section('content')
-
-@include('user.includes.nav') --}}
 <html ng-app="application">
 <head>
     <base href="/representative/">
@@ -62,36 +57,10 @@
     
 </div>
 </div>
-
-
-<div class="mission-content">
-    <h2>Our Mission:</h2>
-    <p>
-        Our mission is to empower researchers and academics by providing them with a user-friendly, comprehensive, and up-to-date database of journals and conferences. We strive to make the search for reputable, peer-reviewed publications and prestigious conferences easier, thus promoting the dissemination of groundbreaking research and fostering collaboration across diverse disciplines.
-    </p>
-
-    <h2>Why Choose World Journal's Alert?</h2>
-    <ul>
-        <li>Unrivalled Database: We pride ourselves on maintaining an extensive repository of scholarly journals and conferences indexed in world-leading databases such as Scopus, Clarivate, and more. Our platform ensures that researchers have access to a wealth of information from reputable sources to enhance their research endeavors.</li>
-        <li>Scope-wise Indexing: We understand the importance of narrowing down your search to the most relevant publications and events. Hence, our platform offers scope-wise indexing, enabling users to find journals and conferences that align precisely with their research interests.</li>
-        <li>User-Friendly Interface: Our website boasts a seamless, user-friendly interface that enables swift navigation and easy exploration of the vast array of indexed journals and conferences. Whether you are an experienced researcher or a curious student, finding the information you need has never been simpler.</li>
-        <li>Stay Informed: World Journal's Alert keeps you updated with the latest developments in your field of interest. We offer regular alerts and notifications about upcoming conferences, new journal publications, and relevant research, helping you stay ahead in your academic journey.</li>
-        <li>Trusted Source: With a strong focus on quality and reliability, our platform only indexes journals and conferences from reputable sources. This dedication ensures that you have access to authoritative and influential content for your academic pursuits.</li>
-        <li>Seamless Integration: World Journal's Alert provides seamless integration with popular reference management tools, making it effortless for you to organize, cite, and manage your research materials efficiently.</li>
-    </ul>
-
-    <h2>Join Us Today:</h2>
-    <p>
-        Whether you are an aspiring researcher, an established academic, or a curious mind eager to explore the frontiers of knowledge, World Journal's Alert welcomes you to join our ever-growing community. Unleash the power of cutting-edge research, access prestigious conferences, and open the doors to endless possibilities in your chosen field.
-    </p>
-    <p>
-        Stay connected with World Journal's Alert to enrich your academic journey and make your mark in the realm of knowledge. Let us be your guiding light to success and innovation.
-    </p>
-</div>
 <style>
-    .body{
-	background: #eee;
-}
+
+
+
 .wrapper{
 	position: relative;
 } 
@@ -153,46 +122,35 @@
         background-color: #336699;
         color: white;
     }
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+    }
 
-.mission-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+        color:white;
+    }
 
-.mission-content h2 {
-    color: #336699;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.mission-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-.mission-content ul {
-    list-style-type: disc;
-    padding-left: 30px;
-    margin-top: 5px;
-}
-
-.mission-content li {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-}
-
-
-.mission-content h2:last-child {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-top: 30px;
-    border-radius: 8px;
-}
-.container-home {
+    .address-container {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+    }
+    .contact-container{
+        background-color: cornflowerblue;
+    }
+    .contact-info {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: palevioletred;
+        
+    }
+    .container-home {
     display: flex;
     align-items: center;
     background-color: midnightblue;
@@ -210,7 +168,9 @@
     justify-content: flex-start;
 
 }
-
+.body {
+        background-color: #a4b729;
+    }
 
 
 .links-home {
@@ -225,5 +185,25 @@
     margin-top: 20px;
     
 }
-
 </style>
+<body>
+<div class="contact container">
+<div class="address-container">
+    <div class="contact-info">
+        <h3>Our Address</h3>
+        <p>Y-18-A, Sudarshana Nagar<br>
+            Bikaner (Rajasthan) 334003<br>INDIA</p>
+    </div>
+
+    <div class="contact-info">
+        <h3>Email Us</h3>
+        <p></p>
+    </div>
+
+    <div class="contact-info">
+        <h3>Call Us</h3>
+        <p></p>
+    </div>
+</div>
+</div>
+</body>
