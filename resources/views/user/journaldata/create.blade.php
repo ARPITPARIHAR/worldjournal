@@ -42,6 +42,7 @@
         <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
         <li><a href="/contact"><i class="fas fa-users"></i>Contact</a></li>
         <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
+        <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
         {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
         {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
@@ -94,7 +95,7 @@
 	position: fixed;
 	width: 200px;
 	height: 100%;
-	background: #676a6c;
+	background:#1E90FF;
 	left: 0; 
 
 }
@@ -121,11 +122,11 @@
 
 .form-container {
     max-width: 900px;
-  margin-left:px;
+  margin-left:140px;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  height: 3250px;
+  height: 3000px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -311,7 +312,7 @@ input[type="radio"],
     padding: 10px;
     border-radius: 5px;
     width:900px;
-    margin-left: px;
+    margin-left: 140px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;

@@ -16,12 +16,13 @@ class CallForPaperController extends Controller
     $data=new Callforpaper;
     $data->journal_title=$request->journalTitle;
     $data->issn=$request->issnNumber;
-    $data->submission_date=$request->Submissiondeadline;
-    $data->notification_date=$request->Notificationdue;
-    $data->final_version=$request->FinalVersiondue;
+    $data->submission_date=$request->submissionDeadline;
+    $data->notification_date=$request->notificationDue;
+    $data->final_version=$request->finalVersionDue;
+    $data->description=$request->description;
  
     $data->save();
-    $request->session()->flash('centerSuccess', 'User detail has been submitted successfully!');
+    $request->session()->flash('centerSuccess', 'Details has been submitted successfully!');
 
     return redirect()->back();
      }

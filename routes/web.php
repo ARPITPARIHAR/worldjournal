@@ -133,4 +133,5 @@ Route::post('/searchcfp', [SearchCfpController::class, 'index'])->name('user.sea
 
 
 Route::get('/callforpaper', [CallForPaperController::class, 'create']);
+Route::post('/call-for-paper/submit',[CallForPaperController::class, 'store'] )->name('call-for-paper.submit');
 // Route::post('user/add/store', [CallForPaperController::class, 'store'])->name('user.add.store');
