@@ -32,9 +32,7 @@ class JournalDataController extends Controller
         $data->scimago_category = $request->country;
         $data->publication_language = $request->language;
         $data->issn = $request->issn;
-        $data->submission_deadline = $request->Submissiondeadline;
-        $data->Notification_due= $request->Notificationdue;
-        $data->Final_Version_due= $request->FinalVersiondue;
+       
         $data->doi = $request->doi;
         $data->journal_creative = $request->rapidReview;
         $data->indexing = $request->doibase;

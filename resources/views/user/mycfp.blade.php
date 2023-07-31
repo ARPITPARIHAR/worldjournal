@@ -109,15 +109,15 @@
         </tr>
         <tr>
             <th>Submission Deadline</th>
-            <td>{{ $cfpdata->submission_deadline }}</td>
+            <td>{{ $cfpdata->submission_date }}</td>
         </tr>
         <tr>
             <th>Notification Due</th>
-            <td>{{ $cfpdata->Notification_due }}</td>
+            <td>{{ $cfpdata->notification_date}}</td>
         </tr>
         <tr>
             <th>Final Version Due</th>
-            <td>{{ $cfpdata->Final_Version_due }}</td>
+            <td>{{ $cfpdata->final_version }}</td>
         </tr>
         @endforeach
         @endif

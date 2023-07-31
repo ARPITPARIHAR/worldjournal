@@ -24,7 +24,7 @@
                 @endif
             </div>
             <ul>
-                <li><a href="#"><i class="fas fa-home"></i>Journal panel</a></li>
+                <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
                 <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
                 <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
                 <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
