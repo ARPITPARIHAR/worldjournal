@@ -9,17 +9,18 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\CfpDataController;
 use App\Http\Controllers\PostCfpController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SearchcfpController;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\AddJournalController;
 use App\Http\Controllers\Auth\AuthController; 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\RestrictedController;
 use App\Http\Controllers\JournalDataController;
+use App\Http\Controllers\CallForPaperController;
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\FeedbackController;
-use App\Http\Controllers\SearchcfpController;
 
 
 
@@ -116,8 +117,8 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
  Route::post('login/whatsapp/callback', [UserLoginController::class, 'loginWithWhatsAppCallback'])->name('login.whatsapp.callback');
  Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
  Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
- Route::post('/webhook/verify', [UserLoginController::class, 'verifyWebhook']);
- 
+ Route::get('/webhook/verify', [UserLoginController::class, 'webhookget']);
+   Route::get('/webhook', [UserLoginControllerName::class, 'webhookpost']);
     
 
 // Route for initiating the social login process
@@ -128,4 +129,8 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
 
 Route::post('feedback.store', [FeedbackController::class, 'store'])->name('feedback.store');
 
-Route::get('/searchcfp', [SearchCfpController::class, 'index'])->name('user.searchcfp');
+Route::post('/searchcfp', [SearchCfpController::class, 'index'])->name('user.searchcfp');
+
+
+Route::get('/callforpaper', [CallForPaperController::class, 'create']);
+// Route::post('user/add/store', [CallForPaperController::class, 'store'])->name('user.add.store');

@@ -113,19 +113,49 @@ class UserLoginController extends Controller
         }
     }
 
-    public function verifyWebhook(Request $request)
-    {
-        $receivedToken = $request->header('X-META-SIGNATURE');
-        $expectedToken = config('app.webhook_verify_token');
-
-        if ($receivedToken === $expectedToken) {
-            return response('Webhook verified successfully', 200);
-        } else {
-            return response('Webhook verification failed', 401);
-        }
+    public function webhookget(Request $request)
+{
+    $my_token = env('VERIFY_TOKEN');
+    $query = $request->all();
+    $mode = $query["hub_mode"];
+    $token = $query["hub_verify_token"];
+    $challange = $query["hub_challenge"];
+    
+    if ($my_token === $token) {
+        return $challange;
+    } else {
+        return response(500);
     }
+}
+     
+public function webhookpost(Request $request)
+{
+    // Verify if the request contains data
+    if ($request->has('data')) {
+        // Get the webhook event data
+        $eventData = $request->input('data');
 
+        // Process the webhook event data
+        // Your custom logic goes here
 
+        // Respond with an HTTP status code indicating successful processing
+        return response('Webhook event received and processed successfully.', 200);
+    } else {
+        // If the request doesn't contain data, return an error response
+        return response('Invalid webhook data.', 400);
+    }
+}}
+    //     $receivedToken = $request->header('X-META-SIGNATURE');
+    //     $expectedToken = config('app.webhook_verify_token');
+
+    //     if ($receivedToken === $expectedToken) {
+    //         return response('Webhook verified successfully', 200);
+    //     } else {
+    //         return response('Webhook verification failed', 401);
+    //     }
+    // }
+
+    
 
     
     public function showUserDetails()

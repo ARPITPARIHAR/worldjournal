@@ -88,9 +88,9 @@
 
 
 <link rel="shortcut icon" type="image/x-icon" href="http://www.indexcopernicus.com/favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" /> --}}
 
-    <link rel="stylesheet" href="/css/ppanel/new/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="/css/ppanel/new/bootstrap.css" media="screen" /> 
 
     <script src="/js/plugins/number/number-polyfill.js"></script>
 <br><br>
@@ -157,7 +157,7 @@
 
                     <div class="form-group row">
                         <label for="name" class="col-lg-2 control-label">Name</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" />
                             
                         </div>
@@ -165,7 +165,7 @@
 
                     <div class="form-group row">
                         <label for="surname" class="col-lg-2 control-label">Surname</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <input type="text" name="surname" id="surname" class="form-control" placeholder="Surname" value="" />
                             
                         </div>
@@ -174,7 +174,7 @@
 
                     <div class="form-group row">
                         <label for="address" class="col-lg-2 control-label">Address</label>
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <input type="text" name="address" id="address" class="form-control" placeholder="Street and number flat/house" value="" />
                             
                         </div>
@@ -298,7 +298,28 @@
   #navbar{
     margin-bottom:0px;
   }
-        .success-message {
+  /* Custom CSS for form spacing */
+.my-form .form-group {
+    margin-bottom: 20px; /* Add spacing between each form group */
+}
+
+.my-form label {
+    margin-right: 10px; /* Add spacing between the label and the input field */
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+}
+   
+  .success-message {
         position: fixed;
         top: 50%;
         left: 50%;
@@ -330,9 +351,7 @@
   .navbar{
 margin-left: 250px;}
 
-.navbar li{
-  background:pink;
-}
+
     .basic {
       margin-top: 400px;
       background-color: darkslategray;

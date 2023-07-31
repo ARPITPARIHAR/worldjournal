@@ -1018,27 +1018,7 @@ input[type="radio"],
                 <input type="text" name="issn" class="custom-input" maxlength="9" oninput="formatISSN(this)">
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Submission deadline</label>
-            <div class="col-sm-10">
-                <input type="date" name="Submissiondeadline" class="custom-input" id="submission-deadline-input">
-                <span id="submission-deadline-display"></span>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Notification due</label>
-            <div class="col-sm-10">
-                <input type="date" name="Notificationdue" class="custom-input" id="notification-due-input">
-                <span id="notification-due-display"></span>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Final Version due</label>
-            <div class="col-sm-10">
-                <input type="date" name="FinalVersiondue" class="custom-input" id="final-version-due-input">
-                <span id="final-version-due-display"></span>
-            </div>
-        </div>
+       
     
         <script>
             // Function to update the display element when a date is selected

@@ -259,7 +259,7 @@
         <div class="call">CALL  FOR  PAPERS</div>
     </div>
 
-    <form action="/searchcfp" method="get">
+    <form action="/searchcfp" method="post">
         @csrf
         <div id="search-container-wrapper">
             <div class="search-container">
@@ -270,7 +270,7 @@
                     <option value="physical science">Physical Science</option>
                     <option value="custom">Other</option>
                 </select>
-                <input type="text" class="search-input" name="custom-category" id="custom-category-input" style="display: none;" placeholder="Type your custom category...">
+                <input type="text" class="search-input" name="category" id="custom-category-input" style="display: none;" placeholder="Type your custom category...">
             </div>
             <div class="search-container">
                 <h6>Search by journal</h6>
@@ -280,7 +280,7 @@
                     <option value="category3">Category 3</option>
                     <option value="custom">Other</option>
                 </select>
-                <input type="text" class="search-input" name="custom-journal" id="custom-journal-input" style="display: none;" placeholder="Type your custom journal...">
+                <input type="text" class="search-input" name="journal" id="custom-journal-input" style="display: none;" placeholder="Type your custom journal...">
             </div>
             <div class="search-container">
                 <h6>Search by ISSN</h6>

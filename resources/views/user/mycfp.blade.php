@@ -61,7 +61,9 @@
        padding:-20px;
         margin: 0;
     }
-
+#header{
+    background-color: #001180;
+}
     .journal-title-container {
             font-family: 'Montserrat', sans-serif;
             font-size: 40px;
@@ -72,6 +74,15 @@
             position: relative;
             top: -80px;
         }
+        .no-data-message {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    padding: 10px;
+    font-size: 16px;
+    height: 200px;
+  
+}
     </style>
 </head>
 <body>
@@ -82,6 +93,11 @@
            
         </thead>
         <tbody>
+            @if ($data->isEmpty())
+            <tr>
+                <div class="no-data-message">No data found </div>
+            </tr>
+        @else
             @foreach ($data as $key => $cfpdata)
         
            
@@ -104,13 +120,14 @@
             <td>{{ $cfpdata->Final_Version_due }}</td>
         </tr>
         @endforeach
+        @endif
         </tbody>
     </table>
 </body>
 </html>
 <br>
 <br>
-   
+   <br><br>
 @include('user.includes.footer')          
 @endsection
 
