@@ -32,7 +32,7 @@ class UserLoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             Session::flash('success', 'You have successfully logged in.');
-            $intendedUrl = Session::pull('url.intended', '/data');
+            $intendedUrl = Session::pull('url.intended', '/dash');
 
             return redirect()->to($intendedUrl);
         } else {
@@ -79,7 +79,7 @@ class UserLoginController extends Controller
 
                     Auth::login($newUser);
                 }
-                return redirect()->route('user.postcfp');
+                // return redirect()->route('user.dashboard');
             } else {
                 return redirect()->route('login')->with('error', 'User information not available from ' . $provider);
             }
@@ -130,18 +130,17 @@ class UserLoginController extends Controller
      
 public function webhookpost(Request $request)
 {
-    // Verify if the request contains data
+ 
     if ($request->has('data')) {
-        // Get the webhook event data
+       
         $eventData = $request->input('data');
 
-        // Process the webhook event data
-        // Your custom logic goes here
+     
 
-        // Respond with an HTTP status code indicating successful processing
+       
         return response('Webhook event received and processed successfully.', 200);
     } else {
-        // If the request doesn't contain data, return an error response
+      
         return response('Invalid webhook data.', 400);
     }
 }}

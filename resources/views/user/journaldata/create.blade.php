@@ -9,27 +9,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+   
     <meta name="description" content="">
     <meta name="author" content="">
 
    
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <!-- Add the Bootstrap CSS file -->
+    
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Add the Bootstrap JavaScript file (including the required dependencies) -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-<!-- Add the Bootstrap Datepicker CSS and JavaScript files -->
+
 <link href="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.js"></script>
 
 <link rel="stylesheet" href="/path/to/styles.css">
-   
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">  
  <div class="wrapper d-flex">
         <div class="sidebar">
             <div class="user-info">
@@ -48,7 +48,7 @@
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
       </ul>
     </div>
-    <!-- Rest of your content here -->
+    
   </div>
   
 
@@ -121,12 +121,13 @@
     }
 
 .form-container {
-    max-width: 900px;
+    width:auto;
+    max-width:1000px;
   margin-left:140px;
   padding: 20px;
   background-color: #f2f2f2;
   border-radius: 5px;
-  height: 3000px;
+  height:auto;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -308,10 +309,11 @@ input[type="radio"],
     display: flex;
     align-items: center;
     background-color: midnightblue;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    width:900px;
+    width:auto;
+    max-width:1000px;
     margin-left: 140px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -330,7 +332,7 @@ input[type="radio"],
     gap: 400px;
     align-items: center;
     color: #999;
-    margin-left: 600px;
+    margin-left: 750px;
 }
 .links-home a {
     color: white;
@@ -366,6 +368,206 @@ input[type="radio"],
 .logout-button:hover {
     background-color:;
 }
+.hamburger-menu {
+            display: none;
+        }
+
+        .hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; 
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 15px;
+  position: relative; 
+}
+
+.line {
+  width: 100%;
+  height: 4px; 
+  background-color:white;
+  border-radius: 2px;
+  transition: all 0.3s ease; 
+}
+       
+        .hamburger-icon:before,
+        .hamburger-icon:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .hamburger-icon.active:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.active:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-items {
+            display: none;
+        }
+
+        .hamburger-menu.active .menu-items {
+            display: block;
+        }
+
+        .menu-items {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            background-color: #1E90FF;
+            z-index: 9998;
+        }
+
+        .menu-items li {
+            margin: 10px 0;
+        }
+
+        .menu-items li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .menu-items li a:hover {
+            background-color: #336699;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #1E90FF;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border-radius: 50%;
+            margin-left:35px;
+        }
+
+        .close-button i {
+            color: white;
+            font-size: 20px;
+        }
+ @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+                margin-left:-170px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                position: fixed;
+                top: 1px;
+                left: 1px;
+                z-index: 9999;
+            }
+
+            .menu-items {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 30%;
+                background-color: #1E90FF;
+                padding: 20px;
+                z-index: 9998;
+                display: none;
+            }
+
+            .menu-items.active {
+                display: block;
+            }
+
+            .menu-items li {
+                margin: 10px 0;
+            }
+
+            .menu-items li a {
+                color: #fff; 
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+                padding: 5px;
+            }
+
+            .menu-items li a:hover {
+                background-color: #336699;
+                border-radius: 5px;
+            }
+
+          
+
+            .container-home {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+             margin-left:-200px;
+             width:auto;
+            }
+
+            .logo-home img {
+                /*width: 90px;*/
+                margin-left: -240px;
+                margin-top: 35px;
+            }
+
+            .links-home {
+                margin-top: -30px;
+                margin-left: 280px;
+            }
+
+            .links-home a {
+                margin-top: 0;
+            }
+
+            .hamburger-menu.active .hamburger-icon {
+                display: none;
+            }
+
+            .hamburger-menu.active .close-button {
+                display: flex;
+            }
+     .form-container {
+        width:auto; 
+         height:auto;
+          padding:10px;
+
+       margin-left:-190px;
+      
+    }
+
+   
+    .col-lg-6 {
+        width:auto;  
+    }
+  .image-sign {
+      margin-left:-300px;
+    width:auto;
+    height: auto;
+  }
+  .cover{
+      margin-left:155px;
+      font-size:24px;
+  }
+   
+ }
 
   
 
@@ -393,7 +595,28 @@ input[type="radio"],
        
         
     </div>
-    
+    </div><div class="mobile-menu-toggle">
+            <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+             
+            <ul class="menu-items">
+                 <div class="close-button">
+                <i class="fas fa-times"></i>
+            </div>
+                <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
+                <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
+                <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
+                <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
+                <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
+            </ul>
+           
+        </div>
     
 
 
@@ -1196,12 +1419,12 @@ input[type="radio"],
         <label class="col-sm-4 control-label-left ng-binding">(Days) </label>
     </div>
     </div>
-                
+                <div class="image-sign">
                         <div class="col-lg-12">
                             <div class="wrapper wrapper-content animated fadeInUp">
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
-                                        <center><h3 class="ng-binding">Journal cover</h3></center><br>
+                                        <center><div class="cover">Journal cover</div></center><br>
                                         <h6 style="font-weight: lighter;">click here to upload image</h6>
 
                                         <div class="mb-3 row">
@@ -1220,7 +1443,7 @@ input[type="radio"],
                                             </div>
                                         </div>
                                         
-                                        
+                                        </div>
                                         
                                             <div class="col-sm-10">
                                                 <div class="input-group">
@@ -1344,7 +1567,16 @@ function formatISSN(input) {
     </script>
 @endif
 
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.hamburger-menu').click(function() {
+        $(this).toggleClass('active');
+        $('.menu-items').toggleClass('active');
+      });
+      
+    });
+  </script>
 
 
 

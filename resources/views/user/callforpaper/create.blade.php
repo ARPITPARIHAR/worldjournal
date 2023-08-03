@@ -14,6 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.css" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="wrapper d-flex">
@@ -31,7 +32,7 @@
                 <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
             </ul>
         </div>
-        <!-- Rest of your content here -->
+      
         <div class="container-home">
             <div class="logo-home">
                 <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo" width="150px">
@@ -40,7 +41,28 @@
                 <a href="/logout" class="btn btn-info">Logout</a>
             </div>
         </div>
-    </div>
+    </div><div class="mobile-menu-toggle">
+            <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+             
+            <ul class="menu-items">
+                 <div class="close-button">
+                <i class="fas fa-times"></i>
+            </div>
+                <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
+                <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
+                <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
+                <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
+                <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
+            </ul>
+           
+        </div>
     {{-- <div class="center-container d-flex justify-content-center align-items-center"> --}}
         <div class="callforpapercontainer">
             <h2 class="text-center">Call for Paper Submission</h2>
@@ -77,7 +99,7 @@
             </form>
             @if(session('centerSuccess'))
                 <div class="success-message">
-                    <span class="close-button" onclick="closeSuccessMessage()">&times;</span>
+                    <span class="closing-button" onclick="closeSuccessMessage()">&times;</span>
                     <p>{{ session('centerSuccess') }}</p>
                 </div>
             @endif
@@ -90,12 +112,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.js"></script>
 
-    <script>
-        function closeSuccessMessage() {
-            var successMessage = document.querySelector('.success-message');
-            successMessage.style.display = 'none';
-        }
-    </script>
+    
 </body>
 </html>
 
@@ -124,10 +141,10 @@ body {
         max-width: 300px; /* Add a maximum width to limit the size of the success message */
     }
 
-    .close-button {
+    .closing-button {
         position: absolute;
-        top: 5px; /* Adjust the top position to separate the close button from the success message */
-        right: 5px; /* Adjust the right position to separate the close button from the success message */
+        top: 5px; 
+        right: 5px; 
         font-size: 20px;
         cursor: pointer;
     }
@@ -244,10 +261,10 @@ input[type="date"] {
     display: flex;
     align-items: center;
     background-color: midnightblue;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    width:auto;
+    width:2000px;
     margin-left: px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -272,9 +289,220 @@ input[type="date"] {
     color: white;
     margin-top: 20px;
     
+}.hamburger-menu {
+            display: none;
+        }
+
+         .hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; 
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 15px;
+  position: relative; 
 }
+
+.line {
+  width: 100%;
+  height: 4px; 
+  background-color:white;
+  border-radius: 2px;
+  transition: all 0.3s ease; 
+}
+
+        /* Style the black box */
+        .hamburger-icon:before,
+        .hamburger-icon:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .hamburger-icon.active:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.active:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-items {
+            display: none;
+        }
+
+        .hamburger-menu.active .menu-items {
+            display: block;
+        }
+
+        .menu-items {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            background-color: #1E90FF;
+            z-index: 9998;
+        }
+
+        .menu-items li {
+            margin: 10px 0;
+        }
+
+        .menu-items li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .menu-items li a:hover {
+            background-color: #336699;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #1E90FF;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border-radius: 50%;
+            margin-left:35px;
+        }
+
+        .close-button i {
+            color: white;
+            font-size: 20px;
+        }
+ @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                position: fixed;
+                top: 1px;
+                left: 1px;
+                z-index: 9999;
+            }
+
+            .menu-items {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 30%;
+                background-color: #1E90FF;
+                padding: 20px;
+                z-index: 9998;
+                display: none;
+            }
+
+            .menu-items.active {
+                display: block;
+            }
+
+            .menu-items li {
+                margin: 10px 0;
+            }
+
+            .menu-items li a {
+                color: #fff; 
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+                padding: 5px;
+            }
+
+            .menu-items li a:hover {
+                background-color: #336699;
+                border-radius: 5px;
+            }
+
+          
+
+            .container-home {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo-home img {
+                /*width: 90px;*/
+                margin-left: -440px;
+                margin-top: 35px;
+            }
+
+            .links-home {
+                margin-top: -30px;
+                margin-left: 280px;
+            }
+
+            .links-home a {
+                margin-top: 0;
+            }
+
+            .hamburger-menu.active .hamburger-icon {
+                display: none;
+            }
+
+            .hamburger-menu.active .close-button {
+                display: flex;
+            }
+             .callforpapercontainer {
+            width:auto; 
+            margin-left:0px;
+        }
+
+      
+        .callforpapercontainer h2 {
+            font-size: 24px;
+        }
+
+        .callforpapercontainer .form-group label {
+            font-size: 14px;
+        }
+
+        .callforpapercontainer .form-group input,
+        .callforpapercontainer .form-group textarea {
+            font-size: 14px;
+        }
+
+        .callforpapercontainer .form-group select {
+            font-size: 14px;
+        }
+
+        .callforpapercontainer .text-center button {
+            font-size: 16px;
+        }
+ }
         </style>
-<script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.hamburger-menu').click(function() {
+        $(this).toggleClass('active');
+        $('.menu-items').toggleClass('active');
+      });
+      
+    });
+  </script>
+  <script>
 function closeSuccessMessage() {
     var successMessage = document.querySelector('.success-message');
     successMessage.style.display = 'none';

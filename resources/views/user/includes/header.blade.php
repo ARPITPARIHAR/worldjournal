@@ -227,7 +227,7 @@
 
         @media (max-width: 767px) {
             .search-container {
-                margin-top: 20px;  
+                margin-top: 30px;  
             }
             
             .search-container h6 {

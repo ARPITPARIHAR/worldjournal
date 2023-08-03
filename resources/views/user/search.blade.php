@@ -82,6 +82,7 @@ border-bottom-left-radius: 15px;
 padding: 20px;
 float: right;
 display: block;
+ overflow-x: auto;
 
 
 }
@@ -93,7 +94,8 @@ padding: 5px;
 
 .push-up {
 position: absolute;
-top: 90px; 
+top: 90px;
+width:1300px;
 }
 th ,td{
 /* background-color:darkblue; */
@@ -119,9 +121,9 @@ margin-bottom: 10px;
 table td:first-child {
 font-weight: bold;
 }
-</style>
 
-<style>
+
+
 .search {
   text-align: left;
   background-color:rgb(233, 239, 242);
@@ -133,6 +135,8 @@ font-weight: bold;
   margin-bottom: 450px;
   border-radius: 15px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+   margin: 0 auto;
+  overflow-x: auto;
 }
 
 .search .widgettitle {
@@ -219,13 +223,13 @@ background-color:rgb(233, 239, 242);
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .table-responsive{
-    width: 1100px;
+    width:auto;
     margin-left: 360px;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */
 border-spacing: 0; /* This will remove the spacing between table's borders and cells */
 /* background-image: url('/user/img/water22.jpg'); */
-margin-bottom: 100px; border: 1px solid #ccc;
+margin-bottom:auto; border: 1px solid #ccc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 border-bottom-right-radius: 15px;
@@ -253,9 +257,19 @@ background-color:rgb(233, 239, 242);
 }
 
 }
- 
+ @media (max-width: 798px) {
+  .table-responsive,
+  .search {
+    width: auto;
+    margin: 10px; /* Add margins for spacing */
+  }
+
+  .table-responsive {
+    padding: 10px; /* Add padding for spacing */
+  }
+}
 @media (min-width: 1200px) {  .table-responsive{
-    width: 1100px;
+    width:auto;
     margin-left: 360px;
     position: absolute;
 border-collapse: collapse; /* This will remove the spacing between cells */

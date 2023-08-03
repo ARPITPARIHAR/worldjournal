@@ -26,8 +26,11 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="path/to/font-awesome.css">
-  <!-- Custom CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   
   
 
@@ -83,11 +86,47 @@
           <li><a class="nav-link scrollto" href="registration">Register</a></li>
           <li><a class="nav-link scrollto" href="logout">LogOut</a></li>
         </ul>
-        <div class="mobile-menu-toggle">
-          <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
-        </div>
+       
       </nav><!-- .navbar -->
     </div>
+    <div class="hamburger-menu">
+    <div class="hamburger-icon">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <ul class="menu-items">
+      <div class="close-button">
+        <i class="fas fa-times"></i>
+      </div>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> Promote Event</a></li>
+      <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+      <li class="dropdown">
+        <a href="#"><span>Call for paper</span> <i class="bi bi-chevron-down"></i></a>
+        <ul class="sub-menu">
+          <li><a href="#"><i class="fas fa-newspaper"></i> Journal</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Conference</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
+        <ul class="sub-menu">
+          <li><a href="#"><i class="fas fa-upload"></i> Post a CFP</a></li>
+          <li><a href="#"><i class="fas fa-list"></i> My CFP List</a></li>
+          <li><a href="#"><i class="fas fa-star"></i> My Favourite List</a></li>
+          <li><a href="#"><i class="fas fa-bell"></i> CFPs Alert List</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+      <li><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
+    </ul>
+  </div>
+
   </header>
 </body>
 
@@ -100,29 +139,11 @@
  
   
 
-{{-- 
-      <div class="hero-img">
-        <img src="{{asset('user/img/hero-bg.png')}}" alt="" class="img-fluid">
-        <h2>We provide for your business!</h2>
-      </div> --}}
 
-      {{-- <div class="hero-info">
-        <h2>We provide for your business!</h2>
-        <div class="hero-img">
-          <img src="{{asset('user/img/hero-bg.png')}}" alt="" class="img-fluid">
-        
-        
-        </div>
-      </div> --}}
 
+
+  
  
-  {{-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --}}
-
-
-  
-  <!-- #header -->
-  
-    <!-- ======= Hero Section ======= -->
  
 
 
@@ -133,17 +154,329 @@
       }
     
       .logo img {
-        width: 100px; /* Adjust the width as needed */
-        height: auto; /* Maintain aspect ratio */
+        width: 100px; 
+        height: auto; 
       }
         
      
 #logo {
   position: absolute;
-  top: 20px; /* Adjust the value to position the logo vertically */
-  left: 20px; /* Adjust the value to position the logo horizontally */
+  top: 20px; 
+  left: 20px; 
+}
+.hamburger-menu {
+            display: none;
+        }
+
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center; 
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin: 25px;
+            position: relative;
+             z-index: 9999; 
+             background-color:#2E8B57;
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color:white;
+        }
+
+       
+        .hamburger-icon:before,
+        .hamburger-icon:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .hamburger-icon.active:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.active:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-items {
+            display: none;
+        }
+
+        .hamburger-menu.active .menu-items {
+            display: block;
+        }
+
+        .menu-items {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            background-color:#8FBC8F;
+            z-index:10000;
+        }
+
+        .menu-items li {
+            margin: 10px 0;
+        }
+
+        .menu-items li a {
+            color:pink;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .menu-items li a:hover {
+            background-color: #336699;
+            border-radius: 5px;
+        }
+
+      .close-button {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #1E90FF;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border-radius: 50%;
+            margin-left:35px;
+        }
+
+        .close-button i {
+            color: white;
+            font-size: 20px;
+        }
+        ul ul {
+  display: none;
 }
 
 
-    </style>
+li.dropdown > a {
+  cursor: pointer;
+}
+
+
+li.dropdown > a i {
+  margin-left: 5px;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%; 
+    background-color:black;
+    z-index: 1000;
+  }
+
+  .dropdown-menu.active {
+    display: block;
     
+  }
+  .secondary-dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%; 
+    background-color: green;
+    z-index: 1000;
+  }
+
+  .secondary-dropdown.active {
+    display: block;
+     background-color: green;
+  } 
+  .sub-menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      right:80%;
+     background-color:#191970 !important;
+      z-index: 1000;
+    }
+
+  
+    .sub-menu.active {
+      display: block;
+   
+    }
+    ul.menu .sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 80%;
+ background-color:#191970 !important;  
+  z-index: 1000;
+}
+   
+
+  
+  
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+    
+ .sub-menu {
+      display: none;
+      position: absolute;
+      top: 0;
+      right:80%;
+      background-color:black;
+      z-index: 1000;
+    }
+
+            .mobile-menu-toggle {
+                position: fixed;
+                top: 1px;
+                right: 1px;
+                z-index: 9999;
+            }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 100%; 
+    background-color:black;
+    z-index: 1000;
+  }
+            .menu-items {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 50%;
+                background-color:#191970;
+                padding: 20px;
+                z-index: 9998;
+                display: none;
+                height:auto;
+            }
+
+            .menu-items.active {
+                display: block;
+            }
+
+            .menu-items li {
+                margin: 10px 0;
+            }
+
+            .menu-items li a {
+                color: #fff; 
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+                padding: 5px;
+            }
+
+            .menu-items li a:hover {
+                background-color: #336699;
+                border-radius: 5px;
+            }
+
+            
+
+            .container-home {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo-home img {
+                /*width: 90px;*/
+                margin-left: -440px;
+                margin-top: 35px;
+            }
+
+            .links-home {
+                margin-top: -30px;
+                margin-left: 280px;
+            }
+
+            .links-home a {
+                margin-top: 0;
+            }
+
+            .hamburger-menu.active .hamburger-icon {
+                display: none;
+            }
+
+            .hamburger-menu.active .close-button {
+                display: flex;
+            }
+            li.dropdown > a i {
+    float: right;
+  }
+        }
+
+   
+        
+
+
+    </style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      // Dropdown click event handler
+      $(document).on("click", ".dropdown > a", function(e) {
+        e.preventDefault();
+        var dropdown = $(this).next("ul");
+        var isActive = dropdown.hasClass('active');
+
+        $("ul.sub-menu").not(dropdown).slideUp().removeClass('active');
+
+       
+        dropdown.toggleClass('active').slideToggle();
+
+        
+        $('.hamburger-menu').removeClass('active');
+        $('.menu-items').removeClass('active');
+      });
+
+  
+      $(document).on("click", ".sub-menu li a", function(e) {
+        e.stopPropagation();
+        $(".sub-menu").slideUp().removeClass('active');
+
+        $('.hamburger-menu').removeClass('active');
+        $('.menu-items').removeClass('active');
+      });
+
+
+      $(document).on("click", '.hamburger-menu', function() {
+        $(this).toggleClass('active');
+        $('.menu-items').toggleClass('active');
+      });
+
+ 
+      $(document).on("click", function(e) {
+        var target = $(e.target);
+        if (!target.closest('.hamburger-menu').length && !target.closest('.menu-items').length) {
+          $('.hamburger-menu').removeClass('active');
+          $('.menu-items').removeClass('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+

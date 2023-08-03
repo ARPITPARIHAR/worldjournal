@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\JournalData;
+use App\Models\Callforpaper;
 use Illuminate\Http\Request;
 class SearchcfpController extends Controller
 {
@@ -11,7 +11,7 @@ public function index(Request $request)
     $issnQuery = $request->input('issn', '');
     $journalQuery = $request->input('journal', '');
 
-    $data = JournalData::where(function ($query) use ($issnQuery, $journalQuery) {
+    $data = Callforpaper::where(function ($query) use ($issnQuery, $journalQuery) {
         if (empty($issnQuery) && empty($journalQuery)) {
             $query->where('issn', 'like', '%' . $issnQuery . '%');
         }

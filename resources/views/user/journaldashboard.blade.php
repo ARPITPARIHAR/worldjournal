@@ -29,7 +29,7 @@
 <script src="https://cdn.jsdelivr.net/npm/datepicker@0.6.5/dist/datepicker.min.js"></script>
 
 <link rel="stylesheet" href="/path/to/styles.css">
-   
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
  <div class="wrapper d-flex">
         <div class="sidebar">
             <div class="user-info">
@@ -38,7 +38,7 @@
                 @endif
             </div>
       <ul>
-        <li><a href="#"><i class="fas fa-home"></i>Journal pannel</a></li>
+        <li><a href="/dash"><i class="fas fa-home"></i>Journal pannel</a></li>
         <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
         <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
         <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
@@ -48,8 +48,13 @@
         {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
       </ul>
     </div>
-    <!-- Rest of your content here -->
+   
   </div>
+
+
+  
+  <!-- Rest of your content here -->
+  
 
   <div class="container-home">
     <div class="logo-home">
@@ -63,7 +68,28 @@
     
 </div>
 </div>
-
+    <div class="mobile-menu-toggle">
+            <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+             
+            <ul class="menu-items">
+                 <div class="close-button">
+                <i class="fas fa-times"></i>
+            </div>
+                <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
+                <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
+                <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
+                <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
+                <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
+            </ul>
+           
+        </div>
 
 <div class="mission-content">
     <h2>Our Mission:</h2>
@@ -225,6 +251,198 @@
     color: white;
     margin-top: 20px;
     
-}
+} .hamburger-menu {
+            display: none;
+        }
 
-</style>
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center; /* Center the box horizontally */
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            margin: 15px;
+            position: relative; /* To position the black box */
+        }
+
+        .line {
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+
+        /* Style the black box */
+        .hamburger-icon:before,
+        .hamburger-icon:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .hamburger-icon.active:before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.active:after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-items {
+            display: none;
+        }
+
+        .hamburger-menu.active .menu-items {
+            display: block;
+        }
+
+        .menu-items {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            background-color: #1E90FF;
+            z-index: 9998;
+        }
+
+        .menu-items li {
+            margin: 10px 0;
+        }
+
+        .menu-items li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        .menu-items li a:hover {
+            background-color: #336699;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: #1E90FF;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border-radius: 50%;
+            margin-left:35px;
+        }
+
+        .close-button i {
+            color: white;
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                position: fixed;
+                top: 1px;
+                left: 1px;
+                z-index: 9999;
+            }
+
+            .menu-items {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 30%;
+                background-color: #1E90FF;
+                padding: 20px;
+                z-index: 9998;
+                display: none;
+            }
+
+            .menu-items.active {
+                display: block;
+            }
+
+            .menu-items li {
+                margin: 10px 0;
+            }
+
+            .menu-items li a {
+                color: #fff; /* Font color for the menu items */
+                text-decoration: none;
+                font-size: 18px;
+                display: block;
+                padding: 5px;
+            }
+
+            .menu-items li a:hover {
+                background-color: #336699;
+                border-radius: 5px;
+            }
+
+            .mission-content {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .container-home {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .logo-home img {
+                /*width: 90px;*/
+                margin-left: -440px;
+                margin-top: 35px;
+            }
+
+            .links-home {
+                margin-top: -30px;
+                margin-left: 280px;
+            }
+
+            .links-home a {
+                margin-top: 0;
+            }
+
+            .hamburger-menu.active .hamburger-icon {
+                display: none;
+            }
+
+            .hamburger-menu.active .close-button {
+                display: flex;
+            }
+        }
+
+   
+        
+
+          </style>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.hamburger-menu').click(function() {
+        $(this).toggleClass('active');
+        $('.menu-items').toggleClass('active');
+      });
+      
+    });
+  </script>
+  </body>
+</html>

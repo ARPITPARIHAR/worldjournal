@@ -83,6 +83,15 @@
     height: 200px;
   
 }
+.description-cell {
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 14px;
+            font-style: italic;
+            word-break: break-word;
+            max-width: 300px; 
+            max-height: 100px; 
+            overflow: auto;        }
     </style>
 </head>
 <body>
@@ -119,6 +128,10 @@
             <th>Final Version Due</th>
             <td>{{ $cfpdata->final_version }}</td>
         </tr>
+      <br>
+      <tr>
+<div class="description-cell">{{ $cfpdata->description }}</div>
+      </tr>
         @endforeach
         @endif
         </tbody>

@@ -112,12 +112,12 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
     
 
 
- Route::post('/webhooks', [UserLoginController::class, 'handleWebhook']);
+ Route::get('/webhooks', [UserLoginController::class, 'handleWebhook']);
 
  Route::post('login/whatsapp/callback', [UserLoginController::class, 'loginWithWhatsAppCallback'])->name('login.whatsapp.callback');
  Route::get('/send-otp', [UserLoginController::class, 'showLoginForm'])->name('send.otp');
  Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
- Route::get('/webhook/verify', [UserLoginController::class, 'webhookget']);
+ Route::get('webhook/verify', [UserLoginController::class, 'webhookget']);
    Route::get('/webhook', [UserLoginControllerName::class, 'webhookpost']);
     
 

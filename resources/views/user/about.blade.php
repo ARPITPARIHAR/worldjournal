@@ -59,7 +59,29 @@
 #header{
 background: #001180;}
 
+@media  (max-width: 767px) {
+    font-size: 18px;
+      padding: 0;
+      width: 180px; /* Optional: You can keep the width as per your requirement */
+      margin-left: 0; /* Remove the margin-left */
+      margin: 0 auto; /* Center the element horizontally */
+    }
 
+    .description {
+      margin-left: 10px;
+    }
+
+    #header {
+      height: 70px; 
+    }
+  }
+
+  
+  @media only screen and (min-width: 1200px) {
+    .about {
+      font-size: 30px;
+    }
+  }
   </style>
 
 

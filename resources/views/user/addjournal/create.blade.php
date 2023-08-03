@@ -1,6 +1,6 @@
 @extends('user.layouts.app')
 @section('meta_title',' Registeration')
-{{-- @include('user.includes.nav') --}}
+@extends('user.includes.nav')
 @section('content')
  
 <!DOCTYPE html>
@@ -39,52 +39,7 @@
 </head>
 
 <body>
-  <header id="header" class="fixed-top d-flex align-items-center">
-   
-    <div class="container d-flex justify-content-between">
-<a href="/" class="logo" style="margin-top: 5px; margin-left: -165px;">
-  <img src="{{ asset('user/img/101.jpg') }}" alt="Logo" class="img-fluid" id="logo" style="max-width: 100px; max-height: 80px;">
-</a>
-
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="/" class="nav-link scrollto">Home</a></li>
-          <li><a class="/about" href="about">About</a></li>
-          <li><a class="/contact" href="contact">Contact Us</a></li>
-          <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
-          <li><a class="nav-link scrollto" href="#team">FAQs</a></li>
-          <li class="dropdown" >
-            <a href="#"><span>Call for paper</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Journal</a></li>
-              <li><a href="#">Conference</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/postcfp">Post a CFP</a></li>
-              <li><a href="#">My CFP List</a></li>
-              <li><a href="#">My Favourite List</a></li>
-              {{-- <li><a href="#">News Alert List</a></li> --}}
-              <li><a href="#">CFPs Alert List</a></li>
-              {{-- <li><a href="#">Promote Event</a></li> --}}
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="logins">Login</a></li>
-          <li><a class="nav-link scrollto" href="registration">Register</a></li>
-          <li><a class="nav-link scrollto" href="logout">LogOut</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-          <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
-        </div>
-      </nav><!-- .navbar -->
-    </div>
-  </header>
-</body>
-
-</html> 
+  
 
 
 <link rel="shortcut icon" type="image/x-icon" href="http://www.indexcopernicus.com/favicon.ico" />
@@ -297,6 +252,7 @@
 <style>
   #navbar{
     margin-bottom:0px;
+    margin-left:20px;
   }
   /* Custom CSS for form spacing */
 .my-form .form-group {
