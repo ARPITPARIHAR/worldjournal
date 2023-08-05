@@ -298,6 +298,7 @@
     }
     #header {
   background-color: #001180!important;
+   height: 60px !important;
 }
 .
 

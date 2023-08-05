@@ -45,8 +45,10 @@ Route::get('dashboard/addjournal/index', [AddJournalController::class, 'index'])
 Route::get('admin/edit', [BusinessSettingController::class, 'edit'])->name('admin.edit');
 Route::post('admin/edit', [BusinessSettingController::class, 'update'])->name('admin.update');
 
+ Route::middleware(['login'])->group(function () {
 Route::get('/addjournal', [AddJournalController::class, 'create'])->name('user.add.create');
 Route::post('user/add/store', [AddJournalController::class, 'store'])->name('user.add.store');
+ });
 
 Route::get('/search', [SearchController::class, 'search'])->name('user.search');
 
@@ -135,3 +137,6 @@ Route::post('/searchcfp', [SearchCfpController::class, 'index'])->name('user.sea
 Route::get('/callforpaper', [CallForPaperController::class, 'create']);
 Route::post('/call-for-paper/submit',[CallForPaperController::class, 'store'] )->name('call-for-paper.submit');
 // Route::post('user/add/store', [CallForPaperController::class, 'store'])->name('user.add.store');
+
+Route::get('logins', [UserLoginController::class, 'LoginForm'])->name('logins');
+Route::post('log-post', [UserLoginController::class, 'login'])->name('log.post');

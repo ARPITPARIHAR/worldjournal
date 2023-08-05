@@ -1,124 +1,50 @@
 @extends('user.layouts.app')
 @section('meta_title','journal')
-<!DOCTYPE html>
-<html lang="en">
+@include('user.includes.nav')
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>World Journals Alert</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome.css">
-  <!-- Custom CSS -->
-  
-  
-  
-
-</head>
-
-<body>
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <style>
-      #header {
-        height: 80px;
-        z-index: 997;
-        transition: all 0.5s;
-        background: #001180;
-        box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
-      }
-    </style>
-    <div class="container d-flex justify-content-between">
-<a href="/" class="logo" style="margin-top: 22px; margin-left: -90px;">
-  <img src="{{ asset('user/img/101.jpg') }}" alt="Logo" class="img-fluid" id="logo" style="max-width: 100px; max-height: 80px;">
-</a>
-
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a href="/" class="nav-link scrollto">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
-          <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
-          <li><a class="nav-link scrollto" href="#team">FAQs</a></li>
-          <li class="dropdown" >
-            <a href="#"><span>Call for paper</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Journal</a></li>
-              <li><a href="#">Conference</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/postcfp">Post a CFP</a></li>
-              <li><a href="#">My CFP List</a></li>
-              <li><a href="#">My Favourite List</a></li>
-              <li><a href="#">News Alert List</a></li>
-              <li><a href="#">CFPs Alert List</a></li>
-              <li><a href="#">Promote Event</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="logins">Login</a></li>
-          <li><a class="nav-link scrollto" href="registration">Register</a></li>
-          <li><a class="nav-link scrollto" href="logout">LogOut</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-          <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
-        </div>
-      </nav><!-- .navbar -->
-    </div>
-  </header>
-</body>
-
-</html>
 @section('content')
+<br><br><br>
+<br>
+<br>
+@foreach ($data as $key => $item)
 
-<div class="ind-cont">
-<div class="col-md-1 text-center" style="margin-top: 25px; margin-left: 10px;">
-    @foreach ($data as $key => $item)
-    <img src="{{ asset('Image/'.$item->image) }}" width="120px" height="80px"class="image-gap">
-    @endforeach
+<div class="row-container">
+    <div class="col-md-1 text-center" style="margin-top: 25px; margin-left: 10px;">
+        <img src="{{ asset('Image/'.$item->image) }}" width="120px" height="80px" class="image-gap">
+    </div>
+    <div class="col-lg-8 col-md-6 text-left ici-info-box" style="margin-left: 1px;">
+        <dl class="dl-horizontal xnomb" style="font-size: 13px;">
+            <dt class="ng-binding journal-title">Journal title:</dt>
+            <dd>{{ $item->journal_title }}</dd>
+            <dt class="ng-binding">ISSN:</dt>
+            <dd>{{ $item->issn }}</dd>
+            <dt class="ng-binding">DOI:</dt>
+            <dd>{{ $item->doi }}</dd>
+            <dt class="ng-binding">Website:</dt>
+            <dd>{{ $item->website }}</dd>
+            <dt class="ng-binding">Country:</dt>
+            <dd>{{ $item->country }}</dd>
+            <dt class="ng-binding">Publisher:</dt>
+            <dd>{{ $item->publication_language }}</dd>
+            <form action="{{ route('bookmark.add', ['id' => $item->id]) }}" method="post">
+              @csrf
+              <input type="hidden" name="journal_title" value="{{ $item->journal_title }}">
+              <input type="hidden" name="issn" value="{{ $item->issn }}">
+              <input type="hidden" name="doi" value="{{ $item->doi }}">
+              <input type="hidden" name="web" value="{{ $item->website }}">
+              <input type="hidden" name="count" value="{{ $item->country}}">
+              <input type="hidden" name="pul" value="{{ $item->publication_language}}">
+              <!-- Add similar input fields for other journal information -->
+              <button type="submit" class="bookmark-btn">Bookmark</button>
+          </form>
+            <div class="bookmark-container">
+              <button class="bookmark-btn">Bookmark</button>
+          </div>
+    </div>
 </div>
-  <div class="col-lg-8 col-md-6 text-left ici-info-box"  style="margin-left: 1px;">
-    <dl class="dl-horizontal xnomb" style="font-size: 13px";>
-       
-      @foreach ($data as $key => $item)
-      <dt class="ng-binding journal-title">Journal title:</dt>
-      <dd>{{ $item->journal_title }}</dd>
-      <dt class="ng-binding">ISSN:</dt>
-      <dd>{{ $item->issn }}</dd>
-      <dt class="ng-binding">DOI:</dt>
-      <dd>{{ $item->doi }}</dd>
-      <dt class="ng-binding">Website:</dt>
-      <dd>{{ $item->website }}</dd>
-      <dt class="ng-binding">Country:</dt>
-      <dd>{{ $item->country }}</dd>
-      <dt class="ng-binding">Publisher:</dt>
-      <dd>{{ $item->publication_language }}</dd>
-      @endforeach
-      
-    </dl>
-  </div>
 </div>
+@endforeach
+
 <div class="col-lg-8 col-md-6 text-left ici-info-box">
   {{-- <div class="tab-container"> --}}
     <div class="tab-header">
@@ -144,7 +70,7 @@
         <table class="table table-bordered table-striped attractive-table">
           <thead>
             <tr>
-              <th class="text-center">English sstitle</th>
+              <th class="text-center">English title</th>
               <th class="text-center">Short title</th>
               <th class="text-center">Printed version</th>
               <th class="text-center">Electronic version</th>
@@ -213,11 +139,12 @@
     </div>
   </div>
 
- 
- 
+    @include('user.includes.footer')
+
   <style>
       #header {
   background-color: #001180!important;
+     height: 60px!important;
 }
 
 
@@ -226,21 +153,19 @@
     background-color:black;
 }
 .navbar{
-margin-left: 260px;
-     margin-top: 15px;
+    margin-top: 15px;
+    margin-left:80px;
      
 }
-    .footer-name {
-  font-size: 16px; 
-}
+   
    
     .ind-cont{
       margin-top:100px;
     }
-    .attractive-header {
-      font-family: "Your Desired Font", sans-serif;
-      color: lightblue; 
-    }
+    /*.attractive-header {*/
+    /*  font-family: "Your Desired Font", sans-serif;*/
+    /*  color: lightblue; */
+    /*}*/
   
     .table-responsive table {
       border-collapse: collapse;
@@ -281,7 +206,26 @@ margin-left: 260px;
       display: none;
       font-size:13px;
     }
- 
+    .table-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Add spacing between rows */
+}
+
+
+.bookmark-container {
+    margin-left:290px;
+}
+
+/* Style for the bookmark button */
+.bookmark-btn {
+    padding: 5px 10px;
+    background-color: #336699;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
   
     .attractive-table {
@@ -309,6 +253,7 @@ margin-left: 260px;
       background-color: olivedrab;
       padding: 10px;
       font-size:13px;
+       overflow-x: auto;
     }
   
     .tab-header {
@@ -347,13 +292,22 @@ margin-left: 260px;
     flex: 1;
   }
 
-  .footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto;
-  }
-  
+.footer.h2 {
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 6rem !important; 
+    display: block !important;
+    margin-block-start: 0.83em !important;
+    margin-block-end: 0.83em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    font-weight: bold !important;
+}
+
+
+
    
     .journal-title {
     color: blue;
@@ -367,6 +321,26 @@ margin-left: 260px;
     margin-bottom: 40px; 
   }
 
+
+
+  @media (max-width: 767px) {
+
+ .tab-content {
+    overflow-x: auto;
+  }
+
+  .table {
+    width: auto;
+  }
+   .tab-content::-webkit-scrollbar {
+    width: 6px !important;
+    background-color: black !important; 
+  }
+
+ 
+  }
+
+
   </style>
    
     @section('script')
@@ -379,7 +353,7 @@ margin-left: 260px;
           const tabId = button.getAttribute('data-tab');
           const tabPane = document.getElementById(tabId);
     
-          // Toggle the visibility of the clicked tab content
+         
           tabPanes.forEach(pane => {
             if (pane === tabPane) {
               pane.style.display = 'block';
@@ -388,7 +362,7 @@ margin-left: 260px;
             }
           });
     
-          // Toggle the active class on the clicked tab button
+          
           tabButtons.forEach(btn => {
             if (btn === button) {
               btn.classList.add('active');
@@ -399,6 +373,4 @@ margin-left: 260px;
         });
       });
     </script> 
-   @include('user.includes.footer')
-  
-     @endsection 
+   @endsection

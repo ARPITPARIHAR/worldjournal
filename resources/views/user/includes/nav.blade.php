@@ -39,8 +39,16 @@
 <body>
   <header id="header" class="fixed-top d-flex align-items-center">
     <style>
+    .navbar .dropdown ul {
+  background-color: #001180 !important;
+  font-size: 4px !important;
+}
+.navbar a{
+    font-size:13px !important;
+}
+    
       #header {
-        height: 80px;
+        height: 60px;
         z-index: 997;
         transition: all 0.5s;
         background: #001180;
@@ -60,8 +68,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/" class="nav-link scrollto">Home</a></li>
-          <li><a class="nav-link scrollto" href="about">About</a></li>
-          <li><a class="nav-link scrollto" href="contact">Contact Us</a></li>
+          <li><a class="/about" href="about">About</a></li>
+          <li><a class="/contact" href="contact">Contact Us</a></li>
           <li><a class="nav-link scrollto" href="#team">Promote Event</a></li>
           <li><a class="nav-link scrollto" href="#team">FAQs</a></li>
           <li class="dropdown" >
@@ -100,9 +108,9 @@
       <div class="close-button">
         <i class="fas fa-times"></i>
       </div>
-      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
       <li><a href="#"><i class="fas fa-user"></i> Promote Event</a></li>
       <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
       <li class="dropdown">
@@ -115,15 +123,15 @@
       <li class="dropdown">
         <a href="#"><span>Manage CFP</span> <i class="bi bi-chevron-down"></i></a>
         <ul class="sub-menu">
-          <li><a href="#"><i class="fas fa-upload"></i> Post a CFP</a></li>
-          <li><a href="#"><i class="fas fa-list"></i> My CFP List</a></li>
+          <li><a href="/postcfp"><i class="fas fa-upload"></i> Post a CFP</a></li>
+          <li><a href="/mycfp"><i class="fas fa-list"></i> My CFP List</a></li>
           <li><a href="#"><i class="fas fa-star"></i> My Favourite List</a></li>
           <li><a href="#"><i class="fas fa-bell"></i> CFPs Alert List</a></li>
         </ul>
       </li>
-      <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-      <li><a href="#"><i class="fas fa-user-plus"></i> Register</a></li>
-      <li><a href="#"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
+      <li><a href="logins"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+      <li><a href="registration"><i class="fas fa-user-plus"></i> Register</a></li>
+      <li><a href="logout"><i class="fas fa-sign-out-alt"></i> LogOut</a></li>
     </ul>
   </div>
 
@@ -179,12 +187,12 @@
             margin: 25px;
             position: relative;
              z-index: 9999; 
-             background-color:#2E8B57;
+             background-color:#800000;
         }
 
         .line {
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color:white;
         }
 

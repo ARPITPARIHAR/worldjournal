@@ -193,6 +193,7 @@ h6 {
       padding: 10px 20px;
       font-size: 14px;
       text-transform: none;
+      background-color: #001180 !important;
     }
 
     .navbar .dropdown ul a i {
@@ -215,6 +216,7 @@ h6 {
       top: 0;
       left: calc(100% - 30px);
       visibility: hidden;
+      background-color: #001180 !important;
     }
 
     .navbar .dropdown .dropdown:hover>ul {

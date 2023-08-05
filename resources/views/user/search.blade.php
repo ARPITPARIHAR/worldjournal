@@ -65,7 +65,10 @@
 @endsection
 @section('style')
 <style>
-          
+         #header {
+  background-color: #001180!important;
+     height: 60px!important;
+}  
   .table-responsive{
     width: 1100px;
     margin-left: 360px;
@@ -86,8 +89,7 @@ display: block;
 
 
 }
-#header{
-background: #001180;}
+
 td, th {
 padding: 5px; 
 }
