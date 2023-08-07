@@ -21,9 +21,7 @@ use App\Http\Controllers\JournalDataController;
 use App\Http\Controllers\CallForPaperController;
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-
-
-
+use App\Http\Controllers\BookMarkController;
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('user/login', [UserController::class, 'login'])->name('user.login');
@@ -140,3 +138,6 @@ Route::post('/call-for-paper/submit',[CallForPaperController::class, 'store'] )-
 
 Route::get('logins', [UserLoginController::class, 'LoginForm'])->name('logins');
 Route::post('log-post', [UserLoginController::class, 'login'])->name('log.post');
+
+Route::post('bookmark/add', [BookMarkController::class, 'store'])->name('bookmark.add');
+Route::get('bookmarkjournal', [BookMarkController::class, 'show']);

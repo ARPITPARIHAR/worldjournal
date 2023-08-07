@@ -1,14 +1,13 @@
 @extends('user.layouts.app')
-@section('meta_title','journal')
+@section('meta_title', 'journal')
 @include('user.includes.nav')
 
 @section('content')
 <br><br><br>
 <br>
 <br>
-@foreach ($data as $key => $item)
-
 <div class="row-container">
+@foreach ($data as $key => $item)
     <div class="col-md-1 text-center" style="margin-top: 25px; margin-left: 10px;">
         <img src="{{ asset('Image/'.$item->image) }}" width="120px" height="80px" class="image-gap">
     </div>
@@ -26,22 +25,20 @@
             <dd>{{ $item->country }}</dd>
             <dt class="ng-binding">Publisher:</dt>
             <dd>{{ $item->publication_language }}</dd>
-            <form action="{{ route('bookmark.add', ['id' => $item->id]) }}" method="post">
-              @csrf
-              <input type="hidden" name="journal_title" value="{{ $item->journal_title }}">
-              <input type="hidden" name="issn" value="{{ $item->issn }}">
-              <input type="hidden" name="doi" value="{{ $item->doi }}">
-              <input type="hidden" name="web" value="{{ $item->website }}">
-              <input type="hidden" name="count" value="{{ $item->country}}">
-              <input type="hidden" name="pul" value="{{ $item->publication_language}}">
-              <!-- Add similar input fields for other journal information -->
-              <button type="submit" class="bookmark-btn">Bookmark</button>
-          </form>
-            <div class="bookmark-container">
-              <button class="bookmark-btn">Bookmark</button>
-          </div>
+      
+        
+        <form action="{{ route('bookmark.add') }}" method="post">
+            @csrf
+            <input type="hidden" name="journal_title" value="{{ $item->journal_title }}">
+            <input type="hidden" name="issn" value="{{ $item->issn }}">
+            <input type="hidden" name="doi" value="{{ $item->doi }}">
+            <input type="hidden" name="web" value="{{ $item->website }}">
+            <input type="hidden" name="count" value="{{ $item->country }}">
+            <input type="hidden" name="pul" value="{{ $item->publication_language }}">
+            <button type="submit" class="bookmark-btn">Bookmark</button>
+        </form>
+      </dl>  
     </div>
-</div>
 </div>
 @endforeach
 
@@ -373,4 +370,40 @@
         });
       });
     </script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    @if(session('success'))
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ session('success') }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearSessionAndCloseModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            $(document).ready(function() {
+                $('#successModal').modal('show');
+            });
+    
+            function clearSessionAndCloseModal() {
+             
+                @php session()->forget('success') @endphp;
+                
+                $('#successModal').modal('hide');
+            }
+        </script>
+    @endif
+  
    @endsection

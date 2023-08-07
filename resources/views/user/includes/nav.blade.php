@@ -84,7 +84,7 @@
             <ul>
               <li><a href="/postcfp">Post a CFP</a></li>
               <li><a href="/mycfp">My CFP List</a></li>
-              <li><a href="#">My Favourite List</a></li>
+              <li><a href="/bookmarkjournal">My Favourite List</a></li>
               {{-- <li><a href="#">News Alert List</a></li> --}}
               <li><a href="#">CFPs Alert List</a></li>
               {{-- <li><a href="#">Promote Event</a></li> --}}
@@ -125,7 +125,7 @@
         <ul class="sub-menu">
           <li><a href="/postcfp"><i class="fas fa-upload"></i> Post a CFP</a></li>
           <li><a href="/mycfp"><i class="fas fa-list"></i> My CFP List</a></li>
-          <li><a href="#"><i class="fas fa-star"></i> My Favourite List</a></li>
+          <li><a href="/bookmarkjournal"><i class="fas fa-star"></i> My Favourite List</a></li>
           <li><a href="#"><i class="fas fa-bell"></i> CFPs Alert List</a></li>
         </ul>
       </li>
