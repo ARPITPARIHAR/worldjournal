@@ -69,8 +69,8 @@ Route::get('/country-list', [AddJournalController::class, 'countryList'])->name(
 
 
 // Route::middleware(['login'])->group(function () {
-    Route::get('/postcfp', [PostCfpController::class, 'create'])->name('user.postcfp');
-    Route::post('/indexpostcfp', [PostCfpController::class, 'index'])->name('user.index');
+    Route::post('/postcfp', [PostCfpController::class, 'create'])->name('user.postcfp');
+    Route::get('/indexpostcfp', [PostCfpController::class, 'index'])->name('user.index');
 // });
 Route::get('/mycfp', [PostCfpController::class, 'mycfp'])->name('user.mycfp');
 

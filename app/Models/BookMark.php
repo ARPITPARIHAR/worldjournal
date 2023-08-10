@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookMark extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'journal_title', 'issn', 'doi', 'web', 'count', 'publication_language', 'bookmark_date', 'image'
+    ];
 }

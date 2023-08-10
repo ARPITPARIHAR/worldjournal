@@ -177,19 +177,19 @@
         }
 
         .hamburger-icon {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center; 
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            margin: 25px;
-            position: relative;
-             z-index: 9999; 
-             background-color:#800000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 25px;
+    position: relative;
+    z-index: 9999;
+    background-color: #800000;
+    border-radius: 4px; /* Add border-radius for rounded corners */
         }
-
         .line {
             width: 100%;
             height: 3px;

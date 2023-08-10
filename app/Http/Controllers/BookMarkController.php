@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\BookMark;
 use Illuminate\Http\Request;
 use Carbon\Carbon; 
+use Illuminate\Support\Facades\Storage;
 
 class BookMarkController extends Controller
 {
@@ -18,16 +19,22 @@ class BookMarkController extends Controller
         $data->count = $request->count;
         $data->publication_language = $request->pul;
         $data->bookmark_date = Carbon::now(); 
+        
+      
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $data->image = $imagePath;
+        }
+        
         $data->save();
-
-        $request->session()->flash('centerSuccess', 'Journal data has been submitted successfully!');
 
         return redirect()->back()->with('showSuccessModal', true);
     }
-
-    public function show(){
-
-    return view('user.myfavorite');
-}
-     
+  
+    public function show()
+    {
+        $data = BookMark::all(); 
+        return view('user.myfavorite', compact('data'));
+    
+}  
 }

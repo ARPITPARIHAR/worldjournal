@@ -21,7 +21,7 @@ class PostCfpController extends Controller
 
         return view('user.index', compact('data'));
     }
-
+  
     public function create()
     {
         return view('user.postcfp');
