@@ -35,7 +35,6 @@
             <input type="hidden" name="web" value="{{ $item->website }}">
             <input type="hidden" name="count" value="{{ $item->country }}">
             <input type="hidden" name="pul" value="{{ $item->publication_language }}">
-            <input type="file" name="image">
             <button type="submit" class="bookmark-btn">Bookmark</button>
         </form>
       </dl>  
