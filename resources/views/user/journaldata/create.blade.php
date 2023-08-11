@@ -351,18 +351,7 @@ input[type="radio"],
         width: 100px;
         height: 100px;
     }
-    /* .home-button,
-.logout-button {
-    display: inline-block;
-    padding: 5px 5px;
-    background-color: hsla(307, 39%, 49%, 0.548);
-    color: white;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-} */
+ 
 
 .home-button:hover,
 .logout-button:hover {
@@ -461,6 +450,10 @@ input[type="radio"],
             font-size: 20px;
         }
  @media (max-width: 768px) {
+
+    body {
+        background-image: none;}
+
             .hamburger-menu {
                 display: block;
                 margin-left:-170px;
@@ -689,13 +682,19 @@ input[type="radio"],
                     
                         </div>
             
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Journal type</label>
-                        <div class="col-sm-10">
-                        <select name="characterJournal" class="chosen-select form-control ng-pristine ng-untouched ng-valid" >
-                            <option value="" disabled selected></option>
-                            <option value="scientific">scientific</option><option value="other" >other</option><option value="popularscience" >popular science</option></select></div>
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label">Journal type</label>
+                            <div class="col-sm-10">
+                                <select name="characterJournal" class="chosen-select form-control ng-pristine ng-untouched ng-valid">
+                                    <option value="" disabled selected></option>
+                                    <option value="scientific">scientific</option>
+                                    <option value="popularscience">popular science</option>
+                                    <option value="other">other</option> 
+                                </select>
+                                <input type="text" id="otherJournalType" name="characterJournal" class="form-control mt-2" placeholder="Your journal type" style="display: none;">
+                            </div>
                         </div>
+                        
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Main scientific profile</label>
                         <div class="col-sm-10">
@@ -728,10 +727,13 @@ input[type="radio"],
                         <option value="psychology">Psychology (all)</option>
                         <option value="socialSciences">Social Sciences (all)</option>
                         <option value="veterinary">Veterinary (all)</option>
-                      </select>
-                    </div>
-                    </div>
-                   
+                        <option value="other">Other</option> 
+
+                    </select>
+                    <input type="text" id="otherMainProfile" name="mainprofile" class="form-control mt-2" placeholder="Your profile" style="display: none;">
+                </div>
+            </div>
+                   <div>
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Scientific profile</label>
                         <div class="col-sm-10">
@@ -763,7 +765,9 @@ input[type="radio"],
                         <option value="psychology">Psychology (all)</option>
                         <option value="socialSciences">Social Sciences (all)</option>
                         <option value="veterinary">Veterinary (all)</option>
+                        <option value="other">Other</option>
                       </select>
+                      <input type="text" id="otherScienceProfile" name="scienceprofile" class="form-control mt-2" placeholder="Your profile" style="display: none;">
                     </div> 
                     </div>
                     
@@ -1029,7 +1033,9 @@ input[type="radio"],
     <option value="Surgery">Surgery</option>
     <option value="Telecommunications">Telecommunications</option>
     <option value="Theater">Theater</option> 
+    <option value="other">Other</option>
         </select> 
+        <input type="text" id="otherWebOfScience" name="webofscience" class="form-control mt-2" placeholder="Enter custom field" style="display: none;">
          </div> 
 </div>      
          
@@ -1577,8 +1583,87 @@ function formatISSN(input) {
       
     });
   </script>
-
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const otherMainProfileInput = document.getElementById("otherMainProfile");
+        const otherScienceProfileInput = document.getElementById("otherScienceProfile");
+        const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
+    
+        const mainProfileSelect = document.querySelector("select[name='mainprofile']");
+        const scienceProfileSelect = document.querySelector("select[name='scienceprofile']");
+        const webOfScienceSelect = document.querySelector("select[name='webofscience']");
+    
+        mainProfileSelect.addEventListener("change", function() {
+            otherMainProfileInput.style.display = mainProfileSelect.value === "other" ? "block" : "none";
+            otherMainProfileInput.value = ""; // Clear existing value
+        });
+    
+        scienceProfileSelect.addEventListener("change", function() {
+            otherScienceProfileInput.style.display = scienceProfileSelect.value === "other" ? "block" : "none";
+            otherScienceProfileInput.value = ""; // Clear existing value
+        });
+    
+        webOfScienceSelect.addEventListener("change", function() {
+            otherWebOfScienceInput.style.display = webOfScienceSelect.value === "other" ? "block" : "none";
+            otherWebOfScienceInput.value = ""; // Clear existing value
+        });
+    });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const journalTypeSelect = document.getElementById("journalType");
+            const customJournalTypeInput = document.getElementById("customJournalType");
+        
+            journalTypeSelect.addEventListener("change", function() {
+                if (journalTypeSelect.value === "other") {
+                    customJournalTypeInput.style.display = "block";
+                    customJournalTypeInput.value = ""; // Clear any existing value
+                } else {
+                    customJournalTypeInput.style.display = "none";
+                }
+            });
+        });
+        </script>
+       
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const otherMainProfileInput = document.getElementById("otherMainProfile");
+            const otherScienceProfileInput = document.getElementById("otherScienceProfile");
+            const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
+        
+            const mainProfileSelect = document.querySelector("select[name='mainprofile']");
+            const scienceProfileSelect = document.querySelector("select[name='scienceprofile']");
+            const webOfScienceSelect = document.querySelector("select[name='webofscience']");
+        
+            mainProfileSelect.addEventListener("change", function() {
+                otherMainProfileInput.style.display = mainProfileSelect.value === "other" ? "block" : "none";
+                otherMainProfileInput.value = ""; // Clear existing value
+            });
+        
+            scienceProfileSelect.addEventListener("change", function() {
+                otherScienceProfileInput.style.display = scienceProfileSelect.value === "other" ? "block" : "none";
+                otherScienceProfileInput.value = ""; // Clear existing value
+            });
+        
+            webOfScienceSelect.addEventListener("change", function() {
+                otherWebOfScienceInput.style.display = webOfScienceSelect.value === "other" ? "block" : "none";
+                otherWebOfScienceInput.value = ""; // Clear existing value
+            });
+        });
+        </script>
+       <script>
+        // JavaScript to handle the "Other" option and custom input
+        const journalTypeSelect = document.querySelector("[name='characterJournal']");
+        const otherJournalTypeInput = document.getElementById("otherJournalType");
+    
+        journalTypeSelect.addEventListener("change", function() {
+            if (this.value === "other") {
+                otherJournalTypeInput.style.display = "block";
+            } else {
+                otherJournalTypeInput.style.display = "none";
+            }
+        });
+    </script>
 
 
 

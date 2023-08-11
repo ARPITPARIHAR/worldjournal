@@ -63,7 +63,7 @@
             </ul>
            
         </div>
-    {{-- <div class="center-container d-flex justify-content-center align-items-center"> --}}
+     <div class="center-container d-flex justify-content-center align-items-center"> 
         <div class="callforpapercontainer">
             <h2 class="text-center">Call for Paper Submission</h2>
             <form method="POST" action="{{ route('call-for-paper.submit') }}">
@@ -105,8 +105,8 @@
             @endif
         </div>
     </div>
-    
-    <!-- Add the Bootstrap JavaScript files -->
+</div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
@@ -121,6 +121,10 @@
 
 <style>
 body {
+
+    align-items: center;
+
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
     margin: 0;
@@ -148,13 +152,16 @@ body {
         font-size: 20px;
         cursor: pointer;
     }
-.callforpapercontainer {
-    background-color: #fff;
+
+    .callforpapercontainer {
+        background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width:800px;
-    margin-left: 350px;
+    width:900px;
+    margin-left:200px;
+    
+   
 }
 
 h2 {

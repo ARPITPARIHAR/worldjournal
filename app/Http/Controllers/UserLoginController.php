@@ -127,7 +127,29 @@ class UserLoginController extends Controller
         return response(500);
     }
 }
-     
+public function webhooksubscribe(Request $request)
+{
+    $my_token = env('VERIFY_TOKEN');
+    $query = $request->all();
+    $mode = $query["hub_mode"];
+    $token = $query["hub_verify_token"];
+    $challange = $query["hub_challenge"];
+
+    if ($my_token === $token) {
+        $url = $query["hub_url"];
+        $verify_token = $query["hub_verify_token"];
+
+        $response = $this->subscribeWebhook($url, $verify_token);
+
+        if ($response->isSuccessful()) {
+            return response()->json(["message" => "Webhook subscribed successfully."]);
+        } else {
+            return response()->json(["message" => "Webhook subscription failed."]);
+        }
+    } else {
+        return response(500);
+    }
+}
 public function webhookpost(Request $request)
 {
  

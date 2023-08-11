@@ -26,6 +26,7 @@
          <button style="margin-left: 80px" type="submit" class="btn btn-primary btn-block" > Search</button>
    </form>
  </div>
+ </div>
 <div class="table-container">
  <div class="push-up">
   <div class="table-responsive">
@@ -132,45 +133,43 @@ margin-bottom: 10px;
 table td:first-child {
 font-weight: bold;
 }
- .search-container{
-     margin-top:90px;
-      margin-left: 0px;
- }
-
+.search-container {
+    margin-top: 90px;
+    margin-left: 5px;
+    text-align: left;
+    background-color: rgb(233, 239, 242);
+    width: 280px;
+    border: 2px solid #062cb6;
+    padding: 10px;
+    margin-bottom: 0px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
 .search {
-  text-align: left;
-  background-color:rgb(233, 239, 242);
-  width: 280px;
-  border: 2px solid #062cb6;
-  padding: 10px;
-  margin-top: 90px;
-  margin-bottom: 450px;
-  border-radius: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-   margin: 0 auto;
- 
+    margin-left: 5px;
 }
 
 .search .widgettitle {
-  color:black;
-  font-size: 18px;
-  margin: 0;
-  padding: 10px 0;
+    color: black;
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 0;
 }
 
 .search form {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .search select {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
+
 .h3
 {
   color:black;

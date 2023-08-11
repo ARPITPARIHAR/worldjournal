@@ -202,7 +202,7 @@ body {
     gap: 400px;
     align-items: center;
     color: #999;
-    margin-left: 1050px;
+    margin-left:auto;
 }
 .links-home a {
     color: white;

@@ -69,8 +69,8 @@ Route::get('/country-list', [AddJournalController::class, 'countryList'])->name(
 
 
 // Route::middleware(['login'])->group(function () {
-    Route::post('/postcfp', [PostCfpController::class, 'create'])->name('user.postcfp');
-    Route::get('/indexpostcfp', [PostCfpController::class, 'index'])->name('user.index');
+    Route::get('/postcfp', [PostCfpController::class, 'create'])->name('user.postcfp');
+    Route::post('/indexpostcfp', [PostCfpController::class, 'index'])->name('user.index');
 // });
 Route::get('/mycfp', [PostCfpController::class, 'mycfp'])->name('user.mycfp');
 
@@ -119,7 +119,8 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
  Route::get('/enter-otp', [UserLoginController::class, 'showOtpForm'])->name('enter-otp');
  Route::get('webhook/verify', [UserLoginController::class, 'webhookget']);
    Route::get('/webhook', [UserLoginControllerName::class, 'webhookpost']);
-    
+   Route::post('webhook/subscribe', [UserLoginController::class, 'webhooksubscribe']);
+
 
 // Route for initiating the social login process
 // // Email verification routes

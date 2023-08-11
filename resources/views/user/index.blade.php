@@ -3,44 +3,45 @@
 @include('user.includes.nav')
 
 @section('content')
-<br><br><br>
-<br>
-<br>
-<div class="row-container">
+
+<div class="row-container" style="margin-top: 20px;">
 @foreach ($data as $key => $item)
-    <div class="col-md-1 text-center" style="margin-top: 25px; margin-left: 10px;">
-        <img src="{{ asset('Image/'.$item->image) }}" width="120px" height="80px" class="image-gap">
+    <div class="row">
+        <div class="col-md-1 text-center image-container">
+            <img src="{{ asset('Image/'.$item->image) }}" width="120px" height="80px" class="image-gap">
+        </div>
+        <div class="col-lg-8 col-md-6 text-left ici-info-box">
+            <div class="info-container">
+                <dl class="dl-horizontal xnomb" style="font-size: 13px;">
+                    <dt class="ng-binding journal-title">Journal title:</dt>
+                    <dd>{{ $item->journal_title }}</dd>
+                    <dt class="ng-binding">ISSN:</dt>
+                    <dd>{{ $item->issn }}</dd>
+                    <dt class="ng-binding">DOI:</dt>
+                    <dd>{{ $item->doi }}</dd>
+                    <dt class="ng-binding">Website:</dt>
+                    <dd>{{ $item->website }}</dd>
+                    <dt class="ng-binding">Country:</dt>
+                    <dd>{{ $item->country }}</dd>
+                    <dt class="ng-binding">Publisher:</dt>
+                    <dd>{{ $item->publication_language }}</dd>
+                </dl>
+                <form action="{{ route('bookmark.add') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="journal_title" value="{{ $item->journal_title }}">
+                    <input type="hidden" name="issn" value="{{ $item->issn }}">
+                    <input type="hidden" name="doi" value="{{ $item->doi }}">
+                    <input type="hidden" name="web" value="{{ $item->website }}">
+                    <input type="hidden" name="count" value="{{ $item->country }}">
+                    <input type="hidden" name="pul" value="{{ $item->publication_language }}">
+                    <button type="submit" class="bookmark-btn btn btn-primary" style="font-size: 14px; float: right;">Bookmark</button>
+
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-8 col-md-6 text-left ici-info-box" style="margin-left: 1px;">
-        <dl class="dl-horizontal xnomb" style="font-size: 13px;">
-            <dt class="ng-binding journal-title">Journal title:</dt>
-            <dd>{{ $item->journal_title }}</dd>
-            <dt class="ng-binding">ISSN:</dt>
-            <dd>{{ $item->issn }}</dd>
-            <dt class="ng-binding">DOI:</dt>
-            <dd>{{ $item->doi }}</dd>
-            <dt class="ng-binding">Website:</dt>
-            <dd>{{ $item->website }}</dd>
-            <dt class="ng-binding">Country:</dt>
-            <dd>{{ $item->country }}</dd>
-            <dt class="ng-binding">Publisher:</dt>
-            <dd>{{ $item->publication_language }}</dd>
-      
-        
-        <form action="{{ route('bookmark.add') }}" method="post">
-            @csrf
-            <input type="hidden" name="journal_title" value="{{ $item->journal_title }}">
-            <input type="hidden" name="issn" value="{{ $item->issn }}">
-            <input type="hidden" name="doi" value="{{ $item->doi }}">
-            <input type="hidden" name="web" value="{{ $item->website }}">
-            <input type="hidden" name="count" value="{{ $item->country }}">
-            <input type="hidden" name="pul" value="{{ $item->publication_language }}">
-            <button type="submit" class="bookmark-btn">Bookmark</button>
-        </form>
-      </dl>  
-    </div>
-</div>
 @endforeach
+</div>
 
 <div class="col-lg-8 col-md-6 text-left ici-info-box">
   {{-- <div class="tab-container"> --}}
@@ -144,7 +145,9 @@
      height: 60px!important;
 }
 
-
+.col-lg-4.col-md-6.footer-info h2 {
+    font-size: 32px !important;
+}
 
 .fixed-top {
     background-color:black;
@@ -154,7 +157,15 @@
     margin-left:80px;
      
 }
-   
+   .row {
+    display: flex;
+    align-items: center; /* Vertically center align the items */
+    margin-bottom: 20px; /* Add spacing between rows */
+}
+
+.image-container {
+    margin-right: 10px; /* Add spacing between image and table data */
+}
    
     .ind-cont{
       margin-top:100px;
