@@ -451,8 +451,7 @@ input[type="radio"],
         }
  @media (max-width: 768px) {
 
-    body {
-        background-image: none;}
+  
 
             .hamburger-menu {
                 display: block;
@@ -541,7 +540,7 @@ input[type="radio"],
         width:auto; 
          height:auto;
           padding:10px;
-
+margin-right:0px;
        margin-left:-190px;
       
     }
