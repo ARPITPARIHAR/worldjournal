@@ -9,7 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\CfpDataController;
 use App\Http\Controllers\PostCfpController;
-use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\FeedBackController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SearchcfpController;
 use App\Http\Controllers\UserLoginController;
@@ -22,10 +22,11 @@ use App\Http\Controllers\CallForPaperController;
 use App\Http\Controllers\BusinessSettingController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BookMarkController;
+use Illuminate\Http\Request;
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('user/login', [UserController::class, 'login'])->name('user.login');
-Route::get('user/promote', [UserController::class, 'promote'])->name('user.promote');
+Route::get('/promote', [UserController::class, 'promote'])->name('user.promote');
 Route::get('user/add', [UserController::class, 'add'])->name('user.add'); 
 Route::get('user/search', [UserController::class, 'search'])->name('user.search'); 
 Route::get('/contact', [UserController::class, 'contact'])->name('user.contact'); 
@@ -110,6 +111,23 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
  Route::get('login/{provider}/callback', [UserLoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
        
     
+ Route::any('whatsapp/call-back-url',function(Request $request){
+    // dd($request->all());
+    \Log::alert($request->all());
+    $my_token = env('META_VERIFY_TOKEN');
+    $query = $request->all();
+    $mode = $query['hub_mode'];
+    $token = $query['hub_verify_token'];
+    $challenge = $query['hub_challenge'];
+
+    if ($my_token===$token) {
+        \Log::alert($challenge);
+       return $challenge;
+    } else {
+        return response(500);
+    }
+    
+});
 
 
  Route::get('/webhooks', [UserLoginController::class, 'handleWebhook']);
@@ -128,7 +146,7 @@ Route::get('login/{provider}', [UserLoginController::class, 'redirectToProvider'
 // Route::get('/email/verify', [RegisterController::class, 'showVerificationNotice'])->name('verification.notice');
 // Route::get('/email/resend', [RegisterController::class, 'resendVerificationEmail'])->name('verification.resend');
 
-Route::post('feedback.store', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::post('feedback.store', [FeedBackController::class, 'store'])->name('feedback.store');
 
 Route::post('/searchcfp', [SearchCfpController::class, 'index'])->name('user.searchcfp');
 

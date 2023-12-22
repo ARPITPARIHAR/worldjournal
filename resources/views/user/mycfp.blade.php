@@ -22,14 +22,15 @@
     .journal-title-container {
         font-family: 'Montserrat', sans-serif;
         font-size: 40px;
-        font-weight: bold;
+        /*font-weight: bold;*/
         color: #007BFF;
         padding: 10px;
         outline: none;
         position: relative;
-        top: -80px;
+      
         display: flex;
         flex-direction: column;
+            margin-top: 0px;
     }
 
     .no-data-message {
@@ -51,12 +52,14 @@
         max-height: auto;
         overflow: auto;
         margin-top: 10px;
+        margin-top: 20px; 
+       margin-bottom: 20px; 
     }
 
 
 .horizontal-table {
     width: auto;
-    margin: 20px auto; /* Center horizontally */
+    margin: 20px auto; 
     border-collapse: collapse;
     text-align: center;
 }
@@ -84,44 +87,64 @@
     .horizontal-table tr:hover {
         background-color: #e6e6e6;
     }
+    .centered-row {
+    text-align: center;
+}
 
+.centered-row th,
+.centered-row td {
+    padding: 10px;
+    width:220px;
+}
+
+    @media (max-width: 768px) {
+     
+        .journal-title-container {
+            font-size: 28px; 
+            margin-top: 20px; 
+        }
+    }
 </style>
+
 <body>
-    <table class="horizontal-table">
-        <tbody>
-            @if ($data->isEmpty())
-                <tr>
-                    <td colspan="2" class="no-data-message">No data found</td>
-                </tr>
-            @else
-                @foreach ($data as $key => $cfpdata)
-                    
-                        <div class="journal-title-container">{{ $cfpdata->journal_title }}</td>
-                  
-                 
-                    <tr>
-                        <th>Submission Deadline</th>
-                        <td>{{ $cfpdata->submission_date }}</td>
-                    </tr>
-                  
-                    <tr>
-                        <th>Notification Due</th>
-                        <td>{{ $cfpdata->notification_date }}</td>
-                    </tr>
-                   
-                    <tr>
-                        <th>Final Version Due</th>
-                        <td>{{ $cfpdata->final_version }}</td>
-                    </tr>
-                  
-                    <tr>
-                        <td colspan="2" class="description-cell">{{ $cfpdata->description }}</td>
-                    </tr>
-               
-                @endforeach
+    @if ($data->isEmpty())
+        <div class="no-data-message">No data found</div>
+    @else
+        @php
+            $currentJournal = null;
+        @endphp
+        @foreach ($data as $key => $cfpdata)
+            @if ($currentJournal !== $cfpdata->journal_title)
+                @if ($currentJournal !== null)
+                    </tbody>
+                    </table>
+                @endif
+                <div class="journal-title-container">{{ $cfpdata->journal_title }}</div>
+                <table class="horizontal-table">
+                    <tbody>
+                    @php
+                        $currentJournal = $cfpdata->journal_title;
+                    @endphp
             @endif
+            <tr class="centered-row">
+                <th>Submission Deadline</th>
+                <td>{{ $cfpdata->submission_date }}</td>
+            </tr>
+            <tr class="centered-row">
+                <th>Notification Due</th>
+                <td>{{ $cfpdata->notification_date }}</td>
+            </tr>
+            <tr class="centered-row">
+                <th>Final Version Due</th>
+                <td>{{ $cfpdata->final_version }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="description-cell">{{ $cfpdata->description }}</td>
+            </tr>
+        @endforeach
         </tbody>
-    </table>
+        </table>
+    @endif
 </body>
 </html>
 <br>
@@ -129,3 +152,4 @@
 <br><br>
 @include('user.includes.footer')
 @endsection
+

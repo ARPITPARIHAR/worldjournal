@@ -13,9 +13,10 @@ class FeedBackController extends Controller
         $data=new Feedback;
     $data->name=$request->name;
     $data->email=$request->email;
-    $data->subject=$request->subject;
+  
     $data->message=$request->message;
     $data->save();
+    Session::flash( 'Thanks for your feedback!');
     return redirect('/');
 }
 }

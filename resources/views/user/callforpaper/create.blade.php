@@ -77,6 +77,10 @@
                     <input type="text" name="issnNumber" id="issnNumber" class="form-control" placeholder="Enter ISSN Number" required>
                 </div>
                 <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" name="category" id="category" class="form-control" placeholder="Enter category" required>
+                </div>
+                <div class="form-group">
                     <label for="submissionDeadline">Submission Deadline</label>
                     <input type="date" name="submissionDeadline" id="submissionDeadline" class="form-control" required>
                 </div>

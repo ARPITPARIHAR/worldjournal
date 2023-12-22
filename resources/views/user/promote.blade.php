@@ -1,276 +1,235 @@
 @extends('user.layouts.app')
 @section('meta_title','Student Registeration')
-@section('content')
 @include('user.includes.nav')
 
 
+<br>
+<br>
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promote Event</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<body>
+<div class="pro-container">
+  <div class="pro">
+    PROMOTE EVENT
+  </div>
+</div>
 
 
-<section id="hero">
-    {{-- <div class="hero-container"></div> --}}
-</section>
-<div class="pro">
-  <h1>
- PROMOTE EVENT </h1> <style>
-  .pro{
-      background-color: #c71370d8;
-      color: white;
-      text-align: center;
-      -webkit-box-sizing: inherit;
 
+<div class="feedback-box">
+    <a data-toggle="modal" data-target="#myModal" class="feedback-icon" title="Send Your Feedback">
+        <img id="feedbackimg" title="Send Your Feedback" src="{{ asset('user/img/feedback.png') }}" alt="Feedback Icon" />
+    </a>
+</div>
+</head>
+</body>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Send Your Feedback</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+      
+                 <form action="{{ route('feedback.store') }}" name="feedback" id="feedback-form" method="post">
+
+                     @csrf
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" class="form-control" name="name" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email Address *</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" name="message" id="comment" rows="5"></textarea>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<style>
+.modal-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+}
+
+
+.btn-primary {
+  background-color: #007BFF;
+  border-color: #007BFF;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+ .navbar .dropdown ul {
+  background-color: #001180 !important;
+  font-size: 4px !important;
+}
+.navbar a{
+    font-size:15px !important;
+}
+@keyframes slide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.pro {
+    
+    margin-bottom:200px;
+  background-color: #c71370d8;
+  color: white;
+  text-align: center;
+  font-family: fangsong;
+  font-size: 24px;
+  letter-spacing: 2px;
+  transition: background-color 0.3s;
+  width:500px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  animation: slide 5s linear infinite; 
+}
+
+
+#header {
+  height: 60px !important;
+  z-index: 997;
+  transition: all 0.5s;
+  background-color: #001180 !important;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+}
+
+
+        li.dropdown ul {
+  background-color: #001180;
+}
+
+.feedback-box {
+    position: fixed;
+   
+    margin-top:-170px;
+    right: 20px; 
+    z-index: 9999; 
+}
+
+.custom-close-button {
+ 
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    opacity: 1;
+}
+
+.feedback-icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 767px) {
+  .pro {
+    width: auto;
+    font-size: 18px;
+    margin-bottom: 200px;
+    margin-right: 0;
+    animation: none; 
   }
 
-
-
- 
-  
-</style>                   																																								</h1>
-</div>
-<div class="tabs">
-                        
-                       
-  <div class="tab-content">
-    <div id="Standard" class="tab-pane active">
-<ul class="nav nav-tabs">
-  <form name="form_id" method="post">
-  <input type="hidden" name="pack_posO" value="O"/>
-    <li class="active"> <a data-toggle="tab" href="#Standard" onclick="document.form_id.submit();"><button type="button" class="btn btn-danger">standard</button> </a> </li>
-   </form>
-   <form name="form_pre" method="post">
-  <input type="hidden" name="pack_posF" value="F"/> 
-    <li><a data-toggle="tab" href="#Premium" onclick="document.form_pre.submit();"> <button type="button" class="btn btn-primary">Premium</button> </a></li>
-   </form> 
-  </ul>
-  
-</div>
-  </div>
-        <a data-toggle="modal" data-target="#myModal" onclick="focusInput();" class="login-window query_form" title="Send Your Feedback"><img id="feedbackimg" title="Send Your Feedback" style="text-align:left"src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/templates/images/right-feedback-icon.png"/></a> 
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h3 class="modal-title" id="myModalLabel" align="right" style="color:#f55a4e;">Send Your Feedback</h3>
-                </div>
-                
-                <div class="modal-body" id="sucess_msg" style="display:none;">
-                    <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <span id="sucess_info"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>		  
-            <form action="" name="feedback" id="feedback" method="post">
-                <div class="modal-body">
-                        <div class="row">
-                          <div class="form-group">
-                            <div class="col-md-6">
-                              <label>Your name *</label>
-                              <input type="text" value="" maxlength="100" class="form-control" name="name" id="name">
-                              <span id="name_info"></span>
-                            </div>
-                            <div class="col-md-6">
-                              <label>Your email address *</label>
-                              <input type="email" value="" maxlength="100" class="form-control" name="email" id="email">
-                              <span id="email_info"></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="form-group">
-                            <div class="col-md-12">
-                              <label>Comment *</label>
-                              <textarea maxlength="5000" rows="10" class="form-control" name="comment" id="comment" style="height: 138px;"></textarea>
-                               <span id="comment_info"></span>
-                            </div>
-                          </div>
-                        </div>
-                </div>
-                <div class="modal-footer" style="margin-top:-10px;">
-                  <span id="Loading_info"></span> &nbsp; &nbsp;	
-                  <button type="button" class="btn btn-default inverted" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" onclick="return ValidSendFeedbackForm(document.feedback);" data-loading-text="Loading...">Submit</button>
-                </div>
-            </form>
-        
-              </div>
-            </div>
-        </div>  
-          		  		     
-      <div class="site-showcase">
-          {{-- <div class="parallax page-header"> --}}
-                  <div class="container">
-                    {{-- <div class="row"> --}}
-                        
-                   </div>
-               </div>
-          </div>
-          </div>		        	  
-          <div class="main" role="main">
-              <div id="content" class="content full">
-                  <div class="container">
-                      {{-- <div class="page"> --}}
-                      <div class="row">
-                        <div class="colum">
-                        <div class="pricing-table three-cols margin-0">
-                                  <div class="pricing-column" style="margin-bottom:15px;">
-                                    <h3 style="color:rgb(237, 45, 16);">Home Page Top Box Banner</h3>
-                                    <div class="pricing-column-content">
-                                                                   <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192291.jpg" alt="Home Page Top Box Banner" title="Home Page Top Box Banner" width="90%" height="250"/></p>
-                                      <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                                      <input type="hidden" name="pack_id" value="2"/>
-                                      <input type="hidden" name="pack_name" value="Home Page Top Box Banner"/>
-                                      <input type="hidden" name="pack_position" value="O"/>
-                                                                    <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                                                                    </form>
-                                     </div>
-                                  </div>
-                                  
-                                                              <div class="pricing-column" style="margin-bottom:15px;">
-                                                                <h3 style="color:rgb(237, 45, 16);">Home Page Top Box Banner</h3>
-                                    <div class="pricing-column-content">
-                                                                   <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192346.jpg" alt="Home Page Left Box Banner" title="Home Page Left Box Banner" width="90%" height="250"/></p>
-                                      <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                                      <input type="hidden" name="pack_id" value="4"/>
-                                      <input type="hidden" name="pack_name" value="Home Page Left Box Banner"/>
-                                      <input type="hidden" name="pack_position" value="O"/>
-                                                                    <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                                                                    </form>
-                                     </div>
-                                  </div>
-                                  
-                                                              <div class="pricing-column" style="margin-bottom:15px;">
-                                    <h3 style="color:rgb(237, 45, 16);">Home Page Big Size Banner</h3>
-                                    <div class="pricing-column-content">
-                                                                   <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192727.jpg" alt="Home Page Big Size Banner" title="Home Page Big Size Banner" width="90%" height="250"/></p>
-                                      <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                                      <input type="hidden" name="pack_id" value="6"/>
-                                      <input type="hidden" name="pack_name" value="Home Page Big Size Banner"/>
-                                      <input type="hidden" name="pack_position" value="O"/>
-                                                                    <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                                                                    </form>
-                                     </div>
-                                  </div>
-                                  
-                                                              <div class="pricing-column" style="margin-bottom:15px;">
-                                    <h3 style="color:rgb(237, 45, 16);">Event List Highlight</h3>
-                                    <div class="pricing-column-content">
-                                                                   <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192790.jpg" alt="Event List Highlight" title="Event List Highlight" width="90%" height="250"/></p>
-                                      <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                                      <input type="hidden" name="pack_id" value="7"/>
-                                      <input type="hidden" name="pack_name" value="Event List Highlight"/>
-                                      <input type="hidden" name="pack_position" value="O"/>
-                                                                    <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                                                                    </form>
-                                     </div>
-                                  </div>
-                                  
-                                                              <div class="pricing-column" style="margin-bottom:15px;">
-                                    <h3 style="color:rgb(237, 45, 16);">User Account Listing Right Side Banne</h3>
-                                    <div class="pricing-column-content">
-                                                                   <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192974.jpg" alt="User Account Listing Right Side Banner" title="User Account Listing Right Side Banner" width="90%" height="250"/></p>
-                                      <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                                      <input type="hidden" name="pack_id" value="9"/>
-                                      <input type="hidden" name="pack_name" value="User Account Listing Right Side Banner"/>
-                                      <input type="hidden" name="pack_position" value="O"/>
-                                                                    <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                                                                    </form>
-                                     </div>
-                                  </div>
-                                  
-                                                              
-                                </div>
-                          </div>
-                          <div id="Premium" class="tab-pane">
-                            <!--<h2>Promote Event</h2>-->
-                                <div class="pricing-table three-cols margin-0">
-                            <div class="pricing-column" style="margin-bottom:15px;">
-                <h3 style="color:rgb(237, 45, 16);">Home Page Top Box Banner</h3>
-                <div class="pricing-column-content">
-                           <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192291.jpg" alt="Home Page Top Box Banner" title="Home Page Top Box Banner" width="90%" height="250"/></p>
-                  <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                  <input type="hidden" name="pack_id" value="2"/>
-                  <input type="hidden" name="pack_name" value="Home Page Top Box Banner"/>
-                  <input type="hidden" name="pack_position" value="O"/>
-                            <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                            </form>
-                 </div>
-              </div>
-              
-                        <div class="pricing-column" style="margin-bottom:15px;">
-              <h3 style="color:rgb(237, 45, 16);">Home Page left Box Banner</h3>
-                <div class="pricing-column-content">
-                           <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192346.jpg" alt="Home Page Left Box Banner" title="Home Page Left Box Banner" width="90%" height="250"/></p>
-                  <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                  <input type="hidden" name="pack_id" value="4"/>
-                  <input type="hidden" name="pack_name" value="Home Page Left Box Banner"/>
-                  <input type="hidden" name="pack_position" value="O"/>
-                            <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                            </form>
-                 </div>
-              </div>
-              
-                        <div class="pricing-column" style="margin-bottom:15px;">
-                <h3 style="color:rgb(237, 45, 16);">Home Page Big Size Banner</h3>
-                <div class="pricing-column-content">
-                           <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192727.jpg" alt="Home Page Big Size Banner" title="Home Page Big Size Banner" width="90%" height="250"/></p>
-                  <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                  <input type="hidden" name="pack_id" value="6"/>
-                  <input type="hidden" name="pack_name" value="Home Page Big Size Banner"/>
-                  <input type="hidden" name="pack_position" value="O"/>
-                            <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                            </form>
-                 </div>
-              </div>
-              
-                        <div class="pricing-column" style="margin-bottom:15px;">
-                <h3 style="color:rgb(237, 45, 16);">Event List Highlight</h3>
-                <div class="pricing-column-content">
-                           <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192790.jpg" alt="Event List Highlight" title="Event List Highlight" width="90%" height="250"/></p>
-                  <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                  <input type="hidden" name="pack_id" value="7"/>
-                  <input type="hidden" name="pack_name" value="Event List Highlight"/>
-                  <input type="hidden" name="pack_position" value="O"/>
-                            <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                            </form>
-                 </div>
-              </div>
-              
-                        <div class="pricing-column" style="margin-bottom:15px;">
-               <h3 style="color:rgb(237, 45, 16);">User Account Listing Right Side Banner</h3>
-                <div class="pricing-column-content">
-                           <p style="padding-top:8px; height:250px;"><img src="https://web.archive.org/web/20190319151439im_/http://www.worldjournalsalert.com/pack-img/1425192974.jpg" alt="User Account Listing Right Side Banner" title="User Account Listing Right Side Banner" width="90%" height="250"/></p>
-                  <form name="oeder_form" action="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/order" method="post">
-                  <input type="hidden" name="pack_id" value="9"/>
-                  <input type="hidden" name="pack_name" value="User Account Listing Right Side Banner"/>
-                  <input type="hidden" name="pack_position" value="O"/>
-                            <a href="https://web.archive.org/web/20190319151439/http://www.worldjournalsalert.com/login" class="btn btn-primary">Sign up Now!</a>
-                            </form>
-                 </div>
-              </div>
-              
-                      
-            </div>
-                          </div>
-                        </div>
-                      </div>
-        </div>                  
-        
-        
-        
-                      </div>
-                     </div> 
-                  </div>
-              </div>
-          </div>
-            
+  .feedback-box {
+    position: fixed;
+    margin-top: -160px;
+    right: 20px;
+    z-index: 9999;
+  }
+}
+</style>
 @include('user.includes.footer')
-@endsection
-@section('style')
-    
-@endsection
-@section('script')
-    
-@endsection
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+@if(session('success'))
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                  <button type="button" class="close custom-close-button" data-dismiss="modal" aria-label="Close">
+                   
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ session('success') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearSessionAndCloseModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#successModal').modal('show');
+        });
+
+        function clearSessionAndCloseModal() {
+         
+            @php session()->forget('success') @endphp;
+            
+            $('#successModal').modal('hide');
+        }
+    </script>
+@endif

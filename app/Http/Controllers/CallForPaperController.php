@@ -16,6 +16,7 @@ class CallForPaperController extends Controller
     $data=new Callforpaper;
     $data->journal_title=$request->journalTitle;
     $data->issn=$request->issnNumber;
+    $data->category=$request->category;
     $data->submission_date=$request->submissionDeadline;
     $data->notification_date=$request->notificationDue;
     $data->final_version=$request->finalVersionDue;

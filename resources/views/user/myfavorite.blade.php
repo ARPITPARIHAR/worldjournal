@@ -47,7 +47,7 @@
         font-size: 4px !important;
       }
       .navbar a{
-          font-size:13px !important;
+          font-size:15px !important;
       }
           
             #header {

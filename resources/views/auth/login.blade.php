@@ -86,4 +86,40 @@
     .user-name {
         text-align: center;
     }
+    @media (max-width: 767px) {
+    .card-body {
+        padding: 10px; 
+    }
+
+    .form-group {
+        margin-bottom: 10px; 
+    }
+
+    .col-md-4.col-form-label.text-md-right {
+        text-align: left; 
+    }
+
+    .form-control {
+        width: 100%; 
+    }
+
+    .col-md-6.offset-md-4 {
+        text-align: center; 
+    }
+    
+    .btn-primary {
+        width: 100%; 
+    }
+    
+    .btn-link {
+        display: block; 
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .text-center.mt-4 a {
+        margin-bottom: 10px;
+    }
+   
+}
 </style>

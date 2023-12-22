@@ -166,16 +166,7 @@ public function webhookpost(Request $request)
         return response('Invalid webhook data.', 400);
     }
 }}
-    //     $receivedToken = $request->header('X-META-SIGNATURE');
-    //     $expectedToken = config('app.webhook_verify_token');
-
-    //     if ($receivedToken === $expectedToken) {
-    //         return response('Webhook verified successfully', 200);
-    //     } else {
-    //         return response('Webhook verification failed', 401);
-    //     }
-    // }
-
+    
     
 
     

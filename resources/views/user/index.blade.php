@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="row-container" style="margin-top: 20px;">
+<div class="row-container" style="margin-top: 70px; margin-left: 20px;">
 @foreach ($data as $key => $item)
     <div class="row">
         <div class="col-md-1 text-center image-container">
