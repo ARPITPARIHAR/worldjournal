@@ -57,7 +57,11 @@
         li.dropdown ul {
   background-color: #001180;
 }
-      
+#navbar ul li:hover {
+    background-color: #fbff00 !important; /* Your desired background color */
+    color: #ffffff !important; /* Your desired text color */
+    border-radius: 0 15px !important; /* Your desired border-radius */
+  }
     </style>
     <div class="container d-flex justify-content-between">
       <a href="/" class="logo">

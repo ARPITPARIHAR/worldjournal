@@ -34,3 +34,6 @@
 
   <!-- Template Main JS File -->
   <script src="asset('user/js/main.js')}}"></script>
+  <script>
+    new WOW().init();
+</script>

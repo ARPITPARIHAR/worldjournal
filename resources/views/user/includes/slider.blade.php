@@ -1,4 +1,21 @@
-<style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Navbar content -->
+    </div>
+  </nav>
+  
+  <div class="img-post">
+    <img src="{{ asset('user/img/114-hd.png') }}" alt="" width="100%" height="540px">
+  </div>
+  
+  <div class="fixed">
+    <form action="{{ route('user.search') }}" method="get" class="search-container">
+      <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+  </div>
+  <style>
     .navbar {
       margin-bottom: 2px;
     }
@@ -89,21 +106,4 @@
       }
     }
   </style>
-  
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <!-- Navbar content -->
-    </div>
-  </nav>
-  
-  <div class="img-post">
-    <img src="{{ asset('user/img/114-hd.png') }}" alt="" width="100%" height="540px">
-  </div>
-  
-  <div class="fixed">
-    <form action="{{ route('user.search') }}" method="get" class="search-container">
-      <input class="resizedTextbox" placeholder="Search by an ISSN or a Title or Publisher name" type="text" id="edit-keyword" name="query" value="" size="30" maxlength="400">
-      <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-  </div>
   

@@ -166,7 +166,7 @@ h6 {
     .navbar .active,
     .navbar .active:focus,
     .navbar li:hover>a {
-      color: #007bff;
+      
     }
 
     .navbar .dropdown ul {
@@ -203,7 +203,7 @@ h6 {
     .navbar .dropdown ul a:hover,
     .navbar .dropdown ul .active:hover,
     .navbar .dropdown ul li:hover>a {
-      color: #007bff;
+      color: white;
     }
 
     .navbar .dropdown:hover>ul {
@@ -309,7 +309,7 @@ h6 {
     .navbar-mobile a:hover,
     .navbar-mobile .active,
     .navbar-mobile li:hover>a {
-      color: #007bff;
+      color: #ffffff !important; 
     }
 
     .navbar-mobile .dropdown ul {
@@ -339,7 +339,7 @@ h6 {
     .navbar-mobile .dropdown ul a:hover,
     .navbar-mobile .dropdown ul .active:hover,
     .navbar-mobile .dropdown ul li:hover>a {
-      color: #007bff;
+      color: #ffffff !important; 
     }
 
     .navbar-mobile .dropdown>.dropdown-active {

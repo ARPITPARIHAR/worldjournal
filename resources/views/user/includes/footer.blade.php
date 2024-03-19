@@ -80,4 +80,7 @@
     border-top-left-radius: 50% 20px;
     border-top-right-radius: 50% 20px;
   }
+  #footer{
+    background-color: black;
+     +align-self: 1;ZXQ CWVEBRT-+  }
   </style>
