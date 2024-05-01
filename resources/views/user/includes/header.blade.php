@@ -144,52 +144,50 @@
      ->groupBy('category')
      ->get();
  @endphp
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" id="country-card">
+        <div class="card-header text-center" style="background-color: #550063; color: white; height:50px; border-radius:15px;">Country Records</div>
+        <div class="card-body">
+          <div class="row" id="country-row">
+            @foreach ($country_records as $result)
+            <div class="col-md-6 col-sm-6">
+              <div class="result">
+                <h5>{{ $result->country }}</h5>
+                <p>{{ $result->count }}</p>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" id="category-card">
+        <div class="card-header text-center" style="background-color: #be0000; color: white; height:50px; border-radius:15px;">Category Records</div>
+        <div class="card-body">
+          <div class="row" id="category-row">
+            @foreach ($category_records as $result)
+            <div class="col-md-6 col-sm-6">
+              <div class="result">
+                <h5>{{$result->category}}</h5>
+                <p>{{$result->count}}</p>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+           
 
-
-                      <div class="container">
-                          <div class="card">
-                            <div class="card-header text-center" style="background-color: #479778; color: white;">Country Records</div>
-
-                              <div class="card-body">
-                                  <div class="row">
-                                      @foreach ($country_records as $result)
-                                      <div class="col-md-3 col-sm-6">
-                                          <div class="result">
-                                              <h5>{{ $result->country }}</h5>
-                                              <p>{{ $result->count }}</p>
-                                          </div>
-                                      </div>
-                                      @endforeach
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                    
-
-     <br>
-    <br>
-     <div class="container">
-      <div class="card">
-        <div class="card-header text-center" style="background-color: #479778; color: white;">Category Records</div>
-
-          <div class="card-body">
-             <div class="row">
-                 @foreach ($category_records as $result)
-                 <div class="col-md-3 col-sm-6">
-                     <div class="result">
-                         <h5>{{$result->category}}</h5>
-                         <p>{{$result->count}}</p>
-                     </div>
-                 </div>
-                 @endforeach
-             </div>
-         </div>
-     </div>
- </div>
+    
 
 <br>
-  <div class="container wow zoomIn" style="background-color:#FF5722; border-radius: 25px;"
+  <div class="container wow zoomIn" style="background-color:; border-radius: 25px;"
        data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
   
 
@@ -215,7 +213,7 @@
           <div class="info-item d-flex justify-content-center">
              <i class="bi bi-geo-alt flex-shrink-0"></i>
                <div>
-                <h2>Location:</h2>
+                <h3>Location:</h3>
                    <p style="font-size:20px";>Y-18-A,
                    Sudarshana Nagar
                    Bikaner (Rajasthan)
@@ -226,14 +224,14 @@
                       <i class="bi bi-envelope flex-shrink-0" style="margin-left: 0;"></i>
 
                         <div>
-                            <h2>Email:</h2>
+                            <h3>Email:</h3>
                             <p style="font-size:20px";>auricletechnology@gmail.com</p>
                         </div>
                     </div>
                     <div class="info-item d-flex justify-content-center">
                         <i class="bi bi-phone flex-shrink-0"></i>
                         <div>
-                            <h2>Call:</h2>
+                            <h3>Call:</h3>
                             <p style="font-size:20px";>987654321</p>
                         </div>
                     </div>
@@ -289,6 +287,11 @@
 
 
 <style>
+
+
+
+
+
 
 .featured-block {
     background-color:#234E70;
@@ -551,7 +554,7 @@
  
  
   
-   .count-box {
+   /* .count-box {
    border: 1px solid #000;
    margin: 20px;
    width: 900px;
@@ -562,35 +565,50 @@
    flex-wrap: wrap;
    padding: 20px;
    background-color: #f5f5f5;
- }
- 
- .result {
-   width: 140px;
-   height: 60px;
+ } */
+ .card-body .row {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+   gap: 10px; /* Gap between rows */
+   column-gap: -13px; /* Gap between columns */
+}
+
+.result {
+   width: 100%;
+   height: auto;
    padding: 10px;
    box-sizing: border-box;
-   background-color: #4285f4;
-   border-radius: 5px;
-   margin-bottom: 10px;
+   background-color: black;
+   border-radius: 10px;
    text-align: center;
    color: #fff;
    font-size: 18px;
    font-weight: bold;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   line-height: 1.0;
    cursor: pointer;
    transition: background-color 0.3s ease;
- }
- 
- .result:hover {
-   background-color: #1c5c9d;
- }
- 
- .result h5 {
-   margin-top: 0;
+}
+
+.result:hover {
+   background-color: #3276b1;
+}
+
+.result h5,
+.result p {
+   margin: 0;
+}
+
+.result h5 {
+   font-size: 20px;
    margin-bottom: 5px;
- }
+}
+
+.result p {
+   font-size: 16px;
+   opacity: 0.8;
+}
+
+
  
   
   @media (max-width: 768px) {

@@ -82,5 +82,5 @@
   }
   #footer{
     background-color: black;
-     +align-self: 1;ZXQ CWVEBRT-+  }
+       }
   </style>
