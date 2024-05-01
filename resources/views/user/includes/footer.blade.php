@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="height:30px;">
       <div class="copyright">
        <strong>© Copyright Auricle Technologies Pvt. Ltd.
         </strong>. All Rights Reserved
@@ -82,5 +82,6 @@
   }
   #footer{
     background-color: black;
+  
        }
   </style>

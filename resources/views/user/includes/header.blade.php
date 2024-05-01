@@ -208,7 +208,7 @@
  
         <div class="row">
             <div class="col-lg-4">
-              <div class="contact" style="background-color:;">
+              <div class="contact" >
           <div class="info-container d-flex flex-column align-items-center justify-content-center">
           <div class="info-item d-flex justify-content-center">
              <i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -442,7 +442,8 @@
             transform: translateX(-50%);
             height: 70px;
             width: 400px;
-            background: #9b2424;
+            background: #009391;
+   
             border-radius: 0 0 50% 50%;
             z-index: -1;
         }
@@ -700,7 +701,7 @@
      
       
 .contact {
-  background-image: url('user/img/background1.jpg');
+  /* background-image: url('user/img/background1.jpg'); */
       background-size: cover;
       background-position: center;
     }
