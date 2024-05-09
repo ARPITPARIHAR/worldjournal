@@ -1498,8 +1498,8 @@ margin-right:0px;
 
 <script>
        
-                                                  const uploadLabel = document.querySelector('a');
-                                                    const fileInput = document.querySelector('#image');
+  const uploadLabel = document.querySelector('a');
+   const fileInput = document.querySelector('#image');
                                         
                                                  uploadLabel.addEventListener('click', function() {
                                                          fileInput.click();

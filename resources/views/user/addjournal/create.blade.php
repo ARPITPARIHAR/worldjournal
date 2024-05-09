@@ -113,7 +113,7 @@
                     <div class="form-group row">
                         <label for="name" class="col-lg-2 control-label">Name</label>
                         <div class="col-lg-9">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" />
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value=""   required/>
                             
                         </div>
                     </div>
@@ -121,16 +121,16 @@
                     <div class="form-group row">
                         <label for="surname" class="col-lg-2 control-label">Surname</label>
                         <div class="col-lg-9">
-                            <input type="text" name="surname" id="surname" class="form-control" placeholder="Surname" value="" />
-                            
+                            <input type="text" name="surname" id="surname" class="form-control" placeholder="Surname" value="" required />
                         </div>
+                        
                     </div>
 
 
                     <div class="form-group row">
                         <label for="address" class="col-lg-2 control-label">Address</label>
                         <div class="col-lg-9">
-                            <input type="text" name="address" id="address" class="form-control" placeholder="Street and number flat/house" value="" />
+                            <input type="text" name="address" id="address" class="form-control" placeholder="Street and number flat/house" value=""  required />
                             
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                     <div class="form-group row">
                         <label for="postalCode" class="col-lg-2 control-label">Postal Code</label>
                         <div class="col-lg-10">
-                            <input type="text" name="postalCode" id="postalCode" class="form-control" placeholder="Postal Code" value="" />
+                            <input type="text" name="postalCode" id="postalCode" class="form-control" placeholder="Postal Code" value=""  required />
                             
                         </div>
                     </div>
@@ -148,14 +148,14 @@
 <div class="form-group row">
     <label for="city" class="col-lg-2 control-label">Country</label>
     <div class="col-lg-10">
-        <input type="text" name="country" id="city" class="form-control" placeholder="Country" oninput="capitalizeInput(this)" />
+        <input type="text" name="country" id="city" class="form-control" placeholder="Country" oninput="capitalizeInput(this)"   required/>
     </div>
 </div>
 
                     <div class="form-group row">
                         <label for="company" class="col-lg-2 control-label">Company</label>
                         <div class="col-lg-10">
-                            <input type="text" name="company" id="company" class="form-control" placeholder="Company name" value="" />
+                            <input type="text" name="company" id="company" class="form-control" placeholder="Company name" value=""  required />
                             
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                     <div class="form-group row">
                         <label for="nip" class="col-lg-2 control-label">Publisher name</label>
                         <div class="col-lg-10">
-                            <input type="text" name="publishername" id="nip" class="form-control" placeholder="publisher name" value="" />
+                            <input type="text" name="publishername" id="nip" class="form-control" placeholder="publisher name" value=""   required/>
                             
                         </div>
                     </div>
@@ -172,13 +172,13 @@
                     <div class="form-group row">
                         <label for="nip" class="col-lg-2 control-label">Category</label>
                         <div class="col-lg-10">
-                            <input type="text" name="category" id="nip" class="form-control" placeholder="Category" oninput="capitalizeInput(this)" />
+                            <input type="text" name="category" id="nip" class="form-control" placeholder="Category" oninput="capitalizeInput(this)"  required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="phone" class="col-lg-2 control-label">Mobile nu</label>
                         <div class="col-lg-10">
-                            <input type="text" name="mobilenu" id="phone" class="form-control" onkeypress="return isTelephoneNumberKey(event)" maxlength="20" placeholder="Mobile number" value="" />
+                            <input type="text" name="mobilenu" id="phone" class="form-control" onkeypress="return isTelephoneNumberKey(event)" maxlength="20" placeholder="Mobile number" value=""  required />
                             
                         </div>
                     </div>

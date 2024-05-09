@@ -14,7 +14,7 @@
 <br>
 <br>
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FmQWBcOsjxuH9xI6q2wIHQqJzhyv4jiX4F5AM9s6jl+9nIkz+KacHUWQnwsNKXdBp5iQ3K8/5E2Zqw9BsdWt8Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 <div class="container">
@@ -135,6 +135,7 @@
 
 <br>
 <br>
+
  @php
  $country_records = App\Models\AddJournal::select('country', DB::raw('COUNT(*) as count'))
      ->groupBy('country')
@@ -144,20 +145,24 @@
      ->groupBy('category')
      ->get();
  @endphp
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-6">
       <div class="card" id="country-card">
-        <div class="card-header text-center" style="background-color: #550063; color: white; height:50px; border-radius:15px;">Country Records</div>
+        <div class="card-header text-center" style="background-color: #B0E0E6; color: black; height:50px; border-radius:15px;">Country Records</div>
         <div class="card-body">
           <div class="row" id="country-row">
+            @php $i = 0; @endphp <!-- Initialize counter -->
             @foreach ($country_records as $result)
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-3 col-sm-3"> <!-- Adjust column size to fit 4 items per row -->
               <div class="result">
-                <h5>{{ $result->country }}</h5>
-                <p>{{ $result->count }}</p>
+                <p class="country-name">{{ $result->country }}</p>
+                <p class="count">({{ $result->count }})</p> <!-- Display count within parentheses -->
               </div>
             </div>
+            @php $i++; @endphp <!-- Increment counter -->
             @endforeach
           </div>
         </div>
@@ -165,16 +170,18 @@
     </div>
     <div class="col-md-6">
       <div class="card" id="category-card">
-        <div class="card-header text-center" style="background-color: #be0000; color: white; height:50px; border-radius:15px;">Category Records</div>
+        <div class="card-header text-center" style="background-color: #FFDAB9; color: black; height:50px; border-radius:15px;">Category Records</div>
         <div class="card-body">
           <div class="row" id="category-row">
+            @php $j = 0; @endphp <!-- Initialize counter -->
             @foreach ($category_records as $result)
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-3 col-sm-3"> <!-- Adjust column size to fit 4 items per row -->
               <div class="result">
-                <h5>{{$result->category}}</h5>
-                <p>{{$result->count}}</p>
+                <p class="category-name">{{ $result->category }}</p>
+                <p class="count">({{ $result->count }})</p> <!-- Display count within parentheses -->
               </div>
             </div>
+            @php $j++; @endphp <!-- Increment counter -->
             @endforeach
           </div>
         </div>
@@ -182,13 +189,13 @@
     </div>
   </div>
 </div>
-           
+
+
 
     
 
-<br>
-  <div class="container wow zoomIn" style="background-color:; border-radius: 25px;"
-       data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;">
+  {{-- <div class="container wow zoomIn" style="background-color:; border-radius: 25px;"
+       data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> --}}
   
 
         <div class="section-title">
@@ -197,80 +204,74 @@
               Contact Us
             </h3>
             <hr style="width: 150px; border: 4px solid white; margin: 10px auto;">
-            <p style="font-size: 22px; color:#ffffff;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
-          </div>
-        
-        <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <br><br>
-        <section class="info-feedback-section">
- 
-        <div class="row">
-            <div class="col-lg-4">
-              <div class="contact" >
-          <div class="info-container d-flex flex-column align-items-center justify-content-center">
-          <div class="info-item d-flex justify-content-center">
-             <i class="bi bi-geo-alt flex-shrink-0"></i>
-               <div>
-                <h3>Location:</h3>
-                   <p style="font-size:20px";>Y-18-A,
-                   Sudarshana Nagar
-                   Bikaner (Rajasthan)
-                                334003</p>
-                        </div>
-                    </div>
-                    <div class="info-item d-flex justify-content-center">
-                      <i class="bi bi-envelope flex-shrink-0" style="margin-left: 0;"></i>
+            <p style="font-size: 22px; color:black;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
+            <div class="zoom-in-container">
+            <div style="max-width: 400px; max-height: 300px; margin: 0 auto; padding: 20px; background-color:#FFFACD; color:black;  border-radius: 10px; text-align: center; margin-top: 0; margin-bottom: 10px;">
 
-                        <div>
-                            <h3>Email:</h3>
-                            <p style="font-size:20px";>auricletechnology@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item d-flex justify-content-center">
-                        <i class="bi bi-phone flex-shrink-0"></i>
-                        <div>
-                            <h3>Call:</h3>
-                            <p style="font-size:20px";>987654321</p>
-                        </div>
-                    </div>
-                </div>
+              <!-- Location -->
+              <div style="margin-bottom: 5px;">
+                <h3 class="info-title"><i class="info-icon fas fa-map-marker-alt"></i>Location:</h3>
+                <p style="font-size: 18px; margin: 0;">Y-18-A, Sudarshana Nagar<br>Bikaner (Rajasthan) 334003</p>
+              </div>
+            
+              <!-- Email -->
+              <div style="margin-bottom: 5px;">
+                <h3 class="info-title"><i class="info-icon fas fa-envelope"></i>Email:</h3>
+                <p style="font-size: 18px; margin: 0;">auricletechnology@gmail.com</p>
+              </div>
+            
+              <!-- Phone Number -->
+              <div>
+                <h3 class="info-title"><i class="info-icon fas fa-phone"></i>Call:</h3>
+                <p style="font-size: 18px; margin: 0;">987654321</p>
+              </div>
+            
             </div>
-              
-<br></div>
-<div class="col-lg-8">
-  <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%); backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;">
+            
+            </div>
+
+<div class="row">
+<div class="col-lg-6"  >
+  <div style="max-height: 500px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen style="height: 500px;"></iframe>
+  </div>
+</div>
+<div class="col-lg-6">
+  <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue;; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;max-height:500px;">
       @csrf
       <h2 style="text-align: center; color: #000;margin-top:-30px;">Drop Us A Message</h2>
+      <br>
       <div class="row">
           <div class="col-md-6 form-group" >
-              <input type="text" name="name" class="form-control" style="border-radius: 25px ;" id="name" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-control" style="border-radius: 10px ;" id="name" placeholder="Your Name" required>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control"style="border-radius: 25px ;" name="email" id="email" placeholder="Your Email" required>
+              <input type="email" class="form-control"style="border-radius: 10px ;" name="email" id="email" placeholder="Your Email" required>
           </div>
       </div>
       <br>
       <div class="form-group mt-6">
-          <input type="text" class="form-control"style="border-radius: 25px ;" name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control"style="border-radius: 10px ;" name="subject" id="subject" placeholder="Subject" required>
       </div>
       <br>
       <div class="form-group mt-3">
-          <textarea class="form-control" style="border-radius: 25px ;" name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" style="border-radius: 10px ;" name="message" rows="5" placeholder="Message" required></textarea>
       </div>
       <div class="my-3">
           <div class="loading">Loading</div>
           <div class="error-message"></div>
           <div class="sent-message">Your message has been sent. Thank you!</div>
       </div>
-      <br>
-      <button type="submit" class="black-button" style="background-color: #000;">Send Message</button>
+     
+      <div style="text-align: center;">
+        <button type="submit" class="black-button" style="background-color: #000; border-radius: 10px;">Send Message</button>
+      </div>
+      
 
   </form>
 </div>
 
-
+</div>
         </div>
         </div>
         </div>
@@ -278,9 +279,6 @@
 </div>
 </div>
         
-</div>
-</div>     
-</div>
 
 
 
@@ -567,47 +565,29 @@
    padding: 20px;
    background-color: #f5f5f5;
  } */
- .card-body .row {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-   gap: 10px; /* Gap between rows */
-   column-gap: -13px; /* Gap between columns */
+
+
+ .result {
+  /* Your existing styles */
+  /* Make sure to include the following styles to align the count number with the name */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.result {
-   width: 100%;
-   height: auto;
-   padding: 10px;
-   box-sizing: border-box;
-   background-color: black;
-   border-radius: 10px;
-   text-align: center;
-   color: #fff;
-   font-size: 18px;
-   font-weight: bold;
-   line-height: 1.0;
-   cursor: pointer;
-   transition: background-color 0.3s ease;
+.country-name,
+.category-name {
+  /* Style for country or category name */
+  margin: 0; /* Remove default margin */
 }
 
-.result:hover {
-   background-color: #3276b1;
+.count {
+  /* Style for count number */
+  margin-left: 5px; /* Add some space between name and count */
 }
 
-.result h5,
-.result p {
-   margin: 0;
-}
 
-.result h5 {
-   font-size: 20px;
-   margin-bottom: 5px;
-}
 
-.result p {
-   font-size: 16px;
-   opacity: 0.8;
-}
 
 
  
@@ -797,6 +777,32 @@
   width: 100%;
   height: 100%;
 }
+@keyframes zoomIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .zoom-in-container {
+   
+  
+    
+  
+    
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+    animation: zoomIn 0.5s ease forwards;
+  }
+
+
+
 </style>
 
 
