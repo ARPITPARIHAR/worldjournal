@@ -197,27 +197,27 @@
   {{-- <div class="container wow zoomIn" style="background-color:; border-radius: 25px;"
        data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> --}}
   
-
+<br>
         <div class="section-title">
           <div style="text-align: center;">
-            <h3 style="font-size: 48px; color:black; text-transform: uppercase; letter-spacing: 2px;">
+            <h3 style="font-size: 40px; color:black; text-transform: uppercase; letter-spacing: 1px;">
               Contact Us
             </h3>
             <hr style="width: 150px; border: 4px solid white; margin: 10px auto;">
-            <p style="font-size: 22px; color:black;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
+            <p style="font-size: 16px; color:black;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
             <div class="zoom-in-container">
             <div style="max-width: 400px; max-height: 300px; margin: 0 auto; padding: 20px; background-color:#FFFACD; color:black;  border-radius: 10px; text-align: center; margin-top: 0; margin-bottom: 10px;">
 
-              <!-- Location -->
+        
               <div style="margin-bottom: 5px;">
                 <h3 class="info-title"><i class="info-icon fas fa-map-marker-alt"></i>Location:</h3>
-                <p style="font-size: 18px; margin: 0;">Y-18-A, Sudarshana Nagar<br>Bikaner (Rajasthan) 334003</p>
+                <p style="font-size: 16px; margin: 0;">Y-18-A, Sudarshana Nagar<br>Bikaner (Rajasthan) 334003</p>
               </div>
             
               <!-- Email -->
               <div style="margin-bottom: 5px;">
                 <h3 class="info-title"><i class="info-icon fas fa-envelope"></i>Email:</h3>
-                <p style="font-size: 18px; margin: 0;">auricletechnology@gmail.com</p>
+                <p style="font-size: 16px; margin: 0;">auricletechnology@gmail.com</p>
               </div>
             
               <!-- Phone Number -->
@@ -798,7 +798,7 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 10px;
-    animation: zoomIn 0.5s ease forwards;
+    animation: zoomIn 0.8s ease forwards;
   }
 
 
