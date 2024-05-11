@@ -65,10 +65,10 @@
     .btn-primary {
       margin-left: 10px;
       padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
+      background-color:white;
+      color: black;
       border: none;
-      border-radius: 4px;
+      border-radius: 15px;
       cursor: pointer;
       transition: background-color 0.3s;
     }

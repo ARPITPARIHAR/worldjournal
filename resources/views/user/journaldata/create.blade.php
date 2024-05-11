@@ -125,7 +125,7 @@
     max-width:1000px;
   margin-left:140px;
   padding: 20px;
-  background-color: #f2f2f2;
+  background-color: #FFEFD5;
   border-radius: 5px;
   height:auto;
   border-top-left-radius: 15px;
@@ -618,73 +618,58 @@ margin-right:0px;
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <form action="{{ route('user.data.store') }}" method="post" id="registrationForms" enctype="multipart/form-data">
-                    @csrf
-    
-                 
-    
-                    {{-- @if(session('success'))
-                        <div class="alert alert-success alert-dismissible fade show custom-alert text-center" role="alert">
-                            {{ session('success') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif --}}
-    
-                    <!-- Submit button and other form elements -->
-                
-            </div>
+             </div>
         </div>
     </div>
-    
-   
-    
-    
-    
-        
-                <div class="mb-3 row">
+    <form action="{{ route('user.data.store') }}" method="post" id="registrationForms" enctype="multipart/form-data">
+        @csrf
+    <div class="mb-3 row">
                 <label class="col-sm-2 col-form-label">Journal title</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control" name="titleor" ></div>
+                    <input type="text" class="form-control" name="titleor" required>
+
             </div>
+        </div>
                    <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">English title</label>
                         <div class="col-sm-10">
-                        <input type="text" class="custom-input"name="titleEn"></div></div>
+                        <input type="text" class="custom-input"name="titleEn" required></div></div>
                         <div class="mb-3 row">
-                            <label class="col-sm-2 col-form-label">Full title</label>
+                            <label class="col-sm-2 col-form-label" >Full title</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" name="titlefu" ></div>
+                            <input type="text" class="form-control" name="titlefu" required ></div>
                         </div>
                    
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Short title</label>
                         <div class="col-sm-10">
-                        <input type="text" class="custom-input"name="titlesh" ></div></div>
+                        <input type="text" class="custom-input"name="titlesh" required ></div></div>
                      
                               
                            
                             <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label">Alternative title</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="custom-input" name="titleal"></div></div>
+                                <input type="text" class="custom-input" name="titleal" required></div></div>
                                
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Journal description</label>
                         <div class="col-sm-10">
-                        <input type="textarea" class="text-input" name="description" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.description" maxlength="4096"></textarea></div>
+                        <input type="textarea" class="text-input" name="description" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.description" maxlength="4096" required></textarea></div>
                         </div>
 
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">English description</label>
                         <div class="col-sm-10">
-                        <input type="textarea " class="text-input" name="descriptionEn" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.descriptionEn" maxlength="4096"></textarea></div>
+                        <input type="textarea " class="text-input" name="descriptionEn" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.descriptionEn" maxlength="4096" required></textarea></div>
                     
                         </div>
             
+                        
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Journal type</label>
                             <div class="col-sm-10">
-                                <select name="characterJournal" class="chosen-select form-control ng-pristine ng-untouched ng-valid">
+                                <select name="characterJournal" id="characterJournal" class="chosen-select form-control ng-pristine ng-untouched ng-valid" required>
                                     <option value="" disabled selected></option>
                                     <option value="scientific">scientific</option>
                                     <option value="popularscience">popular science</option>
@@ -693,12 +678,11 @@ margin-right:0px;
                                 <input type="text" id="otherJournalType" name="characterJournal" class="form-control mt-2" placeholder="Your journal type" style="display: none;">
                             </div>
                         </div>
-                        
-                    <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Main scientific profile</label>
-                        <div class="col-sm-10">
-                    <select name="mainprofile" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country" ng-options="c.code as c.translate for c in getCountries() | orderBy:'translate'" >
-                        <option value="" disabled selected></option>
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label">Main scientific profile</label>
+                            <div class="col-sm-10">
+                                <select name="mainprofile" id="mainprofile" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
+                                    <option value="" disabled selected>Select option</option>
                         <option value="agriBioSciences">Agricultural and Biological Sciences (all)</option>
                         <option value="artsHumanities">Arts and Humanities (all)</option>
                         <option value="biochemGeneticsMolecularBio">Biochemistry, Genetics and Molecular Biology (all)</option>
@@ -729,14 +713,18 @@ margin-right:0px;
                         <option value="other">Other</option> 
 
                     </select>
-                    <input type="text" id="otherMainProfile" name="mainprofile" class="form-control mt-2" placeholder="Your profile" style="display: none;">
+                    <input type="text" id="MainProfile" name="mainprofile" class="form-control mt-2" placeholder="Enter custom field" style="display: none;" >
+                   
                 </div>
             </div>
                    <div>
                     <div class="mb-3 row">
                         <label class="col-sm-2 col-form-label">Scientific profile</label>
                         <div class="col-sm-10">
-                        <select name="scienceprofile" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country" ng-options="c.code as c.translate for c in getCountries() | orderBy:'translate'"><option value="?" selected="selected"></option>
+                         
+                                <select name="scienceprofile" id="scienceprofile" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
+                                    <option value="" disabled selected>Select option</option>
+                          
                         <option value="agriBioSciences">Agricultural and Biological Sciences (all)</option>
                         <option value="artsHumanities">Arts and Humanities (all)</option>
                         <option value="biochemGeneticsMolecularBio">Biochemistry, Genetics and Molecular Biology (all)</option>
@@ -766,15 +754,17 @@ margin-right:0px;
                         <option value="veterinary">Veterinary (all)</option>
                         <option value="other">Other</option>
                       </select>
-                      <input type="text" id="otherScienceProfile" name="scienceprofile" class="form-control mt-2" placeholder="Your profile" style="display: none;">
+                      <input type="text" id="otherScienceProfile" name="scienceprofile" class="form-control mt-2" placeholder="Enter custom field" style="display: none;" >
+                    </div>
                     </div> 
                     </div>
                     
-<div class="mb-3 row">
-     <label class="col-sm-2 col-form-label">Web of Science (main)</label>
-     <div class="col-sm-10">
-        <select name="webofscience" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country" ng-options="c.code as c.translate for c in getCountries() | orderBy:'translate'">
-            <option value="" disabled selected></option>
+                    <div class="mb-3 row">
+                        <label class="col-sm-2 col-form-label">Web of Science (main)</label>
+                        <div class="col-sm-10">
+                            <select name="webofscience" id="webofscience" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
+                                <option value="" disabled selected>Select option</option>
+                               
             <option value="Acoustics">Acoustics</option>
             <option value="Aerospace Engineering &amp; Technology">Aerospace Engineering &amp; Technology</option>
             <option value="Agricultural Economics &amp; Policy">Agricultural Economics &amp; Policy</option>
@@ -1034,7 +1024,8 @@ margin-right:0px;
     <option value="Theater">Theater</option> 
     <option value="other">Other</option>
         </select> 
-        <input type="text" id="otherWebOfScience" name="webofscience" class="form-control mt-2" placeholder="Enter custom field" style="display: none;">
+        <input type="text" id="otherWebOfScience" name="webofscience" class="form-control mt-2" placeholder="Enter custom field" style="display: none;" >
+   
          </div> 
 </div>      
          
@@ -1044,7 +1035,7 @@ margin-right:0px;
 <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">Country</label>   
     <div class="col-sm-10">   
-    <select name="country" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country">
+    <select name="country" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country" required>
         <option value="" disabled selected></option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
@@ -1237,14 +1228,14 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Publication language</label>
         <div class="col-sm-10">
-        <input type="text" class="custom-input"name="language"></div></div>
+        <input type="text" class="custom-input"name="language" required ></div></div>
    
             
 
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">ISSN</label>
             <div class="col-sm-10">
-                <input type="text" name="issn" class="custom-input" maxlength="9" oninput="formatISSN(this)">
+                <input type="text" name="issn" class="custom-input" maxlength="9" oninput="formatISSN(this)" required>
             </div>
         </div>
        
@@ -1275,13 +1266,13 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">DOI</label>
         <div class="col-sm-10">
-        <input type="text" class="custom-input"name="doi"></div></div>
+        <input type="text" class="custom-input"name="doi" required></div></div>
    
     <div class="mb-3 row">
        
         <label class="col-sm-2 col-form-label">Journal Creative Commons articles license</label>
         <div class="col-sm-10">
-            <select name="rapidReview" class="chosen-select form-control ng-pristine ng-valid ng-touched" ng-model="journal.journalLicense">
+            <select name="rapidReview" class="chosen-select form-control ng-pristine ng-valid ng-touched" ng-model="journal.journalLicense" required>
                 <option value="" label="Choose" class="ng-binding">Choose</option>
                 <option value="NONE" class="ng-binding">None</option>
                 <option value="CC_BY" class="ng-binding">Yes, under the CC-BY license</option>
@@ -1298,28 +1289,28 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Indexing Databases</label>
         <div class="col-sm-10">
-        <input type="text" name="doibase" class="custom-input" ng-model="journal.doi"></div></div>
+        <input type="text" name="doibase" class="custom-input" ng-model="journal.doi" required></div></div>
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Website</label>
             <div class="col-sm-10">
-            <input type="text" class="custom-input"name="website" ></div></div>
+            <input type="text" class="custom-input"name="website" required ></div></div>
     
 
    <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">Printed version</label>
     
     <div class="radio-container">
-      <input type="radio" id="printedVersion_1" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="true">
+      <input type="radio" id="printedVersion_1" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="true" required>
       <label for="printedVersion_1" class="ng-binding">Yes</label>
     </div>
     
     <div class="radio-container">
-      <input type="radio" id="printedVersion_2" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="false">
+      <input type="radio" id="printedVersion_2" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="false" required>
       <label for="printedVersion_2" class="ng-binding">No</label>
     </div>
     
     <div class="radio-container">
-      <input type="radio" id="printedVersion_3" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid">
+      <input type="radio" id="printedVersion_3" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" required>
       <label for="printedVersion_3" class="ng-binding">No data</label>
     </div>
 </div>
@@ -1330,15 +1321,15 @@ margin-right:0px;
     
  
                                   <div class="radio-container">
-            <input type="radio" id="electronicVersion_1" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="true">
+            <input type="radio" id="electronicVersion_1" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="true" required>
             <label for="electronicVersion_1" class="ng-binding"> Yes </label>
         </div>
         <div class="radio-container">
-            <input type="radio" id="electronicVersion_2" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="false">
+            <input type="radio" id="electronicVersion_2" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="false" required>
             <label for="electronicVersion_2" class="ng-binding"> No </label>
         </div>
         <div class="radio-container">
-            <input type="radio" id="electronicVersion_3" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid">
+            <input type="radio" id="electronicVersion_3" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" required>
             <label for="electronicVersion_3" class="ng-binding"> No data </label>
         </div>
  </div>
@@ -1347,15 +1338,15 @@ margin-right:0px;
   
        
                                   <div class="radio-container">
-            <input type="radio" id="freeFullText_1" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="true">
+            <input type="radio" id="freeFullText_1" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="true" required>
             <label for="freeFullText_1" class="ng-binding"> Yes </label>
         </div>
         <div class="radio-container">
-            <input type="radio" id="freeFullText_2" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="false">
+            <input type="radio" id="freeFullText_2" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="false" required>
             <label for="freeFullText_2" class="ng-binding"> No </label>
         </div>
         <div class="radio-container">
-            <input type="radio" id="freeFullText_3" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid">
+            <input type="radio" id="freeFullText_3" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" required>
             <label for="freeFullText_3" class="ng-binding"> No data </label>
         </div>
     </div>
@@ -1363,12 +1354,12 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Published from</label>
         <div class="col-sm-10">
-        <input type="number" min="1600" max="2023" name="firstIssueYear" class="custom-input" ng-model="journal.firstIssueYear"></div>
+        <input type="number" min="1600" max="2023" name="firstIssueYear" class="custom-input" ng-model="journal.firstIssueYear" required></div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Publication frequency</label>
         <div class="col-sm-10">
-            <select name="freq" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country">
+            <select name="freq" class="chosen-select form-control ng-pristine ng-valid ng-touched" tabindex="4" ng-model="journal.country" required>
                 <option value="" disabled selected></option>
             <option value="biweekly" >biweekly</option>
             <option value="bimonthly" >bimonthly</option>
@@ -1385,12 +1376,12 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Circulation</label>
         <div class="col-sm-10">
-        <input type="number" min="1" max="10000000" name="circulation" class="chosen-select form-control ng-pristine ng-untouched ng-valid" ng-model="journal.circulation"></div>
+        <input type="number" min="1" max="10000000" name="circulation" class="chosen-select form-control ng-pristine ng-untouched ng-valid" ng-model="journal.circulation" required></div>
         </div>
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label">Review procedure model</label>
             <div class="col-sm-10">
-            <select name="reviewProcedure" class="chosen-select form-control ng-pristine ng-untouched ng-valid" >
+            <select name="reviewProcedure" class="chosen-select form-control ng-pristine ng-untouched ng-valid" required>
             
             <option value="" disabled selected>Select a category</option>
                     <option value="DOUBLE_BLIND_REVIEW" >Double blind review</option>
@@ -1406,74 +1397,42 @@ margin-right:0px;
     <div class="mb-3 row">
         <label class="col-sm-4 col-form-label">The average time during which the preliminary assessment of manuscripts is conducted.</label>
         <div class="col-sm-8">
-            <input type="number" name="initial_assessment_time"class="form-control ng-pristine ng-untouched ng-valid" ng-model="journal.avgManuscriptTimes.review" ng-change="validateReviewTime()" onkeypress="return isIntNumberKey(event)">
+            <input type="number" name="initial_assessment_time"class="form-control ng-pristine ng-untouched ng-valid" ng-model="journal.avgManuscriptTimes.review" ng-change="validateReviewTime()" onkeypress="return isIntNumberKey(event)" required>
         <label class="col-sm-4 control-label-left ng-binding">(Days) </label>
         </div>
     </div>
     <div class="mb-3 row">
         <label class="col-sm-4 col-form-label">The average time during which the reviews of manuscripts are conducted.</label>
         <div class="col-sm-8">
-        <input type="number" name="review_time" class="form-control ng-valid ng-dirty ng-valid-number ng-touched" ng-model="journal.avgManuscriptTimes.initialAssessment" ng-change="validateInitialAssessmentTime()" onkeypress="return isIntNumberKey(event)">
+        <input type="number" name="review_time" class="form-control ng-valid ng-dirty ng-valid-number ng-touched" ng-model="journal.avgManuscriptTimes.initialAssessment" ng-change="validateInitialAssessmentTime()" onkeypress="return isIntNumberKey(event)" required>
             <label class="col-sm-4 control-label-left ng-binding">(Days) </label>
         </div>
         </div>
     <div class="mb-3 row">
         <label class="col-sm-4 col-form-label">The average time in which the article is published</label>
         <div class="col-sm-8">
-        <input type="number"name="published_time" class="form-control ng-pristine ng-untouched ng-valid" ng-model="journal.avgManuscriptTimes.review" ng-change="validateReviewTime()" onkeypress="return isIntNumberKey(event)">
+        <input type="number"name="published_time" class="form-control ng-pristine ng-untouched ng-valid" ng-model="journal.avgManuscriptTimes.review" ng-change="validateReviewTime()" onkeypress="return isIntNumberKey(event)" required>
         <label class="col-sm-4 control-label-left ng-binding">(Days) </label>
     </div>
     </div>
-                <div class="image-sign">
-                        <div class="col-lg-12">
-                            <div class="wrapper wrapper-content animated fadeInUp">
-                                <div class="ibox float-e-margins">
-                                    <div class="ibox-title">
-                                        <center><div class="cover">Journal cover</div></center><br>
-                                        <h6 style="font-weight: lighter;">click here to upload image</h6>
 
-                                        <div class="mb-3 row">
-                                            <div class="col-sm-2" style="margin-left: 330px;">
-                                                <div style="display: inline-block;">
-                                                    <a href="#" onclick="document.getElementById('image').click(); return false;">
-                                                        <img src="{{ asset('user/img/upload.jfif') }}" alt="" style="width: 100%; height: 100%;">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-10">
-                                                <div class="input-group">
-                                                   <input type="file" class="form-control" id="image" name="image" style="display: none;">
-                                                </div>
-                                             
-                                            </div>
-                                        </div>
-                                        
-                                        </div>
-                                        
-                                            <div class="col-sm-10">
-                                                <div class="input-group">
-                                                   
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
-                                        
-                                       
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        
-                                                    <div class="button">
-                                                    <button type="submit" class="btn btn-primary" >save</button>
-                                        
-                                                   <button type="button" class="btn btn-secondary">cancel</button>  
-                                                    </div> 
-                                           
-                                              </div><br>
+    <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Journal Cover</label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control" id="image" name="image" required ></div>
+      <br>
+      <br>
+      <br>
+     
+        <div class="button">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <span style="margin: 0 10px;"></span> <!-- Adjust the margin as needed -->
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+        </div>
+  
+    <br>
                                               
-                                            
-                                        </form>
+    </form>
                                         
                     
                                         
@@ -1493,8 +1452,14 @@ margin-right:0px;
 
 </body>
 </html>
+<style>
+    .button {
+      display: flex;
+      justify-content: center; /* Center buttons horizontally */
+    }
+    </style>
 
-  
+
 
 <script>
        
@@ -1584,30 +1549,71 @@ function formatISSN(input) {
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const otherMainProfileInput = document.getElementById("otherMainProfile");
         const otherScienceProfileInput = document.getElementById("otherScienceProfile");
-        const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
-    
-        const mainProfileSelect = document.querySelector("select[name='mainprofile']");
-        const scienceProfileSelect = document.querySelector("select[name='scienceprofile']");
-        const webOfScienceSelect = document.querySelector("select[name='webofscience']");
-    
-        mainProfileSelect.addEventListener("change", function() {
-            otherMainProfileInput.style.display = mainProfileSelect.value === "other" ? "block" : "none";
-            otherMainProfileInput.value = ""; // Clear existing value
-        });
-    
+        const scienceProfileSelect = document.getElementById("scienceprofile");
+
+        // Event listener for the select dropdown
         scienceProfileSelect.addEventListener("change", function() {
-            otherScienceProfileInput.style.display = scienceProfileSelect.value === "other" ? "block" : "none";
-            otherScienceProfileInput.value = ""; // Clear existing value
-        });
-    
-        webOfScienceSelect.addEventListener("change", function() {
-            otherWebOfScienceInput.style.display = webOfScienceSelect.value === "other" ? "block" : "none";
-            otherWebOfScienceInput.value = ""; // Clear existing value
+            const selectedValue = scienceProfileSelect.value;
+            
+            // Check if the selected value is "other"
+            if (selectedValue === "other") {
+                otherScienceProfileInput.style.display = "block";
+                otherScienceProfileInput.value = ""; // Clear existing value
+            } else {
+                otherScienceProfileInput.style.display = "none";
+                otherScienceProfileInput.value = selectedValue; // Fill input with selected value
+            }
         });
     });
-    </script>
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const otherMainProfileInput = document.getElementById("otherMainProfile");
+      
+        const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
+
+        const mainProfileSelect = document.querySelector("select[name='mainprofile']");
+   
+        const webOfScienceSelect = document.querySelector("select[name='webofscience']");
+
+        // Variable to store the custom value
+        let customValue = "";
+
+        mainProfileSelect.addEventListener("change", function() {
+            if (mainProfileSelect.value === "other") {
+                otherMainProfileInput.style.display = "block";
+            } else {
+                otherMainProfileInput.style.display = "none";
+                otherMainProfileInput.value = ""; // Clear existing value
+            }
+        });
+
+       
+
+        webOfScienceSelect.addEventListener("change", function() {
+            if (webOfScienceSelect.value === "other") {
+                otherWebOfScienceInput.style.display = "block";
+            } else {
+                otherWebOfScienceInput.style.display = "none";
+                otherWebOfScienceInput.value = ""; // Clear existing value
+            }
+        });
+
+        // Event listener to capture input value
+        otherMainProfileInput.addEventListener("input", function() {
+            customValue = otherMainProfileInput.value;
+        });
+
+      
+
+        otherWebOfScienceInput.addEventListener("input", function() {
+            customValue = otherWebOfScienceInput.value;
+        });
+    });
+</script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const journalTypeSelect = document.getElementById("journalType");
@@ -1624,7 +1630,7 @@ function formatISSN(input) {
         });
         </script>
        
-        <script>
+        {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const otherMainProfileInput = document.getElementById("otherMainProfile");
             const otherScienceProfileInput = document.getElementById("otherScienceProfile");
@@ -1649,7 +1655,7 @@ function formatISSN(input) {
                 otherWebOfScienceInput.value = ""; // Clear existing value
             });
         });
-        </script>
+        </script> --}}
        <script>
         // JavaScript to handle the "Other" option and custom input
         const journalTypeSelect = document.querySelector("[name='characterJournal']");

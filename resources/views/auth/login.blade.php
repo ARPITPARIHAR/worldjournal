@@ -9,7 +9,7 @@
         <div class="col-md-8">
             <div class="card">
 
-                <div class="card-header text-center" style="background-color: #f0f0f0; height:40px">Lodffeferfegin</div>
+                <div class="card-header text-center" style="background-color: lightgreen; height:40px">Login</div>
                 <div class="card-body">
                     @if(session('error') || session('social_error'))
                         <div class="alert alert-danger">

@@ -204,7 +204,7 @@
               Contact Us
             </h3>
             <hr style="width: 150px; border: 4px solid white; margin: 10px auto;">
-            <p style="font-size: 16px; color:black;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
+            <p style="font-size: 16px; color:black; margin-top:-24px;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
             <div class="zoom-in-container">
             <div style="max-width: 400px; max-height: 300px; margin: 0 auto; padding: 20px; background-color:#FFFACD; color:black;  border-radius: 10px; text-align: center; margin-top: 0; margin-bottom: 10px;">
 
@@ -232,12 +232,12 @@
 
 <div class="row">
 <div class="col-lg-6"  >
-  <div style="max-height: 500px;">
+  <div style="max-height: 500px; margin-left:100px;">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen style="height: 500px;"></iframe>
   </div>
 </div>
 <div class="col-lg-6">
-  <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue;; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;max-height:500px;">
+  <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue;; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;max-height:500px;margin-right:100px;">
       @csrf
       <h2 style="text-align: center; color: #000;margin-top:-30px;">Drop Us A Message</h2>
       <br>
@@ -440,7 +440,7 @@
             transform: translateX(-50%);
             height: 70px;
             width: 400px;
-            background: #009391;
+            background: #483D8B;
    
             border-radius: 0 0 50% 50%;
             z-index: -1;
@@ -533,12 +533,7 @@
     position: relative;
     z-index: 1;
 }
-.btn-primary {
-    color: #fff;
-    background-color: #ee1515;
-    border-color: #ee1515;
-}
-   .form-control{
+ .form-control{
     border-radius:10px;
    }
 

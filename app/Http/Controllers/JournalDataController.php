@@ -29,7 +29,7 @@ class JournalDataController extends Controller
         $data->scientific_profile = $request->scienceprofile;
         $data->webofscience = $request->webofscience;
         $data->country = $request->country;
-        $data->scimago_category = $request->country;
+      
         $data->publication_language = $request->language;
         $data->issn = $request->issn;
        
