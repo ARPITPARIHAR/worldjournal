@@ -644,10 +644,7 @@ margin-right:0px;
                         <label class="col-sm-2 col-form-label">Short title</label>
                         <div class="col-sm-10">
                         <input type="text" class="custom-input"name="titlesh" required ></div></div>
-                     
-                              
-                           
-                            <div class="mb-3 row">
+                     <div class="mb-3 row">
                                 <label class="col-sm-2 col-form-label">Alternative title</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="custom-input" name="titleal" required></div></div>
@@ -664,8 +661,7 @@ margin-right:0px;
                         <input type="textarea " class="text-input" name="descriptionEn" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.descriptionEn" maxlength="4096" required></textarea></div>
                     
                         </div>
-            
-                        
+ 
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Journal type</label>
                             <div class="col-sm-10">
@@ -1296,60 +1292,66 @@ margin-right:0px;
             <input type="text" class="custom-input"name="website" required ></div></div>
     
 
-   <div class="mb-3 row">
+ 
+            <div class="mb-3 row">
     <label class="col-sm-2 col-form-label">Printed version</label>
+    <div class="col-sm-8">
     
-    <div class="radio-container">
+    <div class="radio-container" style="margin-left:0px;">
       <input type="radio" id="printedVersion_1" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="true" required>
       <label for="printedVersion_1" class="ng-binding">Yes</label>
     </div>
     
-    <div class="radio-container">
+    <div class="radio-container" style="margin-left:100px;">
       <input type="radio" id="printedVersion_2" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" value="false" required>
       <label for="printedVersion_2" class="ng-binding">No</label>
     </div>
     
-    <div class="radio-container">
+    <div class="radio-container" style="margin-left:80px;">
       <input type="radio" id="printedVersion_3" ng-value="" name="printedVersion" ng-model="journal.printedVersion" class="ng-pristine ng-untouched ng-valid" required>
       <label for="printedVersion_3" class="ng-binding">No data</label>
     </div>
 </div>
-  
+   
 
 <div class="mb-3 row">
+
     <label class="col-sm-2 col-form-label">Electronic version</label>
-    
- 
-                                  <div class="radio-container">
+    <div class="col-sm-8">
+     <div class="radio-container" style="margin-left: 5px;">
             <input type="radio" id="electronicVersion_1" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="true" required>
             <label for="electronicVersion_1" class="ng-binding"> Yes </label>
         </div>
-        <div class="radio-container">
+        <div class="radio-container" style="margin-left:100px;">
             <input type="radio" id="electronicVersion_2" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" value="false" required>
             <label for="electronicVersion_2" class="ng-binding"> No </label>
         </div>
-        <div class="radio-container">
+        <div class="radio-container" style="margin-left:80px;">
             <input type="radio" id="electronicVersion_3" ng-value="" name="electronicVersion" ng-model="journal.electronicVersion" class="ng-pristine ng-untouched ng-valid" required>
             <label for="electronicVersion_3" class="ng-binding"> No data </label>
         </div>
  </div>
+
 <div class="mb-3 row">
+  
     <label class="col-sm-2 col-form-label">Free full texts</label>
   
-       
-                                  <div class="radio-container">
+    <div class="col-sm-8">
+                                  <div class="radio-container"  style="margin-left:10px;">
+                                   
             <input type="radio" id="freeFullText_1" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="true" required>
             <label for="freeFullText_1" class="ng-binding"> Yes </label>
         </div>
-        <div class="radio-container">
+        <div class="radio-container"  style="margin-left:100px;">
             <input type="radio" id="freeFullText_2" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" value="false" required>
             <label for="freeFullText_2" class="ng-binding"> No </label>
         </div>
-        <div class="radio-container">
+        <div class="radio-container"  style="margin-left:80px;">
             <input type="radio" id="freeFullText_3" ng-value="" name="freeFullText" ng-model="journal.freeFullText" class="ng-pristine ng-untouched ng-valid" required>
             <label for="freeFullText_3" class="ng-binding"> No data </label>
         </div>
     </div>
+</div>
     <br>
     <div class="mb-3 row">
         <label class="col-sm-2 col-form-label">Published from</label>

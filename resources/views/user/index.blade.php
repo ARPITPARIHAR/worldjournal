@@ -34,7 +34,7 @@
                     <input type="hidden" name="web" value="{{ $item->website }}">
                     <input type="hidden" name="count" value="{{ $item->country }}">
                     <input type="hidden" name="pul" value="{{ $item->publication_language }}">
-                    <button type="submit" class="bookmark-btn btn btn-primary" style="font-size: 14px; float: right;">Bookmark</button>
+                    <button type="submit" class="bookmark-btn btn btn-primary" style="font-size: 14px; float: right; border-radius:10px;background-color:red;">Bookmark</button>
 
                 </form>
             </div>
@@ -101,7 +101,7 @@
         <table class="table table-bordered table-striped attractive-table">
           <thead>
             <tr>
-              <th class="text-center">Scimago category</th>
+         
               <th class="text-center">Web of science category</th>
               <th class="text-center">Indexed In</th>
               <th class="text-center">Circulation</th>
@@ -112,7 +112,7 @@
             @foreach ($data as $item)
             @if (is_object($item))
             <tr>
-              <td class="text-center">{{ $item->scimago_category }}</td>
+            
               <td class="text-center">{{ $item->webofscience }}</td>
               <td class="text-center">{{ $item->indexing ? 'Yes' : 'No' }}</td>
               <td class="text-center">{{ $item->circulation ? 'Yes' : 'No' }}</td>
@@ -144,6 +144,10 @@
   background-color: #001180!important;
      height: 60px!important;
 }
+#footer{
+    background-color: black !important;
+  
+       }
 
 .col-lg-4.col-md-6.footer-info h2 {
     font-size: 32px !important;
@@ -258,7 +262,7 @@
    /
     .tab-container {
       border: 1px solid #ddd;
-      background-color: olivedrab;
+      background-color: #FFF0F5;
       padding: 10px;
       font-size:13px;
        overflow-x: auto;
@@ -281,7 +285,7 @@
     transition: background-color 0.3s;
     font-family: Arial, sans-serif;
     color: white;
-    background: linear-gradient(to right,teal,	#8FBC8F);
+    background: maroon;
     font-size: 13px;
   }
 

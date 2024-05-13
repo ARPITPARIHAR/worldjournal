@@ -74,15 +74,16 @@
 <style>
 .modal-body {
   padding: 20px;
+  background-color:#FFDAB9;
 }
-
+#footer{
+    background-color: black !important;
+  
+       }
 .form-group {
   margin-bottom: 20px;
 }
 
-.form-group label {
-  font-weight: bold;
-}
 
 .form-control {
   border: 1px solid #ccc;
