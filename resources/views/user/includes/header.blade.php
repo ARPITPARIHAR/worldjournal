@@ -206,24 +206,24 @@
             <hr style="width: 150px; border: 4px solid white; margin: 10px auto;">
             <p style="font-size: 16px; color:black; margin-top:-24px;">Your message is important to us. Get in touch for any inquiries or feedback.</p>
             <div class="zoom-in-container">
-            <div style="max-width: 400px; max-height: 300px; margin: 0 auto; padding: 20px; background-color:#FFFACD; color:black;  border-radius: 10px; text-align: center; margin-top: 0; margin-bottom: 10px;">
+            <div style="max-width: 400px; max-height: 300px; margin: 0 auto; padding: 20px; background-color: #defdff; color:black;  border-radius: 10px; text-align: center; margin-top: 0; margin-bottom: 10px;">
 
         
               <div style="margin-bottom: 5px;">
                 <h3 class="info-title"><i class="info-icon fas fa-map-marker-alt"></i>Location:</h3>
-                <p style="font-size: 16px; margin: 0;">Y-18-A, Sudarshana Nagar<br>Bikaner (Rajasthan) 334003</p>
+                <p style="font-size: 16px; margin: 0;color: #0d3c88;">Y-18-A, Sudarshana Nagar<br>Bikaner (Rajasthan) 334003</p>
               </div>
             
               <!-- Email -->
               <div style="margin-bottom: 5px;">
                 <h3 class="info-title"><i class="info-icon fas fa-envelope"></i>Email:</h3>
-                <p style="font-size: 16px; margin: 0;">auricletechnology@gmail.com</p>
+                <p style="font-size: 16px; margin: 0;color: #0d3c88;">auricletechnology@gmail.com</p>
               </div>
             
               <!-- Phone Number -->
               <div>
                 <h3 class="info-title"><i class="info-icon fas fa-phone"></i>Call:</h3>
-                <p style="font-size: 18px; margin: 0;">987654321</p>
+                <p style="font-size: 18px; margin: 0;color: #0d3c88;">987654321</p>
               </div>
             
             </div>
@@ -406,17 +406,18 @@
             font-size: 16px;
             margin-bottom: 10px;
         }
-
         #search-button {
-            padding: 10px 20px;
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-left: 700px; 
-        }
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto; /* Align horizontally to center */
+    display: block; /* Make it a block element to center */
+}
+
 
         #search-button:hover {
             background-color: #0056b3;

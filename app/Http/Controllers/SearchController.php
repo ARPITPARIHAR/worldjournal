@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-public function search(Request $request)
+    public function search(Request $request)
 {
     $cfptype = $request->input('cfptype');
     $category = $request->input('category');
@@ -21,14 +21,12 @@ public function search(Request $request)
     }
 
     if ($category) {
-        $data->where(function ($query) use ($category) {
-            $query->where('category', $category);
-        });
+        $data->where('category', $category);
     }
 
     if ($country) {
         $data->where(function ($query) use ($country) {
-            $query->where('country', $country);
+            $query->where('publisher_address', 'like', "%{$country}%");
         });
     }
 
@@ -39,6 +37,7 @@ public function search(Request $request)
                 ->orWhere('journal_title', 'like', "%{$search}%");
         });
     }
+
 
    
 
