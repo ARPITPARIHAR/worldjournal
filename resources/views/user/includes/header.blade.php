@@ -149,39 +149,35 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="card" id="country-card">
         <div class="card-header text-center" style="background-color: #B0E0E6; color: black; height:50px; border-radius:15px;">Country Records</div>
         <div class="card-body">
-          <div class="row" id="country-row">
-            @php $i = 0; @endphp <!-- Initialize counter -->
+          <div class="row justify-content-center"> <!-- Center the content -->
             @foreach ($country_records as $result)
-            <div class="col-md-3 col-sm-3"> <!-- Adjust column size to fit 4 items per row -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6"> <!-- Adjust column size to fit 4 items per row on large screens, 3 items per row on medium screens, and 2 items per row on small screens -->
               <div class="result">
                 <p class="country-name">{{ $result->country }}</p>
                 <p class="count">({{ $result->count }})</p> <!-- Display count within parentheses -->
               </div>
             </div>
-            @php $i++; @endphp <!-- Increment counter -->
             @endforeach
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="card" id="category-card">
         <div class="card-header text-center" style="background-color: #FFDAB9; color: black; height:50px; border-radius:15px;">Category Records</div>
         <div class="card-body">
-          <div class="row" id="category-row">
-            @php $j = 0; @endphp <!-- Initialize counter -->
+          <div class="row justify-content-center"> <!-- Center the content -->
             @foreach ($category_records as $result)
-            <div class="col-md-3 col-sm-3"> <!-- Adjust column size to fit 4 items per row -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6"> <!-- Adjust column size to fit 4 items per row on large screens, 3 items per row on medium screens, and 2 items per row on small screens -->
               <div class="result">
                 <p class="category-name">{{ $result->category }}</p>
                 <p class="count">({{ $result->count }})</p> <!-- Display count within parentheses -->
               </div>
             </div>
-            @php $j++; @endphp <!-- Increment counter -->
             @endforeach
           </div>
         </div>
@@ -286,6 +282,26 @@
 
 <style>
 
+/* For small devices (phones, 768px and below) */
+@media only screen and (max-width: 768px) {
+  .col-lg-6 {
+    width: 100%; /* Make columns full width on small screens */
+    margin-left: 0 !important; /* Remove left margin */
+    margin-right: 0 !important; /* Remove right margin */
+  }
+
+  iframe {
+    width: 100%; /* Make the map iframe full width */
+  }
+}
+
+/* For medium devices (tablets, 768px and above) */
+@media only screen and (min-width: 768px) {
+  .col-lg-6 {
+    width: 50%; /* Set columns to half width on medium screens */
+    float: left; /* Float columns to left */
+  }
+}
 
 
 

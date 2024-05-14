@@ -104,8 +104,8 @@
     <div class="hamburger-menu">
     <div class="hamburger-icon">
       <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+     
+   
     </div>
 
     <ul class="menu-items">
@@ -191,13 +191,13 @@
     margin: 25px;
     position: relative;
     z-index: 9999;
-    background-color: #800000;
+    background-color:white;
     border-radius: 4px; /* Add border-radius for rounded corners */
         }
         .line {
             width: 100%;
-            height: 3px;
-            background-color:white;
+            height: 2px;
+            background-color:black;
         }
 
        
