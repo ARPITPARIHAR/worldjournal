@@ -228,9 +228,10 @@
 
 <div class="row">
 <div class="col-lg-6"  >
-  <div style="max-height: 500px; margin-left:100px;">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen style="height: 500px;"></iframe>
-  </div>
+ 
+  <div style="max-height: 500px; margin-left: 100px; margin-right: auto; /* Center the iframe horizontally */">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen style="height: 500px; width: 100%; /* Make the iframe full width */"></iframe>
+</div>
 </div>
 <div class="col-lg-6">
   <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue;; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;max-height:500px;margin-right:100px;">
@@ -282,33 +283,20 @@
 
 <style>
 
-/* For small devices (phones, 768px and below) */
-<style>
+
+
 @media only screen and (max-width: 768px) {
-  .col-lg-6 {
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  iframe {
-    width: 100%;
-    margin-left: 0; /* Remove left margin */
-  }
-
-  .php-email-form {
-    padding: 3rem 1.5rem; /* Reduce padding */
-    max-height: 100%; /* Adjust max-height */
-  }
-
-  .col-lg-6:last-child {
-    margin-right: 0; /* Remove right margin for the last column */
-  }
+    div[style*="margin-left: 100px;"] {
+        margin-left: 0; /* Remove left margin on mobile screens */
+    }
 }
 
-
-
-
+@media only screen and (max-width: 768px) {
+    .php-email-form {
+        padding: 3rem 1.5rem; /* Reduce padding for mobile screens */
+        max-height: none; /* Remove max-height to allow dynamic height */
+    }
+}
 
 
 .featured-block {
