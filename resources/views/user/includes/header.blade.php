@@ -283,25 +283,29 @@
 <style>
 
 /* For small devices (phones, 768px and below) */
+<style>
 @media only screen and (max-width: 768px) {
   .col-lg-6 {
-    width: 100%; /* Make columns full width on small screens */
-    margin-left: 0 !important; /* Remove left margin */
-    margin-right: 0 !important; /* Remove right margin */
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   iframe {
-    width: 100%; /* Make the map iframe full width */
+    width: 100%;
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .php-email-form {
+    padding: 3rem 1.5rem; /* Reduce padding */
+    max-height: 100%; /* Adjust max-height */
+  }
+
+  .col-lg-6:last-child {
+    margin-right: 0; /* Remove right margin for the last column */
   }
 }
 
-/* For medium devices (tablets, 768px and above) */
-@media only screen and (min-width: 768px) {
-  .col-lg-6 {
-    width: 50%; /* Set columns to half width on medium screens */
-    float: left; /* Float columns to left */
-  }
-}
 
 
 

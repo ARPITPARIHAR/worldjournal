@@ -168,8 +168,9 @@ font-weight: bold;
 }
 .search-container {
     margin-top: 90px;
-    margin-left: 5px;
+   
     text-align: left;
+   
     background-color: rgb(0 170 255);
     width: 280px;
   
@@ -178,6 +179,18 @@ font-weight: bold;
     border-radius: 15px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .search-container {
+        margin-top: 20px; /* Adjust top margin for smaller screens */
+        width: 95%; /* Set width to a higher percentage for smaller screens */
+    }
+}
+
 
 .search {
     margin-left: 5px;
