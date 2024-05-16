@@ -15,7 +15,7 @@ class JournalDataController extends Controller
 
     public function store(Request $request)
     {
-            //   dd($request->all());
+            //    dd($request->all());
         $data = new JournalData();
         $data->journal_title = $request->titleor;
         $data->english_title = $request->titleEn;

@@ -229,12 +229,12 @@
 <div class="row">
 <div class="col-lg-6"  >
  
-  <div style="max-height: 500px; margin-left: 100px; margin-right: auto; /* Center the iframe horizontally */">
+  <div class="map" style="max-height: 500px; margin-left: 100px; margin-right: auto; /* Center the iframe horizontally */">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d220.18644260501418!2d73.34259678603189!3d27.994414007983714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1687893595114!5m2!1sen!2sin" frameborder="0" allowfullscreen style="height: 500px; width: 100%; /* Make the iframe full width */"></iframe>
 </div>
 </div>
 <div class="col-lg-6">
-  <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue;; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative;max-height:500px;margin-right:100px;">
+ <form action="feedback.store" method="post" role="form" class="php-email-form" style="background: powderblue; backdrop-filter: blur(3.5px); box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1); border-radius: 30px; padding: 7rem 3rem; margin: 0; overflow: visible; position: relative; max-height: 500px; margin-right: 100px;">
       @csrf
       <h2 style="text-align: center; color: #000;margin-top:-30px;">Drop Us A Message</h2>
       <br>
@@ -286,18 +286,19 @@
 
 
 @media only screen and (max-width: 768px) {
-    div[style*="margin-left: 100px;"] {
-        margin-left: 0; /* Remove left margin on mobile screens */
+  .map {
+        margin-left: 0 !important; /* Remove left margin on mobile screens */
     }
 }
 
 @media only screen and (max-width: 768px) {
     .php-email-form {
-        padding: 3rem 1.5rem; /* Reduce padding for mobile screens */
-        max-height: none; /* Remove max-height to allow dynamic height */
+        padding: 4rem 1.5rem !important; /* Adjust padding for mobile screens */
+        max-height: none !important; /* Remove max-height */
+        margin-right: 0 !important;
+        margin-top:10px !important;
     }
 }
-
 
 .featured-block {
     background-color:#234E70;

@@ -109,6 +109,7 @@
     }
     .btn.btn-info {
         color: black;
+        background-color: white;
     }
     .sidebar li a {
         text-decoration: none;
@@ -661,19 +662,21 @@ margin-right:0px;
                         <input type="textarea " class="text-input" name="descriptionEn" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" ng-model="journal.descriptionEn" maxlength="4096" required></textarea></div>
                     
                         </div>
- 
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Journal type</label>
                             <div class="col-sm-10">
-                                <select name="characterJournal" id="characterJournal" class="chosen-select form-control ng-pristine ng-untouched ng-valid" required>
-                                    <option value="" disabled selected></option>
+                                <select name="characterJournal" id="characterJournal" class="chosen-select form-control" onchange="toggleInputVisibility()" required>
+                                    <option value="" disabled selected>Select option</option>
                                     <option value="scientific">scientific</option>
                                     <option value="popularscience">popular science</option>
                                     <option value="other">other</option> 
                                 </select>
-                                <input type="text" id="otherJournalType" name="characterJournal" class="form-control mt-2" placeholder="Your journal type" style="display: none;">
+                                <input type="text" id="otherJournalType" class="form-control mt-2" placeholder="Your journal type" style="display: none;">
                             </div>
                         </div>
+                        
+                       
+                        
                         <div class="mb-3 row">
                             <label class="col-sm-2 col-form-label">Main scientific profile</label>
                             <div class="col-sm-10">
@@ -715,12 +718,12 @@ margin-right:0px;
             </div>
                    <div>
                     <div class="mb-3 row">
-                        <label class="col-sm-2 col-form-label">Scientific profile</label>
-                        <div class="col-sm-10">
-                         
-                                <select name="scienceprofile" id="scienceprofile" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
-                                    <option value="" disabled selected>Select option</option>
-                          
+    <label class="col-sm-2 col-form-label">Scientific profile</label>
+    <div class="col-sm-10">
+        <select name="scienceprofile" id="scienceprofile" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
+        
+    
+            <option value="" disabled selected>Select option</option>
                         <option value="agriBioSciences">Agricultural and Biological Sciences (all)</option>
                         <option value="artsHumanities">Arts and Humanities (all)</option>
                         <option value="biochemGeneticsMolecularBio">Biochemistry, Genetics and Molecular Biology (all)</option>
@@ -759,8 +762,9 @@ margin-right:0px;
                         <label class="col-sm-2 col-form-label">Web of Science (main)</label>
                         <div class="col-sm-10">
                             <select name="webofscience" id="webofscience" class="chosen-select form-control" onchange="toggleInputVisibility(this)" required>
+        
+    
                                 <option value="" disabled selected>Select option</option>
-                               
             <option value="Acoustics">Acoustics</option>
             <option value="Aerospace Engineering &amp; Technology">Aerospace Engineering &amp; Technology</option>
             <option value="Agricultural Economics &amp; Policy">Agricultural Economics &amp; Policy</option>
@@ -1549,7 +1553,57 @@ function formatISSN(input) {
       
     });
   </script>
-  <script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
+        const webOfScienceSelect = document.getElementById("webofscience");
+
+        // Event listener for the select dropdown
+        webOfScienceSelect.addEventListener("change", function() {
+            const selectedValue = webOfScienceSelect.value;
+            
+            // Check if the selected value is "other"
+            if (selectedValue === "other") {
+                otherWebOfScienceInput.style.display = "block";
+                otherWebOfScienceInput.value = ""; // Clear existing value
+            } else {
+                otherWebOfScienceInput.style.display = "none";
+                otherWebOfScienceInput.value = selectedValue; // Fill input with selected value
+            }
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const otherMainProfileInput = document.getElementById("MainProfile");
+        const mainProfileSelect = document.getElementById("mainprofile");
+
+        // Event listener for the select dropdown
+        mainProfileSelect.addEventListener("change", function() {
+            const selectedValue = mainProfileSelect.value;
+            
+            // Check if the selected value is "other"
+            if (selectedValue === "other") {
+                otherMainProfileInput.style.display = "block";
+                otherMainProfileInput.value = ""; // Clear existing value
+            } else {
+                otherMainProfileInput.style.display = "none";
+                otherMainProfileInput.value = selectedValue; // Fill input with selected value
+            }
+        });
+
+        // Initial check for "other" option on page load
+        if (mainProfileSelect.value === "other") {
+            otherMainProfileInput.style.display = "block";
+        }
+    });
+</script>
+
+
+
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         const otherScienceProfileInput = document.getElementById("otherScienceProfile");
         const scienceProfileSelect = document.getElementById("scienceprofile");
@@ -1570,94 +1624,6 @@ function formatISSN(input) {
     });
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const otherMainProfileInput = document.getElementById("otherMainProfile");
-      
-        const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
-
-        const mainProfileSelect = document.querySelector("select[name='mainprofile']");
-   
-        const webOfScienceSelect = document.querySelector("select[name='webofscience']");
-
-        // Variable to store the custom value
-        let customValue = "";
-
-        mainProfileSelect.addEventListener("change", function() {
-            if (mainProfileSelect.value === "other") {
-                otherMainProfileInput.style.display = "block";
-            } else {
-                otherMainProfileInput.style.display = "none";
-                otherMainProfileInput.value = ""; // Clear existing value
-            }
-        });
-
-       
-
-        webOfScienceSelect.addEventListener("change", function() {
-            if (webOfScienceSelect.value === "other") {
-                otherWebOfScienceInput.style.display = "block";
-            } else {
-                otherWebOfScienceInput.style.display = "none";
-                otherWebOfScienceInput.value = ""; // Clear existing value
-            }
-        });
-
-        // Event listener to capture input value
-        otherMainProfileInput.addEventListener("input", function() {
-            customValue = otherMainProfileInput.value;
-        });
-
-      
-
-        otherWebOfScienceInput.addEventListener("input", function() {
-            customValue = otherWebOfScienceInput.value;
-        });
-    });
-</script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const journalTypeSelect = document.getElementById("journalType");
-            const customJournalTypeInput = document.getElementById("customJournalType");
-        
-            journalTypeSelect.addEventListener("change", function() {
-                if (journalTypeSelect.value === "other") {
-                    customJournalTypeInput.style.display = "block";
-                    customJournalTypeInput.value = ""; // Clear any existing value
-                } else {
-                    customJournalTypeInput.style.display = "none";
-                }
-            });
-        });
-        </script>
-       
-        {{-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const otherMainProfileInput = document.getElementById("otherMainProfile");
-            const otherScienceProfileInput = document.getElementById("otherScienceProfile");
-            const otherWebOfScienceInput = document.getElementById("otherWebOfScience");
-        
-            const mainProfileSelect = document.querySelector("select[name='mainprofile']");
-            const scienceProfileSelect = document.querySelector("select[name='scienceprofile']");
-            const webOfScienceSelect = document.querySelector("select[name='webofscience']");
-        
-            mainProfileSelect.addEventListener("change", function() {
-                otherMainProfileInput.style.display = mainProfileSelect.value === "other" ? "block" : "none";
-                otherMainProfileInput.value = ""; // Clear existing value
-            });
-        
-            scienceProfileSelect.addEventListener("change", function() {
-                otherScienceProfileInput.style.display = scienceProfileSelect.value === "other" ? "block" : "none";
-                otherScienceProfileInput.value = ""; // Clear existing value
-            });
-        
-            webOfScienceSelect.addEventListener("change", function() {
-                otherWebOfScienceInput.style.display = webOfScienceSelect.value === "other" ? "block" : "none";
-                otherWebOfScienceInput.value = ""; // Clear existing value
-            });
-        });
-        </script> --}}
        <script>
         // JavaScript to handle the "Other" option and custom input
         const journalTypeSelect = document.querySelector("[name='characterJournal']");
@@ -1671,6 +1637,7 @@ function formatISSN(input) {
             }
         });
     </script>
+
 
 
 

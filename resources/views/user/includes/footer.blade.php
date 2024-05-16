@@ -61,15 +61,7 @@
        <strong>© Copyright Auricle Technologies Pvt. Ltd.
         </strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!--
-        All the links in the footer should remain intact.
-        You can delete the links only if you purchased the pro version.
-        Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-      -->
-        {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
-      </div>
+    
     </div>
   </footer><!-- End Footer -->
   
@@ -84,4 +76,15 @@
     background-color: black;
   
        }
+       @media only screen and (max-width: 768px) {
+    .container {
+        height: auto; /* Set height to auto for mobile screens */
+        padding-top: 10px; /* Add padding for better spacing */
+        padding-bottom: 10px; /* Add padding for better spacing */
+        text-align: center; /* Center align text for better readability */
+    }
+}
+
+
+
   </style>
