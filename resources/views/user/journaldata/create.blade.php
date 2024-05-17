@@ -31,25 +31,30 @@
 <link rel="stylesheet" href="/path/to/styles.css">
  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">  
  <div class="wrapper d-flex">
-        <div class="sidebar">
-            <div class="user-info">
-                @if(Auth::check())
-                    <span>Welcome, {{ Auth::user()->name }}</span>
-                @endif
-            </div>
-      <ul>
-        <li><a href="/dash"><i class="fas fa-home"></i>Journal pannel</a></li>
-        <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
-        <li><a href="/contact"><i class="fas fa-users"></i>Contact</a></li>
-        <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
-        <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
-        {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
-        {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
-        {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
-      </ul>
+    <div class="sidebar">
+        <div class="user-info">
+            @if(Auth::check())
+                <span>Welcome, {{ Auth::user()->name }}</span>
+            @endif
+        </div>
+        <ul>
+            <a href="/dash">
+                <li><i class="fas fa-home"></i>Journal panel</li>
+            </a>
+            <a href="/">
+                <li><i class="fas fa-users"></i>Go to home</li>
+            </a>
+          
+            <a href="/data">
+                <li><i class="fas fa-users"></i>Add My Journal</li>
+            </a>
+            <a href="/callforpaper">
+                <li><i class="fas fa-users"></i>Call For Paper</li>
+            </a>
+        </ul>
     </div>
-    
-  </div>
+</div>
+
   
 
 <style>
@@ -120,22 +125,18 @@
         background-color: #336699;
         color: white;
     }
+    .form-container {
+    width: auto;
+    max-width: 900px;
+    margin-left: 140px; /* Set margin to desired fixed value */
+    margin-right: 140px; /* Set margin to desired fixed value */
+    padding: 20px;
+    background-color: #FFEFD5;
+    border-radius: 15px;
+    height: auto;
+}
 
-.form-container {
-    width:auto;
-    max-width:1000px;
-  margin-left:140px;
-  padding: 20px;
-  background-color: #FFEFD5;
-  border-radius: 5px;
-  height:auto;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-   border-bottom-left-radius: 15px;
-  
-            }
-           
+ 
             .form-label {
   display: block;
   font-weight: bold;
@@ -187,11 +188,11 @@
             body {
                 margin: 0;
     padding: 0;
-    background-image: url('/user/img/cfp.jpg');
+   
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-                background-color:lightgray;
+                background-color:#fd5f00!important;
                 margin-left: 200px;
             }
             .col-sm-2.control-label.ng-binding {
@@ -225,7 +226,24 @@ h6{
 }
 
 
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
 
+.sidebar ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul a:hover {
+    text-decoration: none;
+   background-color: rgb(239, 83, 83);
+}
+
+.sidebar ul li:hover {
+    border-bottom: none;
+}
 
 
 
@@ -314,8 +332,8 @@ input[type="radio"],
     padding: 10px;
     border-radius: 5px;
     width:auto;
-    max-width:1000px;
-    margin-left: 140px;
+   
+    margin-left: 0px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -328,13 +346,18 @@ input[type="radio"],
 
 
 
-.links-home {
-    display: flex;
-    gap: 400px;
-    align-items: center;
-    color: #999;
-    margin-left: 750px;
+
+.logout-container {
+    position: absolute;
+     right: 10px;
 }
+
+
+.links-home {
+    flex: 0 0 auto; 
+}
+
+
 .links-home a {
     color: white;
     margin-top: 20px;
@@ -523,7 +546,7 @@ input[type="radio"],
 
             .links-home {
                 margin-top: -30px;
-                margin-left: 280px;
+              
             }
 
             .links-home a {
@@ -580,8 +603,7 @@ margin-right:0px;
         <div class="logo-home">
             <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo"width="150px">
         </div>
-        <div class="links-home">
-            <!--<a href="/" class="home-button" id="home-link">Go to Home</a>-->
+        <div class="logout-container">
             <a href="/logout" class="btn btn-info">Logout</a>
         </div>
         

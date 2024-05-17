@@ -30,41 +30,42 @@
 
 <link rel="stylesheet" href="/path/to/styles.css">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
- <div class="wrapper d-flex">
-        <div class="sidebar">
-            <div class="user-info">
-                @if(Auth::check())
-                    <span>Welcome, {{ Auth::user()->name }}</span>
-                @endif
-            </div>
-      <ul>
-        <li><a href="/dash"><i class="fas fa-home"></i>Journal pannel</a></li>
-        <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
-        <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
-        <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
-        <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
-        {{-- <li class="notification1"><a href="#"><i class="fas fa-calendar-week"></i>Calendar</a><span class="number1">4</span></li> --}}
-        {{-- <li class="notification2"><a href="#"><i class="far fa-envelope"></i>Documents</a><span class="number2">5</span></li> --}}
-        {{-- <li><a href="#"><i class="fas fa-signal"></i>Reports</a></li> --}}
-      </ul>
+   <div class="wrapper d-flex">
+    <div class="sidebar">
+        <div class="user-info">
+            @if(Auth::check())
+                <span>Welcome, {{ Auth::user()->name }}</span>
+            @endif
+        </div>
+        <ul>
+            <a href="/dash">
+                <li><i class="fas fa-home"></i>Journal panel</li>
+            </a>
+            <a href="/">
+                <li><i class="fas fa-users"></i>Go to home</li>
+            </a>
+           
+            <a href="/data">
+                <li><i class="fas fa-users"></i>Add My Journal</li>
+            </a>
+            <a href="/callforpaper">
+                <li><i class="fas fa-users"></i>Call For Paper</li>
+            </a>
+        </ul>
     </div>
-   
-  </div>
+</div>
 
-
-  
-  <!-- Rest of your content here -->
   
 
   <div class="container-home">
     <div class="logo-home">
-        <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo"width="150px">
+        <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo" width="150px">
     </div>
-    <div class="links-home">
-        <!--<a href="/" class="home-button" id="home-link">Go to Home</a>-->
-    
+    <div class="logout-container">
         <a href="/logout" class="btn btn-info">Logout</a>
     </div>
+</div>
+
     
 </div>
 </div>
@@ -143,6 +144,7 @@
 
         .btn.btn-info {
         color: black;
+        background-color: white;
     }
         .user-info span.name {
             font-size: 24px;
@@ -219,15 +221,17 @@
     margin-top: 30px;
     border-radius: 8px;
 }
+
 .container-home {
     display: flex;
     align-items: center;
     background-color: midnightblue;
-    border: 2px solid #ccc;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     width:auto;
-    margin-left: px;
+   
+    margin-left: 0px;
     border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -237,21 +241,24 @@
     justify-content: flex-start;
 
 }
-
+.logout-container {
+    position: absolute;
+     right: 10px;
+}
 
 
 .links-home {
-    display: flex;
-    gap: 400px;
-    align-items: center;
-    color: #999;
-    margin-left: 1050px;
+    flex: 0 0 auto; 
 }
+
+
 .links-home a {
     color: white;
     margin-top: 20px;
     
-} .hamburger-menu {
+}
+
+ .hamburger-menu {
             display: none;
         }
 
@@ -337,6 +344,25 @@
             border-radius: 50%;
             margin-left:35px;
         }
+        .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul a:hover {
+    text-decoration: none;
+   background-color: rgb(239, 83, 83);
+}
+
+.sidebar ul li:hover {
+    border-bottom: none;
+}
+
 
         .close-button i {
             color: white;
@@ -410,16 +436,17 @@
                 margin-left: -440px;
                 margin-top: 35px;
             }
+        
 
-            .links-home {
-                margin-top: -30px;
-                margin-left: 280px;
-            }
+.logo-home {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
 
-            .links-home a {
-                margin-top: 0;
-            }
+.links-home {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
 
+          
             .hamburger-menu.active .hamburger-icon {
                 display: none;
             }

@@ -25,23 +25,38 @@
                 @endif
             </div>
             <ul>
-                <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
-                <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
-                <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
-                <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
-                <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
+                <a href="/dash">
+                    <li><i class="fas fa-home"></i>Journal panel</li>
+                </a>
+                <a href="/">
+                    <li><i class="fas fa-users"></i>Go to home</li>
+                </a>
+              
+                <a href="/data">
+                    <li><i class="fas fa-users"></i>Add My Journal</li>
+                </a>
+                <a href="/callforpaper">
+                    <li><i class="fas fa-users"></i>Call For Paper</li>
+                </a>
             </ul>
         </div>
-      
+    </div>
+    
+
         <div class="container-home">
             <div class="logo-home">
                 <img src="{{asset('user/img/101.jpg')}}" alt="Logo" class="logo" width="150px">
             </div>
-            <div class="links-home">
+            <div class="logout-container">
                 <a href="/logout" class="btn btn-info">Logout</a>
             </div>
         </div>
-    </div><div class="mobile-menu-toggle">
+        
+            
+        </div>
+        </div>
+
+       <div class="mobile-menu-toggle">
             <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
         </div>
         <div class="hamburger-menu">
@@ -57,7 +72,7 @@
             </div>
                 <li><a href="/dash"><i class="fas fa-home"></i>Journal panel</a></li>
                 <li><a href="/"><i class="fas fa-users"></i>Go to home</a></li>
-                <li><a href="/contactus"><i class="fas fa-users"></i>Contact</a></li>
+              
                 <li><a href="/data"><i class="fas fa-users"></i>Add My Journal</a></li>
                 <li><a href="/callforpaper"><i class="fas fa-users"></i>Call For Paper</a></li>
             </ul>
@@ -133,7 +148,73 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
-    background-image: url('/user/img/cfp.jpg');
+    background-color:#fd5f00!important;
+}
+
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar ul a:hover {
+    text-decoration: none;
+   background-color: rgb(239, 83, 83);
+}
+
+.sidebar ul li:hover {
+    border-bottom: none;
+}
+
+
+
+
+.container-home {
+    display: flex;
+    align-items: center;
+    background-color: midnightblue;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width:100%;
+   
+    margin-left: 0px;
+    border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+   border-bottom-left-radius: 15px;
+   align-items: center;
+   
+    justify-content: flex-start;
+
+}
+
+
+
+
+.logout-container {
+    position: absolute;
+     right: 10px;
+}
+
+
+.links-home {
+    flex: 0 0 auto; 
+}
+
+
+.links-home a {
+    color: white;
+    margin-top: 20px;
+    
+}
+.logo-home {
+    margin-left:5px;
 }
 .success-message {
         position: fixed;
@@ -158,15 +239,15 @@ body {
     }
 
     .callforpapercontainer {
-        background-color: #fff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width:900px;
-    margin-left:200px;
-    
-   
+    width: 900px;
+    margin-left: 200px;
+    margin-right: 200px; /* Set right margin to match left margin */
 }
+
 
 h2 {
     margin-bottom: 20px;
@@ -230,6 +311,7 @@ input[type="date"] {
 
         .btn.btn-info {
         color: black;
+        background-color: white;
     }
         .user-info span.name {
             font-size: 24px;
@@ -268,39 +350,11 @@ input[type="date"] {
         color: white;
     }
 
-    .container-home {
-    display: flex;
-    align-items: center;
-    background-color: midnightblue;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    width:2000px;
-    margin-left: px;
-    border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-   border-bottom-left-radius: 15px;
-   align-items: center;
-   
-    justify-content: flex-start;
 
-}
 .body {
         background-color: #a4b729;
     }
-    .links-home {
-    display: flex;
-    gap: 400px;
-    align-items: center;
-    color: #999;
-    margin-left: 1050px;
-}
-.links-home a {
-    color: white;
-    margin-top: 20px;
-    
-}.hamburger-menu {
+    .hamburger-menu {
             display: none;
         }
 
@@ -324,7 +378,6 @@ input[type="date"] {
   transition: all 0.3s ease; 
 }
 
-        /* Style the black box */
         .hamburger-icon:before,
         .hamburger-icon:after {
             content: '';
@@ -441,31 +494,16 @@ input[type="date"] {
                 background-color: #336699;
                 border-radius: 5px;
             }
+   
 
-          
+.logo-home {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
 
-            .container-home {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
+.links-home {
+    flex: 0 0 auto; /* Don't grow or shrink */
+}
 
-            .logo-home img {
-                /*width: 90px;*/
-                margin-left: -440px;
-                margin-top: 35px;
-            }
-
-            .links-home {
-                margin-top: -30px;
-                margin-left: 280px;
-            }
-
-            .links-home a {
-                margin-top: 0;
-            }
 
             .hamburger-menu.active .hamburger-icon {
                 display: none;
