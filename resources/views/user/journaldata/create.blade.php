@@ -127,7 +127,7 @@
     }
     .form-container {
     width: auto;
-    max-width: 900px;
+    max-width: 800px;
     margin-left: 140px; /* Set margin to desired fixed value */
     margin-right: 140px; /* Set margin to desired fixed value */
     padding: 20px;
